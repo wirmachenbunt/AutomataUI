@@ -1,4 +1,4 @@
-# AutomataUI
+# AutomataUI for vvvv
 
 Hello Automata UI !
 this is a visual finite state machine editor with built in finite state machine.
