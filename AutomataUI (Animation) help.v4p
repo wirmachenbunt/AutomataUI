@@ -1,0 +1,621 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
+   <PATCH nodename="C:\Users\Chris\Desktop\AutomataUI\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="1080">
+   <BOUNDS type="Window" left="6090" top="9300" width="21090" height="9810">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="34" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="351" top="5598" width="2355" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="351" top="5598" width="7080" height="4500">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|::: Create a State - DoubleClickLeft&cr;&lf;::: Create a Transition - RightClick on StartState and LeftClick on TargetState&cr;&lf;::: Edit a State or Transition - DoubleClickLeft&cr;&lf;::: Delete a State or Transition - MiddleClick&cr;&lf;::: Move a State - Drag State with LeftMouseButton&cr;&lf;::: Move the Stage - Drag with RightMouseButton in empty space&cr;&lf;::: Force State - CTRL + LEFTCLICK&cr;&lf;&cr;&lf;The Rules&cr;&lf;::: Only one transition per direction between states allowed.&cr;&lf;::: Transitions can have a duration counted in frames.&cr;&lf;::: Transitions set as pingpong can go back and forth between states.&cr;&lf;::: If a transition is active, it can not be interupted until it reaches its target states.&cr;&lf;::: &quot;Reset to default state&quot; can reset the automata at any point in time to a configurable state&cr;&lf;::: Transitions with the same name will be consolidated into one input pin.&cr;&lf;::: If a state has many identical named transitions, only the first one will be triggered.&cr;&lf;::: If you delete a state, all related transitions will be deleted too.&cr;&lf;::: Check Inspector for hidden settings (Default State, Joreg Mode)&cr;&lf;::: The automata tree is saved with the patch&cr;&lf;::: The automata tree can be copied to another patch by copying the node itself&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="33" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="7326" top="3399" width="1110" height="1200">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7326" top="3399" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Output">
+   </PIN>
+   <PIN pinname="Input String" slicecount="3" values="Init,Init,Init">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="5">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="32" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="621" top="528" width="1005" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="621" top="528" width="4800" height="600">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Automata UI 1.7|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="20">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="|Segoe UI|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="31" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="636" top="1128" width="1005" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="636" top="1128" width="6135" height="615">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|wirmachenbunt // Christian Engler //  2018&cr;&lf;Open Source Version|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="9">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="|Segoe UI|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="26" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="645" top="2025" width="870" height="480">
+   </BOUNDS>
+   <BOUNDS type="Box" left="645" top="2025" width="4674" height="3265">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|changelog&cr;&lf;Improvements:&cr;&lf;- Transition Pins are Bangs now&cr;&lf;- State and Transition changes update outputs accordingly&cr;&lf;- fixed bug when deleting states&cr;&lf;- fixed bug when feeding NIL&cr;&lf;&cr;&lf;Features&cr;&lf;- Getstate Node with normalized in/out value for animation&cr;&lf;- Automata Class Output for custom plugins&cr;&lf;- HiDpi capable&cr;&lf;- select slice of automata by UI buttons (top left corner)&cr;&lf;- CTRL + Click to force a state or activate a transition&cr;&lf;- hidden focus UI pin to bring the window in front&cr;&lf;- Bezier transitions|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="24" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="18741" top="6348" width="435" height="855">
+   </BOUNDS>
+   <BOUNDS type="Node" left="18741" top="6348" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="6">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="StateActive">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="21" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="15223" top="6273" width="765" height="765">
+   </BOUNDS>
+   <BOUNDS type="Node" left="15223" top="6273" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="ElapsedStateTime">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="20" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="13197" top="3621" width="615" height="600">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13197" top="3621" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="3" values="346,346,346">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Elapsed State Time|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="19" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="12462" top="2598" width="285" height="615">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12462" top="2598" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="3" values="0,0,0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Transition Time|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="18" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="11721" top="2763" width="285" height="1155">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11721" top="2763" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="3" values="5,5,5">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Transition Index|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="17" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="10263" top="2688" width="1350" height="1245">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10263" top="2688" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="7">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="6" values="|My Transition|,|My Transition2|,|My Transition|,|My Transition|,|My Transition|,∅">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Transitions">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="16" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="16402" top="6335" width="888" height="2484">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16402" top="6335" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Real">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="TimeIn">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="12" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="18754" top="3795" width="1815" height="1680">
+   </BOUNDS>
+   <BOUNDS type="Node" left="18754" top="3795" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input Enum" visible="1" slicecount="1" values="Menu">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="9" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="7341" top="1728" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7341" top="1728" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   <PIN pinname="Input Enum" visible="1" slicecount="1" values="Init">
+   </PIN>
+   </NODE>
+   <NODE systemname="AutomataUI (Animation)" filename="AutomataUI\bin\Debug\AutomataUI.dll" nodename="AutomataUI (Animation)" componentmode="InAWindow" id="35">
+   <BOUNDS type="Node" left="7316" top="2188" width="6670" height="270">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8505" top="0" width="12135" height="9315">
+   </BOUNDS>
+   <PIN pinname="TransitionNames" slicecount="4" values="|Reset To Default State|,dingdong,|My Transition|,|My Transition|">
+   </PIN>
+   <PIN pinname="StateXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfState xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;151&lt;/X&gt;&cr;&lf;        &lt;Y&gt;391&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;151&lt;/X&gt;&cr;&lf;      &lt;Y&gt;391&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;bXNNkfPT&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;440&lt;/X&gt;&cr;&lf;        &lt;Y&gt;93&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;440&lt;/X&gt;&cr;&lf;      &lt;Y&gt;93&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;z8dDCElf&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;SubMenu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;580&lt;/X&gt;&cr;&lf;        &lt;Y&gt;349&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;580&lt;/X&gt;&cr;&lf;      &lt;Y&gt;349&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;&lt;/ArrayOfState&gt;|">
+   </PIN>
+   <PIN pinname="TransitionXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfTransition xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;dingdong&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;80&lt;/X&gt;&cr;&lf;          &lt;Y&gt;421&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;80&lt;/X&gt;&cr;&lf;        &lt;Y&gt;421&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;bXNNkfPT&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;440&lt;/X&gt;&cr;&lf;          &lt;Y&gt;93&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;440&lt;/X&gt;&cr;&lf;        &lt;Y&gt;93&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;5&lt;/X&gt;&cr;&lf;      &lt;Y&gt;-2&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;1&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;200&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;true&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;259&lt;/X&gt;&cr;&lf;        &lt;Y&gt;285&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;77&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;259&lt;/X&gt;&cr;&lf;      &lt;Y&gt;285&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;77&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;My Transition&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;bXNNkfPT&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;440&lt;/X&gt;&cr;&lf;          &lt;Y&gt;93&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;440&lt;/X&gt;&cr;&lf;        &lt;Y&gt;93&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;z8dDCElf&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;SubMenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;607&lt;/X&gt;&cr;&lf;          &lt;Y&gt;349&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;607&lt;/X&gt;&cr;&lf;        &lt;Y&gt;349&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;-4&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;2&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;44&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;512&lt;/X&gt;&cr;&lf;        &lt;Y&gt;248&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;92&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;512&lt;/X&gt;&cr;&lf;      &lt;Y&gt;248&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;92&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;My Transition&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;z8dDCElf&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;SubMenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;607&lt;/X&gt;&cr;&lf;          &lt;Y&gt;349&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;607&lt;/X&gt;&cr;&lf;        &lt;Y&gt;349&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;80&lt;/X&gt;&cr;&lf;          &lt;Y&gt;421&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;80&lt;/X&gt;&cr;&lf;        &lt;Y&gt;421&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;-70&lt;/X&gt;&cr;&lf;      &lt;Y&gt;173&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;255&lt;/X&gt;&cr;&lf;      &lt;Y&gt;-82&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;405&lt;/X&gt;&cr;&lf;        &lt;Y&gt;447&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;86&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;405&lt;/X&gt;&cr;&lf;      &lt;Y&gt;447&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;86&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;&lt;/ArrayOfTransition&gt;|">
+   </PIN>
+   <PIN pinname="My Transition" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Reset To Default State" visible="1">
+   </PIN>
+   <PIN pinname="Show Slice" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="DoIt" visible="1">
+   </PIN>
+   <PIN pinname="0" visible="1">
+   </PIN>
+   <PIN pinname="23422" visible="1">
+   </PIN>
+   <PIN pinname="return" visible="1">
+   </PIN>
+   <PIN pinname="toSubMenu" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="toMenu" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="done loading" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="AutomataUI" visible="1">
+   </PIN>
+   <PIN pinname="Keyboard State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Focus Window" visible="-1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="License" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Target State Index" visible="1">
+   </PIN>
+   <PIN pinname="Active State Index" visible="1">
+   </PIN>
+   <PIN pinname="States" visible="1">
+   </PIN>
+   <PIN pinname="dingdong" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Output" dstnodeid="33" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Elapsed State Time" dstnodeid="20" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Transition Time" dstnodeid="19" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Transition Index" dstnodeid="18" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Transitions" dstnodeid="17" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Output Enum" dstnodeid="35" dstpinname="Default State">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="37" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="9513" top="1542" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9513" top="1542" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Reset To Default State|">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="35" dstpinname="Reset To Default State">
+   </LINK>
+   <NODE systemname="GetState (AutomataUI Animation)" filename="AutomataUI\bin\Debug\AutomataUI.dll" nodename="GetState (AutomataUI Animation)" componentmode="Hidden" id="25">
+   <BOUNDS type="Node" left="15205" top="5849" width="3600" height="270">
+   </BOUNDS>
+   <PIN pinname="AutomataUI" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Default State" slicecount="1" visible="1" values="Init">
+   </PIN>
+   <PIN pinname="State" visible="1" slicecount="1" values="Submenu10">
+   </PIN>
+   <PIN pinname="StateActive" visible="1">
+   </PIN>
+   <PIN pinname="ElapsedStateTime" visible="1">
+   </PIN>
+   <PIN pinname="TimeIn" visible="1">
+   </PIN>
+   <PIN pinname="TimeOut" visible="1">
+   </PIN>
+   <PIN pinname="FadeInOut" visible="1">
+   </PIN>
+   <PIN pinname="FadeDirection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="StateActive" dstnodeid="24" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="ElapsedStateTime" dstnodeid="21" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Output Enum" dstnodeid="25" dstpinname="State">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="FadeInOut" dstnodeid="16" dstpinname="Y Input Value">
+   </LINK>
+   <PACK Name="imagePack" Version="0.2.0">
+   </PACK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="71">
+   <BOUNDS type="Box" left="13920" top="2610" width="1095" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13920" top="2610" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="AutomataUI">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="AutomataUI" dstnodeid="71" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="71" srcpinname="Output Node" dstnodeid="25" dstpinname="AutomataUI" linkstyle="Bezier">
+   <LINKPOINT x="13965" y="4343">
+   </LINKPOINT>
+   <LINKPOINT x="15225" y="4328">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="72">
+   <BOUNDS type="Box" left="9540" top="4620" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9540" top="4620" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Target State Index|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Target State Index" dstnodeid="72" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="73">
+   <BOUNDS type="Box" left="8775" top="3660" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8775" top="3660" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Active State Index|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Active State Index" dstnodeid="73" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="74">
+   <BOUNDS type="Box" left="8055" top="2715" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8055" top="2715" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="States">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="States" dstnodeid="74" dstpinname="Input String">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="77">
+   <BOUNDS type="Box" left="17550" top="6345" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="17550" top="6345" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="FadeDirection">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="FadeDirection" dstnodeid="77" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="Logging (AutomataUI Animation)" filename="AutomataUI\bin\Debug\AutomataUI.dll" nodename="Logging (AutomataUI Animation)" componentmode="Hidden" id="78">
+   <BOUNDS type="Node" left="9300" top="7620" width="2610" height="270">
+   </BOUNDS>
+   <PIN pinname="AutomataUI" visible="1">
+   </PIN>
+   <PIN pinname="Save" visible="1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" visible="1" values="..\..\Users\Chris\Desktop\logfile.txt">
+   </PIN>
+   <PIN pinname="Message" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="80">
+   <BOUNDS type="Box" left="10575" top="6630" width="2865" height="315">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10575" top="6630" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\Users\Chris\Desktop\logfile.txt">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="|All Files (*.*)||*.*|">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Filename">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="80" srcpinname="Output String" dstnodeid="78" dstpinname="Filename">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="86">
+   <BOUNDS type="Box" left="11850" top="7245" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11850" top="7245" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="|custom message|">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="86" srcpinname="Output String" dstnodeid="78" dstpinname="Message">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="88">
+   <BOUNDS type="Box" left="11730" top="1275" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11730" top="1275" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="dingdong">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="88" srcpinname="Y Output Value" dstnodeid="35" dstpinname="dingdong">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="89">
+   <BOUNDS type="Node" left="9255" top="7920" width="2655" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9255" top="7920" width="2655" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|log Automata changes for statistics|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="90">
+   <BOUNDS type="Node" left="15420" top="5490" width="2820" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="15420" top="5490" width="2820" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|animate things using transition times|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="SetTransition (AutomataUI Animation)" filename="AutomataUI\bin\Debug\AutomataUI.dll" nodename="SetTransition (AutomataUI Animation)" componentmode="Hidden" id="91">
+   <BOUNDS type="Node" left="16155" top="3840" width="1590" height="270">
+   </BOUNDS>
+   <PIN pinname="AutomataUI" visible="1">
+   </PIN>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Time" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Transition" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="92">
+   <BOUNDS type="Box" left="17175" top="2730" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="17175" top="2730" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Set">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="92" srcpinname="Y Output Value" dstnodeid="91" dstpinname="Set">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="93">
+   <BOUNDS type="Box" left="16680" top="2025" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16680" top="2025" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="18">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Time">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="93" srcpinname="Y Output Value" dstnodeid="91" dstpinname="Time">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="94">
+   <BOUNDS type="Box" left="17700" top="2760" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="17700" top="2760" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="dingdong">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Transition">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="94" srcpinname="Output Enum" dstnodeid="91" dstpinname="Transition">
+   </LINK>
+   <LINK srcnodeid="71" srcpinname="Output Node" dstnodeid="91" dstpinname="AutomataUI" linkstyle="Bezier">
+   <LINKPOINT x="13980" y="3330">
+   </LINKPOINT>
+   <LINKPOINT x="16155" y="3330">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="71" srcpinname="Output Node" dstnodeid="78" dstpinname="AutomataUI" linkstyle="Bezier">
+   <LINKPOINT x="13905" y="5220">
+   </LINKPOINT>
+   <LINKPOINT x="9360" y="5220">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VVVV.Nodes.Generic</name>
+    </assembly>
+    <members>
+        <member name="T:VVVV.Nodes.Generic.Copier`1">
+            <summary>
+            Copies values or spread of values. Used in nodes which need to copy data.
+            </summary>
+            <typeparam name="T">The type of value this copier is able to copy.</typeparam>
+        </member>
+        <member name="F:VVVV.Nodes.Generic.Copier`1.Immutable">
+            <summary>
+            Returns a copier for immutable types.
+            </summary>
+        </member>
+        <member name="M:VVVV.Nodes.Generic.Copier`1.Copy(`0)">
+            <summary>
+            Creates a copy of the given value.
+            </summary>
+            <param name="value">The value to copy.</param>
+            <returns>The copied value.</returns>
+        </member>
+        <member name="M:VVVV.Nodes.Generic.Copier`1.CopySpread(VVVV.PluginInterfaces.V2.ISpread{`0})">
+            <summary>
+            Creates a copy of the given spread.
+            </summary>
+            <param name="spread">The spread to copy.</param>
+            <returns>The copied spread.</returns>
+        </member>
+    </members>
+</doc>

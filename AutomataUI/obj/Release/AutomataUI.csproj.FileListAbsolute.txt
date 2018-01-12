@@ -1,0 +1,8 @@
+C:\AutomataUI\AutomataUI\AutomataUI\bin\Release\AutomataUI.dll
+C:\AutomataUI\AutomataUI\AutomataUI\bin\Release\AutomataUI.pdb
+C:\AutomataUI\AutomataUI\AutomataUI\bin\Release\Newtonsoft.Json.dll
+C:\AutomataUI\AutomataUI\AutomataUI\bin\Release\SlimDX.dll
+C:\AutomataUI\AutomataUI\AutomataUI\bin\Release\SlimDX.xml
+C:\AutomataUI\AutomataUI\AutomataUI\obj\Release\AutomataUI.csprojResolveAssemblyReference.cache
+C:\AutomataUI\AutomataUI\AutomataUI\obj\Release\AutomataUI.dll
+C:\AutomataUI\AutomataUI\AutomataUI\obj\Release\AutomataUI.pdb

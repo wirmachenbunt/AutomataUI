@@ -1,0 +1,13 @@
+C:\AutomataUI\AutomataUI\AutomataUI\bin\Debug\AutomataUI.dll
+C:\AutomataUI\AutomataUI\AutomataUI\bin\Debug\AutomataUI.pdb
+C:\AutomataUI\AutomataUI\AutomataUI\bin\Debug\SlimDX.dll
+C:\AutomataUI\AutomataUI\AutomataUI\bin\Debug\SlimDX.xml
+C:\AutomataUI\AutomataUI\AutomataUI\obj\Debug\AutomataUI.dll
+C:\AutomataUI\AutomataUI\AutomataUI\obj\Debug\AutomataUI.pdb
+C:\AutomataUI\AutomataUI\AutomataUI\bin\Debug\Newtonsoft.Json.dll
+C:\AutomataUI\AutomataUI\AutomataUI\obj\Debug\AutomataUI.csprojResolveAssemblyReference.cache
+C:\Users\Chris\Desktop\AutomataUI\AutomataUI\bin\Debug\AutomataUI.dll
+C:\Users\Chris\Desktop\AutomataUI\AutomataUI\bin\Debug\AutomataUI.pdb
+C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Debug\AutomataUI.csprojResolveAssemblyReference.cache
+C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Debug\AutomataUI.dll
+C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Debug\AutomataUI.pdb
