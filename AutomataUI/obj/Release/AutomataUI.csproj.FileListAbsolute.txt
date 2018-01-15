@@ -6,3 +6,8 @@ C:\AutomataUI\AutomataUI\AutomataUI\bin\Release\SlimDX.xml
 C:\AutomataUI\AutomataUI\AutomataUI\obj\Release\AutomataUI.csprojResolveAssemblyReference.cache
 C:\AutomataUI\AutomataUI\AutomataUI\obj\Release\AutomataUI.dll
 C:\AutomataUI\AutomataUI\AutomataUI\obj\Release\AutomataUI.pdb
+C:\Users\Chris\Desktop\AutomataUI\AutomataUI\bin\Release\AutomataUI.dll
+C:\Users\Chris\Desktop\AutomataUI\AutomataUI\bin\Release\AutomataUI.pdb
+C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Release\AutomataUI.csprojResolveAssemblyReference.cache
+C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Release\AutomataUI.dll
+C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Release\AutomataUI.pdb
