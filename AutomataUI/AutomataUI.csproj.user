@@ -3,6 +3,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\vvvv\vvvv_50beta35.8_x64\vvvv.exe</StartProgram>
-    <StartArguments>"C:\AutomataUI\AutomataUI\AutomataUI %28Animation%29 help.v4p"</StartArguments>
+    <StartArguments>"C:\AutomataUI\AutomataUI %28Animation%29 help.v4p"</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\vvvv\vvvv_50beta35.8_x64\vvvv.exe</StartProgram>
+    <StartArguments>"C:\AutomataUI\AutomataUI %28Animation%29 help.v4p"</StartArguments>
   </PropertyGroup>
 </Project>

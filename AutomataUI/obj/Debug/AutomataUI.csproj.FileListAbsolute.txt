@@ -11,3 +11,8 @@ C:\Users\Chris\Desktop\AutomataUI\AutomataUI\bin\Debug\AutomataUI.pdb
 C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Debug\AutomataUI.csprojResolveAssemblyReference.cache
 C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Debug\AutomataUI.dll
 C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Debug\AutomataUI.pdb
+C:\AutomataUI\AutomataUI\bin\Debug\AutomataUI.dll
+C:\AutomataUI\AutomataUI\bin\Debug\AutomataUI.pdb
+C:\AutomataUI\AutomataUI\obj\Debug\AutomataUI.csprojResolveAssemblyReference.cache
+C:\AutomataUI\AutomataUI\obj\Debug\AutomataUI.dll
+C:\AutomataUI\AutomataUI\obj\Debug\AutomataUI.pdb

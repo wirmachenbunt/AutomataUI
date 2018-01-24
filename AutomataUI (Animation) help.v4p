@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
-   <PATCH nodename="C:\Users\Chris\Desktop\AutomataUI\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="1080">
+   <PATCH nodename="C:\AutomataUI\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="1080">
    <BOUNDS type="Window" left="6090" top="9300" width="21090" height="9810">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.0.0">
@@ -297,6 +297,8 @@
    </PIN>
    <PIN pinname="dingdong" visible="1">
    </PIN>
+   <PIN pinname="Transition Time Settings" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="35" srcpinname="Output" dstnodeid="33" dstpinname="Input String">
    </LINK>
@@ -542,22 +544,10 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE systemname="SetTransition (AutomataUI Animation)" filename="AutomataUI\bin\Debug\AutomataUI.dll" nodename="SetTransition (AutomataUI Animation)" componentmode="Hidden" id="91">
-   <BOUNDS type="Node" left="16155" top="3840" width="1590" height="270">
-   </BOUNDS>
-   <PIN pinname="AutomataUI" visible="1">
-   </PIN>
-   <PIN pinname="Set" visible="1">
-   </PIN>
-   <PIN pinname="Time" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Transition" visible="1">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="92">
-   <BOUNDS type="Box" left="17175" top="2730" width="480" height="480">
+   <BOUNDS type="Box" left="16980" top="3060" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="17175" top="2730" width="0" height="0">
+   <BOUNDS type="Node" left="16980" top="3060" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -573,15 +563,15 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="92" srcpinname="Y Output Value" dstnodeid="91" dstpinname="Set">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="93">
-   <BOUNDS type="Box" left="16680" top="2025" width="795" height="240">
+   <BOUNDS type="Box" left="16575" top="2295" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="16680" top="2025" width="0" height="0">
+   <BOUNDS type="Node" left="16575" top="2295" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="18">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="113">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -591,31 +581,71 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Time">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="93" srcpinname="Y Output Value" dstnodeid="91" dstpinname="Time">
-   </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="94">
-   <BOUNDS type="Box" left="17700" top="2760" width="1590" height="270">
+   <BOUNDS type="Box" left="17640" top="3165" width="1590" height="270">
    </BOUNDS>
-   <BOUNDS type="Node" left="17700" top="2760" width="0" height="0">
+   <BOUNDS type="Node" left="17640" top="3165" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="dingdong">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Transition">
    </PIN>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="94" srcpinname="Output Enum" dstnodeid="91" dstpinname="Transition">
-   </LINK>
-   <LINK srcnodeid="71" srcpinname="Output Node" dstnodeid="91" dstpinname="AutomataUI" linkstyle="Bezier">
-   <LINKPOINT x="13980" y="3330">
-   </LINKPOINT>
-   <LINKPOINT x="16155" y="3330">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="71" srcpinname="Output Node" dstnodeid="78" dstpinname="AutomataUI" linkstyle="Bezier">
    <LINKPOINT x="13905" y="5220">
    </LINKPOINT>
    <LINKPOINT x="9360" y="5220">
    </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="95">
+   <BOUNDS type="Box" left="12840" top="5190" width="1890" height="1140">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12840" top="5190" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Transition Time Settings" dstnodeid="95" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Renderer (TTY)" nodename="Renderer (TTY)" componentmode="InAWindow" id="96">
+   <BOUNDS type="Node" left="13440" top="1635" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="13440" top="1635" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="1050" top="10995" width="6240" height="5085">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="SetTransitionTime (AutomataUI Animation)" filename="AutomataUI\bin\Debug\AutomataUI.dll" nodename="SetTransitionTime (AutomataUI Animation)" componentmode="Hidden" id="97">
+   <BOUNDS type="Node" left="16170" top="3855" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="16170" top="3855" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="AutomataUI" visible="1">
+   </PIN>
+   <PIN pinname="Transition" visible="1">
+   </PIN>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Time" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="AutomataUI" dstnodeid="97" dstpinname="AutomataUI">
+   </LINK>
+   <LINK srcnodeid="94" srcpinname="Output Enum" dstnodeid="97" dstpinname="Transition">
+   </LINK>
+   <LINK srcnodeid="92" srcpinname="Y Output Value" dstnodeid="97" dstpinname="Set">
+   </LINK>
+   <LINK srcnodeid="93" srcpinname="Y Output Value" dstnodeid="97" dstpinname="Time">
    </LINK>
    </PATCH>

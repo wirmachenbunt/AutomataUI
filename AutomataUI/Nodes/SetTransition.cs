@@ -19,7 +19,7 @@ using VVVV.Core.Logging;
 namespace VVVV.Nodes
 {
     #region PluginInfo
-    [PluginInfo(Name = "SetTransition",
+    [PluginInfo(Name = "SetTransitionTime",
                 Category = "AutomataUI Animation",
                 Help = "setup transitions programatically ",
                 Tags = "",
@@ -37,7 +37,7 @@ namespace VVVV.Nodes
         [Input("Time")]
         public ISpread<int> TransitionTime;
 
-        [Input("Set", IsBang =true)]
+        [Input("Set", IsBang = true)]
         public ISpread<bool> SetTime;
 
         [Import()]
@@ -81,24 +81,38 @@ namespace VVVV.Nodes
             FLogger.Log(LogType.Debug, "connected");
         }
 
-        
+
 
         //called when data for any output pin is requested
         public void Evaluate(int SpreadMax)
         {
 
-            if (invalidate || AutomataUI[0].StatesChanged)
+            if (AutomataUI.IsConnected)
             {
-                EnumManager.UpdateEnum(EnumName, AutomataUI[0].transitionList[0].Name, AutomataUI[0].transitionList.Select(x => x.Name).ToArray());
-                invalidate = false;
-            }
 
 
-            try
-            {
-               
+                if (invalidate || AutomataUI[0].StatesChanged)
+                {
+                    EnumManager.UpdateEnum(EnumName, AutomataUI[0].transitionList[0].Name, AutomataUI[0].transitionList.Select(x => x.Name).ToArray());
+                    invalidate = false;
+                }
+
+
+                //AutomataUI[0].transitionList[0].Frames = 1000;
+                for (int i = 0; i < SetTime.SliceCount; i++)
+                {
+                    if (SetTime.IsChanged && SetTime[i])
+                    {
+                        var item = AutomataUI[0].transitionList.FirstOrDefault(r => r.Name == EnumTransition[i]);
+                        item.Frames = TransitionTime[i];
+                        AutomataUI[0].Invalidate();
+                    }
+                }
+
+
             }
-            catch { FLogger.Log(LogType.Debug, "No Connection"); }
+
+            else { FLogger.Log(LogType.Debug, "No Connection"); }
 
         }
     }
