@@ -25,7 +25,7 @@ namespace VVVV.Nodes
     [PluginInfo(Name = "AutomataUI", Category = "Animation", Help = "Statemachine", Tags = "", AutoEvaluate = true)]
     #endregion PluginInfo
 
-    
+
 
     public class AutomataUI : UserControl, IPluginEvaluate, IPartImportsSatisfiedNotification
     {
@@ -34,7 +34,7 @@ namespace VVVV.Nodes
         //[Input("Default State", EnumName = "DefaultAutomataState", IsSingle = true, Visibility = PinVisibility.OnlyInspector)]
         protected IDiffSpread<EnumEntry> DefaultState;
 
-        [Input("Focus Window", IsBang = true,Visibility = PinVisibility.OnlyInspector)]
+        [Input("Focus Window", IsBang = true, Visibility = PinVisibility.OnlyInspector)]
         public IDiffSpread<bool> FocusWindow;
 
         [Config("License")]
@@ -95,7 +95,7 @@ namespace VVVV.Nodes
         #endregion fields & pins
 
         #region variables
-        
+
         public int x = 0; //mouse koordinaten
         public int y = 0;
         public Point previousPosition;
@@ -122,7 +122,7 @@ namespace VVVV.Nodes
 
         int counter = 0;
 
-        
+
         public string licenseOwner = "Automata UI // Open Source Version";
 
         Dictionary<string, IIOContainer> FPins = new Dictionary<string, IIOContainer>(); //dynamic pins
@@ -223,7 +223,7 @@ namespace VVVV.Nodes
             SetStyle(ControlStyles.ResizeRedraw, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.Opaque | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.UserPaint, true);
 
-}
+        }
 
         private void InitSettings()
         {
@@ -249,7 +249,7 @@ namespace VVVV.Nodes
                     transition.startState = stateList.First(x => x.ID.Contains(transition.startState.ID));
                     transition.endState = stateList.First(x => x.ID.Contains(transition.endState.ID));
                 }
-                
+
                 this.Invalidate();
                 previousPosition = MousePosition;
                 p.StagePos.X = 0;
@@ -259,7 +259,7 @@ namespace VVVV.Nodes
                 Initialize = false;
             }
         }
-       
+
         #endregion constructor and init
 
         #region mouse    
@@ -267,7 +267,7 @@ namespace VVVV.Nodes
         private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             //hit detection for various use
-            hitState = stateList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x,this.y)));
+            hitState = stateList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
             hitTransition = transitionList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
 
             previousPosition = MousePosition;
@@ -282,7 +282,7 @@ namespace VVVV.Nodes
                 p.bezierEdit.HighlightTransitionIndex = null;
                 p.bezierEdit.highlightTransition = null;
 
-                foreach ( GraphicsPath path in p.transitionPaths )
+                foreach (GraphicsPath path in p.transitionPaths)
                 {
                     if (path.IsOutlineVisible(this.x, this.y, p.greenPen))
                     {
@@ -308,9 +308,9 @@ namespace VVVV.Nodes
                 ElapsedStateTime[ShowSlice[0]] = TransitionFramesOut[ShowSlice[0]] = 0;
                 this.Invalidate(); //redraw
             }
-            
-                // Override Active Transition by CTRL Mouseclick
-                if (e.Button == MouseButtons.Left && Form.ModifierKeys == Keys.Control && hitTransition != null)
+
+            // Override Active Transition by CTRL Mouseclick
+            if (e.Button == MouseButtons.Left && Form.ModifierKeys == Keys.Control && hitTransition != null)
             {
                 TargetStateIndex[ShowSlice[0]] = stateList.IndexOf(hitTransition.endState); // set target state index
                 ActiveStateIndex[ShowSlice[0]] = stateList.IndexOf(hitTransition.startState);
@@ -319,7 +319,7 @@ namespace VVVV.Nodes
                 TransitionFramesOut[ShowSlice[0]] = hitTransition.Frames; // get frames of transition
                 TransitionIndex[ShowSlice[0]] = transitionList.IndexOf(hitTransition); //get transition
                 ElapsedStateTime[ShowSlice[0]] = 0; // stop ElapsedStateTimer
-                
+
                 FLogger.Log(LogType.Debug, "force transition");
                 this.Invalidate(); //redraw
             }
@@ -366,12 +366,12 @@ namespace VVVV.Nodes
             }
 
         }
-        
+
         private void Form1_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
         {
 
             if (hitState == null) selectedState = startConnectionState = null; //empty interaction states
- 
+
             if (stateList.Count > 2) StateXML[0] = State.DataSerializeState(stateList); //update config
 
             if (dragState != null)
@@ -380,7 +380,7 @@ namespace VVVV.Nodes
                 TransitionXML[0] = Transition.DataSerializeTransition(transitionList);
             }
 
-        }     
+        }
 
         private void Form1_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
@@ -390,16 +390,16 @@ namespace VVVV.Nodes
 
             if (hitState == null && hitTransition == null && e.Button == MouseButtons.Left) AddState("MyState"); // Add State 
 
-            else if (hitState != null && hitTransition == null ) EditState(hitState); //Edit State
+            else if (hitState != null && hitTransition == null) EditState(hitState); //Edit State
 
             if (hitTransition != null && hitState == null) EditTransition(hitTransition); //Edit Transition
 
         }
-      
+
         private void Form1_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            x = Convert.ToInt32((e.X - p.StagePos.X)/p.dpi);
-            y = Convert.ToInt32((e.Y - p.StagePos.Y)/p.dpi);
+            x = Convert.ToInt32((e.X - p.StagePos.X) / p.dpi);
+            y = Convert.ToInt32((e.Y - p.StagePos.Y) / p.dpi);
 
             //hittest states
             hitState = stateList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
@@ -411,7 +411,7 @@ namespace VVVV.Nodes
                 Lines.EdgePoints myEdgePoints = Lines.GetEdgePoints(State.Center(p.bezierEdit.highlightTransition.startState.Bounds), State.Center(p.bezierEdit.highlightTransition.endState.Bounds), 40, 40, 0.0);
                 if (dragState == "bezierStart") p.bezierEdit.highlightTransition.startBezierPoint = new Point(this.x - myEdgePoints.A.X, this.y - myEdgePoints.A.Y);
                 if (dragState == "bezierEnd") p.bezierEdit.highlightTransition.endBezierPoint = new Point(this.x - myEdgePoints.B.X, this.y - myEdgePoints.B.Y);
-            } 
+            }
             #endregion
 
             #region drag states
@@ -423,11 +423,11 @@ namespace VVVV.Nodes
                 previousPosition = MousePosition;
                 p.StagePos.X += deltaX;
                 p.StagePos.Y += deltaY;
-            }             
-            
+            }
+
             if (selectedState != null && e.Button == MouseButtons.Left && dragState == null)
             {
-                selectedState.Move(new Point(Convert.ToInt32(e.X/p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.X/p.dpi), Convert.ToInt32(e.Y/p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.Y/p.dpi)));
+                selectedState.Move(new Point(Convert.ToInt32(e.X / p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.X / p.dpi), Convert.ToInt32(e.Y / p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.Y / p.dpi)));
             }
 
             #endregion
@@ -438,7 +438,7 @@ namespace VVVV.Nodes
             {
                 targetConnectionState = hitState;
             }
-            else targetConnectionState = null; 
+            else targetConnectionState = null;
             #endregion
 
             this.Invalidate(); //redraw
@@ -471,7 +471,7 @@ namespace VVVV.Nodes
                 int frames = 1;
                 bool pingpong = false;
                 {
-                    if (PaintAutomataClass.Dialogs.ShowTransitionDialog(ref input, ref frames, ref pingpong, "Add Transition",p.dpi) == DialogResult.OK)
+                    if (PaintAutomataClass.Dialogs.ShowTransitionDialog(ref input, ref frames, ref pingpong, "Add Transition", p.dpi) == DialogResult.OK)
                     {
                         //add transition
                         transitionList.Add(new Transition()
@@ -500,7 +500,7 @@ namespace VVVV.Nodes
             int frames = transition.Frames;
             bool pingpong = transition.IsPingPong;
 
-            if (PaintAutomataClass.Dialogs.ShowTransitionDialog(ref input, ref frames, ref pingpong, "Edit Transition",p.dpi) == DialogResult.OK)
+            if (PaintAutomataClass.Dialogs.ShowTransitionDialog(ref input, ref frames, ref pingpong, "Edit Transition", p.dpi) == DialogResult.OK)
             {
 
                 transition.Name = input;
@@ -526,7 +526,7 @@ namespace VVVV.Nodes
         private void AddState(string input)
         {
             int frames = 0;
-            if (PaintAutomataClass.Dialogs.ShowInputDialog(ref input, ref frames, "Add State",p.dpi) == DialogResult.OK)
+            if (PaintAutomataClass.Dialogs.ShowInputDialog(ref input, ref frames, "Add State", p.dpi) == DialogResult.OK)
             {
                 //add state to state list
                 stateList.Add(new State()
@@ -549,7 +549,7 @@ namespace VVVV.Nodes
             int frames = state.Frames;
             if (input != "Init") //edit state unless its init
             {
-                if (PaintAutomataClass.Dialogs.ShowInputDialog(ref input, ref frames, "Edit State",p.dpi) == DialogResult.OK)
+                if (PaintAutomataClass.Dialogs.ShowInputDialog(ref input, ref frames, "Edit State", p.dpi) == DialogResult.OK)
                 {
                     state.Name = input;
                     state.Frames = frames;
@@ -580,7 +580,7 @@ namespace VVVV.Nodes
             UpdateTransitionConfigs();
             UpdateOutputs();
 
-            
+
         }
 
         private void UpdateTransitionConfigs()
@@ -639,82 +639,88 @@ namespace VVVV.Nodes
             }
         }
 
+        public void TriggerTransition(string TransitionName, int ii)
+        {
+            //FLogger.Log(LogType.Debug,pin.ToString());
+            UpdateOutputs(); // output all States and Transitions
+
+            if (TransitionName == "Reset To Default State") // Reset to Init State
+            {
+
+                // Get Enum Index From Default State and Set Active State
+                ActiveStateIndex[ii] = DefaultState[ii].Index; // index ist 1 statt 0 beta34.2 bug
+                TargetStateIndex[ii] = DefaultState[ii].Index;
+                ElapsedStateTime[ii] = 0; // Reset Timer
+                TransitionFramesOut[ii] = 0; // Reset Timer
+                this.Invalidate();
+            }
+            else
+            {
+                //Find Transition
+                int i = 0;
+                foreach (Transition transition in transitionList)
+                {
+                    // standard transitions
+                    if (transition.Name == TransitionName &&
+                        transition.startState.ID == stateList.ElementAt(ActiveStateIndex[ii]).ID &&
+                        TransitionFramesOut[ii] == 0 &&
+                        ElapsedStateTime[ii] >= transition.startState.Frames)
+                    {
+                        TargetStateIndex[ii] = stateList.IndexOf(transition.endState); // set target state index
+                        TransitionFramesOut[ii] = transition.Frames; // get frames of transition
+                        TransitionIndex[ii] = i; //get transition
+                        ElapsedStateTime[ii] = 0; // stop ElapsedStateTimer
+                        this.Invalidate(); //redraw
+                                           
+                        break;
+                    }
+
+                    //pingpong transitions - return to startstate , previous test covers transition to targetstate
+                    if (transition.Name == TransitionName &&
+                        transition.endState.ID == stateList.ElementAt(ActiveStateIndex[ii]).ID &&
+                        TransitionFramesOut[ii] == 0 &&
+                        transition.IsPingPong &&
+                        ElapsedStateTime[ii] >= transition.endState.Frames)
+                    {
+                        TargetStateIndex[ii] = stateList.IndexOf(transition.startState); // set target state index
+                        TransitionFramesOut[ii] = transition.Frames; // get frames of transition, hier war +1
+                        TransitionIndex[ii] = i; //get transition
+                        ElapsedStateTime[ii] = 0; // stop ElapsedStateTimer
+                        this.Invalidate(); //redraw
+
+                        break;
+                    }
+                    i++;
+                }
+            }
+        }
+
+
         public void Evaluate(int SpreadMax)
         {
-            
-                InitSettings(); // Load previous setting and setup certain variables
-            
-            ActiveStateIndex.SliceCount 
-                = TargetStateIndex.SliceCount 
-                = TransitionIndex.SliceCount 
-                = TransitionFramesOut.SliceCount 
-                = ElapsedStateTime.SliceCount 
+
+            InitSettings(); // Load previous setting and setup certain variables
+
+            ActiveStateIndex.SliceCount
+                = TargetStateIndex.SliceCount
+                = TransitionIndex.SliceCount
+                = TransitionFramesOut.SliceCount
+                = ElapsedStateTime.SliceCount
                 = FOutput.SliceCount = SpreadMax; //make spreadable , set Spreadmax
 
             #region TriggerTransitions
             for (int ii = 0; ii < SpreadMax; ii++) //spreadable loop 01
             {
                 foreach (var pin in FPins)
-             
+
                 {
                     var diffpin = pin.Value.RawIOObject as IDiffSpread<bool>;
                     if (diffpin[ii] == true && diffpin.SliceCount != 0) //diffpin.IsChanged && JONAS WUNSCHKONZERT
                     {
-                        
-                        //FLogger.Log(LogType.Debug,pin.ToString());
-                        UpdateOutputs(); // output all States and Transitions
 
-                        if (pin.Key == "Reset To Default State") // Reset to Init State
-                        {
+                        TriggerTransition(pin.Key, ii);
 
-                            // Get Enum Index From Default State and Set Active State
-                            ActiveStateIndex[ii] = DefaultState[ii].Index; // index ist 1 statt 0 beta34.2 bug
-                            TargetStateIndex[ii] = DefaultState[ii].Index;
-                            ElapsedStateTime[ii] = 0; // Reset Timer
-                            TransitionFramesOut[ii] = 0; // Reset Timer
-                            this.Invalidate();
-                        }
-                        else 
-                        {
-                            //Find Transition
-                            int i = 0;
-                            foreach (Transition transition in transitionList)
-                            {
-                                // standard transitions
-                                if (transition.Name == pin.Key &&
-                                    transition.startState.ID == stateList.ElementAt(ActiveStateIndex[ii]).ID &&
-                                    TransitionFramesOut[ii] == 0 &&
-                                    ElapsedStateTime[ii] >= transition.startState.Frames)
-                                {
-                                    TargetStateIndex[ii] = stateList.IndexOf(transition.endState); // set target state index
-                                    TransitionFramesOut[ii] = transition.Frames; // get frames of transition
-                                    TransitionIndex[ii] = i; //get transition
-                                    ElapsedStateTime[ii] = 0; // stop ElapsedStateTimer
-                                    this.Invalidate(); //redraw
-                                    //FLogger.Log(LogType.Debug, "redraw");
-                                    break;
-                                }
-
-                                //pingpong transitions - return to startstate , previous test covers transition to targetstate
-                                if (transition.Name == pin.Key &&
-                                    transition.endState.ID == stateList.ElementAt(ActiveStateIndex[ii]).ID &&
-                                    TransitionFramesOut[ii] == 0 &&
-                                    transition.IsPingPong &&
-                                    ElapsedStateTime[ii] >= transition.endState.Frames)
-                                {
-                                    TargetStateIndex[ii] = stateList.IndexOf(transition.startState); // set target state index
-                                    TransitionFramesOut[ii] = transition.Frames; // get frames of transition, hier war +1
-                                    TransitionIndex[ii] = i; //get transition
-                                    ElapsedStateTime[ii] = 0; // stop ElapsedStateTimer
-                                    this.Invalidate(); //redraw
-                                    
-                                    break;
-                                }
-                                i++;
-                            }
-                        }
-                            
-                        }
+                    }
                 }
             }
             #endregion TriggerTransitions
@@ -743,12 +749,12 @@ namespace VVVV.Nodes
 
                 if (TransitionFramesOut[ii] == 0) ElapsedStateTime[ii] += 1; // Run State Timer when TransitionTimer is 0
             }
-            
+
             if (JoregMode.IsChanged && JoregMode[0]) p.JoregMode(this, true);   //Joreg Mode
             else if (JoregMode.IsChanged && !JoregMode[0]) p.JoregMode(this, false);
-          
+
             if (ShowSlice.IsChanged || ActiveStateIndex.IsChanged) this.Invalidate(); // redraw if you want to see another slice of automata
-            
+
             #endregion TimingAndIndices
 
             AutomataUIOut.SliceCount = 1; // set output for additional nodes
@@ -758,7 +764,7 @@ namespace VVVV.Nodes
 
             if (FocusWindow[0] && FocusWindow.IsChanged) this.Focus(); //bring window to front
 
-            
+
 
         }
     }
