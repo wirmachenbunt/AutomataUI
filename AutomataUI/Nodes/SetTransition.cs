@@ -93,7 +93,7 @@ namespace VVVV.Nodes
 
                 if (invalidate || AutomataUI[0].StatesChanged)
                 {
-                    EnumManager.UpdateEnum(EnumName, AutomataUI[0].transitionList[0].Name, AutomataUI[0].transitionList.Select(x => x.Name).ToArray());
+                    EnumManager.UpdateEnum(EnumName, AutomataUI[0].transitionList[0].Name, AutomataUI[0].transitionList.Select(x => x.Name).Distinct().ToArray());
                     invalidate = false;
                 }
 
