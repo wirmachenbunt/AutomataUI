@@ -115,14 +115,10 @@ namespace VVVV.Nodes
         PaintAutomataClass p = new PaintAutomataClass(); // create AutomataPaint Object
 
         private bool Initialize = true;
-        public bool StatesChanged = false;
 
         string dragState = null;
 
         public string myGUID = Guid.NewGuid().ToString();
-
-        int counter = 0;
-
 
         public string licenseOwner = "Automata UI // Open Source Version";
 
@@ -224,22 +220,20 @@ namespace VVVV.Nodes
 
         private void InitSettings()
         {
-
             //load settings
             if (stateList.Count < 2 && StateXML[0].Length > 3 && Initialize)
             {
-
                 try
                 {
                     stateList = State.DataDeserializeState(StateXML[0]);
                     transitionList = Transition.DataDeserializeTransition(TransitionXML[0]);
-
                 }
                 catch { FLogger.Log(LogType.Debug, "Loading XML Graph failed!"); }
 
                 //new enum technique
                 EnumManager.UpdateEnum(myGUID + "_States", stateList[0].Name, stateList.Select(x => x.Name).ToArray());
                 EnumManager.UpdateEnum(myGUID + "_Transitions", transitionList[0].Name, transitionList.Select(x => x.Name).Distinct().ToArray());
+                EnumManager.UpdateEnum(myGUID + "_AllTransitions", transitionList[0].Name, transitionList.Select(x => x.Name).ToArray());
 
                 //repair relation
                 foreach (Transition transition in transitionList)
@@ -574,8 +568,6 @@ namespace VVVV.Nodes
             UpdateStateConfigs(); // update JSON,Enums and Redraw
             UpdateTransitionConfigs();
             UpdateOutputs();
-
-
         }
 
         private void UpdateTransitionConfigs()
@@ -591,6 +583,9 @@ namespace VVVV.Nodes
                 TransitionNames.Add(transition.Name);
                 TransitionTimeSettingOut.Add(transition.Frames);
             }
+            //new enum technique
+            EnumManager.UpdateEnum(myGUID + "_Transitions", transitionList[0].Name, transitionList.Select(x => x.Name).Distinct().ToArray());
+            EnumManager.UpdateEnum(myGUID + "_AllTransitions", transitionList[0].Name, transitionList.Select(x => x.Name).ToArray());
         }
 
         private void UpdateStateConfigs()
@@ -599,8 +594,7 @@ namespace VVVV.Nodes
             //update Default State Enum
             EnumManager.UpdateEnum(EnumName, stateList[0].Name, stateList.Select(x => x.Name).ToArray());
             StateXML[0] = State.DataSerializeState(stateList); //save config
-            StatesChanged = true;
-
+            
             //new enum technique
             EnumManager.UpdateEnum(myGUID + "_States", stateList[0].Name, stateList.Select(x => x.Name).ToArray());
             FLogger.Log(LogType.Debug, "update enums state");
@@ -626,16 +620,6 @@ namespace VVVV.Nodes
         }
 
         #endregion Management
-
-        public void StateChangeCounter()
-        {
-            if (StatesChanged) { counter += 1; }
-            if (counter > 2)
-            {
-                StatesChanged = false;
-                counter = 0;
-            }
-        }
 
         public void TriggerTransition(string TransitionName, int ii)
         {
@@ -669,7 +653,7 @@ namespace VVVV.Nodes
                         TransitionIndex[ii] = i; //get transition
                         ElapsedStateTime[ii] = 0; // stop ElapsedStateTimer
                         this.Invalidate(); //redraw
-                                           
+
                         break;
                     }
 
@@ -695,7 +679,6 @@ namespace VVVV.Nodes
 
         public void Evaluate(int SpreadMax)
         {
-
             InitSettings(); // Load previous setting and setup certain variables
 
             ActiveStateIndex.SliceCount
@@ -709,14 +692,11 @@ namespace VVVV.Nodes
             for (int ii = 0; ii < SpreadMax; ii++) //spreadable loop 01
             {
                 foreach (var pin in FPins)
-
                 {
                     var diffpin = pin.Value.RawIOObject as IDiffSpread<bool>;
                     if (diffpin[ii] == true && diffpin.SliceCount != 0) //diffpin.IsChanged && JONAS WUNSCHKONZERT
                     {
-
                         TriggerTransition(pin.Key, ii);
-
                     }
                 }
             }
@@ -754,15 +734,11 @@ namespace VVVV.Nodes
 
             #endregion TimingAndIndices
 
-            AutomataUIOut.SliceCount = 1; // set output for additional nodes
+            // set output for additional nodes
+            AutomataUIOut.SliceCount = 1;
             AutomataUIOut[0] = this;
 
-            StateChangeCounter(); // inform child nodes about state changes , pretty dirty
-
             if (FocusWindow[0] && FocusWindow.IsChanged) this.Focus(); //bring window to front
-
-
-
         }
     }
 }

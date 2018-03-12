@@ -29,7 +29,7 @@ namespace VVVV.Nodes
     {
         #region fields & pins
 
-        protected IDiffSpread<EnumEntry> EnumTransition;
+        IIOContainer<IDiffSpread<EnumEntry>> TransitionEnum;
 
         [Input("AutomataUI")]
         public Pin<AutomataUI> AutomataUI;
@@ -46,9 +46,7 @@ namespace VVVV.Nodes
 
         int stateindex;
 
-        string EnumName;
-
-        private bool invalidate = true;
+        private bool init = true;
 
         #endregion fields & pins
 
@@ -57,45 +55,45 @@ namespace VVVV.Nodes
             AutomataUI.Connected += Input_Connected;
             AutomataUI.Disconnected += Input_Disconnected;
 
-            FHost.GetNodePath(true, out EnumName); //get unique node path
-            EnumName += "AutomataUI"; // add unique name to path
-            InputAttribute attr = new InputAttribute("Transition"); //name of pin
-            attr.EnumName = EnumName;
-            //attr.DefaultEnumEntry = "Init"; //default state
-            EnumTransition = FIOFactory.CreateDiffSpread<EnumEntry>(attr);
+            //new way of enums
+            InputAttribute attr = new InputAttribute("Transition");
+            TransitionEnum = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);
         }
 
         private void Input_Disconnected(object sender, PinConnectionEventArgs args)
         {
             FLogger.Log(LogType.Debug, "DisConnected");
-            invalidate = true;
+            init = true;
         }
 
         private void Input_Connected(object sender, PinConnectionEventArgs args)
         {
-
-            invalidate = true;
             FLogger.Log(LogType.Debug, "connected");
         }
 
-        
+        //get connected enum for states
+        public void Initialize()
+        {
+            if (init)
+            {
+                var pin = TransitionEnum.GetPluginIO() as IPin;
+                (pin as IEnumIn).SetSubType(AutomataUI[0].myGUID + "_Transitions");
+                init = false;
+            }
+        }
 
         //called when data for any output pin is requested
         public void Evaluate(int SpreadMax)
         {
-            if(AutomataUI[0] == null) return;
-            if (invalidate || AutomataUI[0].StatesChanged)
-            {
-               
+            if (AutomataUI[0] == null) return;
 
-                EnumManager.UpdateEnum(EnumName, AutomataUI[0].transitionList[0].Name, AutomataUI[0].transitionList.Select(x => x.Name).Distinct().ToArray());
-                invalidate = false;
-                //FLogger.Log(LogType.Debug, "Update Enum Trigger Transition");
-            }
-
-            for (int i = 0; i < FTrigger.SliceCount; i++)
+            if (AutomataUI.IsConnected)
             {
-                if(FTrigger[i]) AutomataUI[0].TriggerTransition(EnumTransition[i].Name, i);
+                Initialize();
+                for (int i = 0; i < FTrigger.SliceCount; i++)
+                {
+                    if (FTrigger[i]) AutomataUI[0].TriggerTransition(TransitionEnum.IOObject[i].Name, i);
+                }
             }
         }
     }

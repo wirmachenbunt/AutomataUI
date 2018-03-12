@@ -24,7 +24,8 @@ namespace VVVV.Nodes
     public class GetState : IPluginEvaluate, IPartImportsSatisfiedNotification
     {
         #region fields & pins
-        protected IDiffSpread<EnumEntry> EnumState;
+        //protected IDiffSpread<EnumEntry> EnumState;
+        IIOContainer<IDiffSpread<EnumEntry>> StatesEnum;
 
         [Input("AutomataUI")]
         public Pin<AutomataUI> AutomataUI;
@@ -48,9 +49,7 @@ namespace VVVV.Nodes
         [Import()]
         IPluginHost FHost;
 
-        string EnumName;
-
-        private bool invalidate = true;
+        bool init = true;
 
         #endregion fields & pins
 
@@ -59,45 +58,45 @@ namespace VVVV.Nodes
             AutomataUI.Connected += Input_Connected;
             AutomataUI.Disconnected += Input_Disconnected;
 
-            FHost.GetNodePath(true, out EnumName); //get unique node path
-            EnumName += "AutomataUI"; // add unique name to path
-            InputAttribute attr = new InputAttribute("State"); //name of pin
-            attr.EnumName = EnumName;
-            attr.DefaultEnumEntry = "Init"; //default state
-            EnumState = FIOFactory.CreateDiffSpread<EnumEntry>(attr);
+            //new way of enums
+            InputAttribute attr = new InputAttribute("State");
+            StatesEnum = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);          
         }
 
         private void Input_Disconnected(object sender, PinConnectionEventArgs args)
         {
             FLogger.Log(LogType.Debug, "DisConnected");
-            invalidate = true;
+            init = true;    
         }
 
         private void Input_Connected(object sender, PinConnectionEventArgs args)
-        {
-
-            invalidate = true;
+        { 
             FLogger.Log(LogType.Debug, "connected");
         }
 
+        //get connected enum for states
+        public void Initialize()
+        {
+            if(init)
+            {
+                var pin = StatesEnum.GetPluginIO() as IPin;
+                (pin as IEnumIn).SetSubType(AutomataUI[0].myGUID + "_States");
+                init = false;
+            }
+            
+        }
 
         //called when data for any output pin is requested
         public void Evaluate(int SpreadMax)
         {
-            //ElapsedStateTime.SliceCount = SpreadMax;
-
             if (AutomataUI.IsConnected)
             {
-                if (invalidate || AutomataUI[0].StatesChanged)
-                {
-                    EnumManager.UpdateEnum(EnumName, AutomataUI[0].stateList[0].Name, AutomataUI[0].stateList.Select(x => x.Name).ToArray());
-                    invalidate = false;
-                }
+                Initialize();
 
-                StateActive.SliceCount = EnumState.SliceCount * AutomataUI[0].ActiveStateIndex.SliceCount; //set Slicecount to amount of incoming Automatas
+                StateActive.SliceCount = StatesEnum.IOObject.SliceCount * AutomataUI[0].ActiveStateIndex.SliceCount; //set Slicecount to amount of incoming Automatas
                 FadeInOut.SliceCount = ElapsedStateTime.SliceCount = FadeDirection.SliceCount = StateActive.SliceCount;
 
-                for (int j = 0; j < EnumState.SliceCount; j++)
+                for (int j = 0; j < StatesEnum.IOObject.SliceCount; j++)
                 {
                     for (int i = 0; i < AutomataUI[0].ActiveStateIndex.SliceCount; i++) // spreaded
                     {
@@ -105,7 +104,7 @@ namespace VVVV.Nodes
                         //FLogger.Log(LogType.Debug, Convert.ToString(offset));
 
                         // find out if selected state is active
-                        if (AutomataUI[0].ActiveStateIndex[i] == EnumState[j].Index && // Selected State is Active and Time is running ?
+                        if (AutomataUI[0].ActiveStateIndex[i] == StatesEnum.IOObject[j].Index && // Selected State is Active and Time is running ?
                             AutomataUI[0].ElapsedStateTime[i] > 0)
                         {
                             StateActive[offset] = true;
@@ -121,7 +120,7 @@ namespace VVVV.Nodes
 
                         //output in timing
                         if (AutomataUI[0].TransitionFramesOut[i] > 0 &&
-                            AutomataUI[0].transitionList.ElementAt(AutomataUI[0].TransitionIndex[i]).endState == AutomataUI[0].stateList.ElementAt(EnumState[j].Index)) // is the selected state the target state of the active transition ?
+                            AutomataUI[0].transitionList.ElementAt(AutomataUI[0].TransitionIndex[i]).endState == AutomataUI[0].stateList.ElementAt(StatesEnum.IOObject[j].Index)) // is the selected state the target state of the active transition ?
                         {
                             FadeInOut[offset] = 1.0 - ((1.0 / AutomataUI[0].transitionList.ElementAt(AutomataUI[0].TransitionIndex[i]).Frames) * AutomataUI[0].TransitionFramesOut[i]);
                             FadeDirection[offset] = "in";
@@ -129,7 +128,7 @@ namespace VVVV.Nodes
                         else FadeInOut[offset] = Convert.ToDouble(StateActive[offset]);
 
                         if (AutomataUI[0].TransitionFramesOut[i] > 0 &&
-                            AutomataUI[0].transitionList.ElementAt(AutomataUI[0].TransitionIndex[i]).startState == AutomataUI[0].stateList.ElementAt(EnumState[j].Index)) // is the selected state the target state of the active transition ?
+                            AutomataUI[0].transitionList.ElementAt(AutomataUI[0].TransitionIndex[i]).startState == AutomataUI[0].stateList.ElementAt(StatesEnum.IOObject[j].Index)) // is the selected state the target state of the active transition ?
                         {
                             FadeInOut[offset] = (1.0 / AutomataUI[0].transitionList.ElementAt(AutomataUI[0].TransitionIndex[i]).Frames) * AutomataUI[0].TransitionFramesOut[i];
                             FadeDirection[offset] = "out";

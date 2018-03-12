@@ -29,7 +29,7 @@ namespace VVVV.Nodes
     {
         #region fields & pins
 
-        protected IDiffSpread<EnumEntry> EnumTransition;
+        IIOContainer<IDiffSpread<EnumEntry>> TransitionEnum;
 
         [Input("AutomataUI")]
         public Pin<AutomataUI> AutomataUI;
@@ -48,10 +48,7 @@ namespace VVVV.Nodes
         IPluginHost FHost;
 
         int stateindex;
-
-        string EnumName;
-
-        private bool invalidate = true;
+        private bool init = true;
 
         #endregion fields & pins
 
@@ -60,28 +57,32 @@ namespace VVVV.Nodes
             AutomataUI.Connected += Input_Connected;
             AutomataUI.Disconnected += Input_Disconnected;
 
-            FHost.GetNodePath(true, out EnumName); //get unique node path
-            EnumName += "AutomataUI"; // add unique name to path
-            InputAttribute attr = new InputAttribute("Transition"); //name of pin
-            attr.EnumName = EnumName;
-            //attr.DefaultEnumEntry = "Init"; //default state
-            EnumTransition = FIOFactory.CreateDiffSpread<EnumEntry>(attr);
+            //new way of enums
+            InputAttribute attr = new InputAttribute("Transition");
+            TransitionEnum = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);
         }
 
         private void Input_Disconnected(object sender, PinConnectionEventArgs args)
         {
             FLogger.Log(LogType.Debug, "DisConnected");
-            invalidate = true;
+            init = true;
         }
 
         private void Input_Connected(object sender, PinConnectionEventArgs args)
         {
-
-            invalidate = true;
             FLogger.Log(LogType.Debug, "connected");
         }
 
-
+        //get connected enum for states
+        public void Initialize()
+        {
+            if (init)
+            {
+                var pin = TransitionEnum.GetPluginIO() as IPin;
+                (pin as IEnumIn).SetSubType(AutomataUI[0].myGUID + "_AllTransitions");
+                init = false;
+            }
+        }
 
         //called when data for any output pin is requested
         public void Evaluate(int SpreadMax)
@@ -89,21 +90,13 @@ namespace VVVV.Nodes
 
             if (AutomataUI.IsConnected)
             {
+                Initialize();
 
-
-                if (invalidate || AutomataUI[0].StatesChanged)
-                {
-                    EnumManager.UpdateEnum(EnumName, AutomataUI[0].transitionList[0].Name, AutomataUI[0].transitionList.Select(x => x.Name).Distinct().ToArray());
-                    invalidate = false;
-                }
-
-
-                //AutomataUI[0].transitionList[0].Frames = 1000;
                 for (int i = 0; i < SetTime.SliceCount; i++)
                 {
                     if (SetTime.IsChanged && SetTime[i])
                     {
-                        var item = AutomataUI[0].transitionList.FirstOrDefault(r => r.Name == EnumTransition[i]);
+                        var item = AutomataUI[0].transitionList.FirstOrDefault(r => r.Name == TransitionEnum.IOObject[i]);
                         item.Frames = TransitionTime[i];
                         AutomataUI[0].Invalidate();
                     }
