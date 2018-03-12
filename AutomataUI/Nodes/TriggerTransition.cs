@@ -90,7 +90,7 @@ namespace VVVV.Nodes
 
                 EnumManager.UpdateEnum(EnumName, AutomataUI[0].transitionList[0].Name, AutomataUI[0].transitionList.Select(x => x.Name).Distinct().ToArray());
                 invalidate = false;
-                FLogger.Log(LogType.Debug, "Update Enum Trigger Transition");
+                //FLogger.Log(LogType.Debug, "Update Enum Trigger Transition");
             }
 
             for (int i = 0; i < FTrigger.SliceCount; i++)

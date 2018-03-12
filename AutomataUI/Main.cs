@@ -32,13 +32,12 @@ namespace VVVV.Nodes
         #region fields & pins
 
         //[Input("Default State", EnumName = "DefaultAutomataState", IsSingle = true, Visibility = PinVisibility.OnlyInspector)]
-        protected IDiffSpread<EnumEntry> DefaultState;
+        //protected IDiffSpread<EnumEntry> DefaultState;
+
+        IIOContainer<IDiffSpread<EnumEntry>> DefaultState;
 
         [Input("Focus Window", IsBang = true, Visibility = PinVisibility.OnlyInspector)]
         public IDiffSpread<bool> FocusWindow;
-
-        [Config("License")]
-        public IDiffSpread<string> License;
 
         [Config("StateXML")]
         public IDiffSpread<string> StateXML;
@@ -120,6 +119,8 @@ namespace VVVV.Nodes
 
         string dragState = null;
 
+        public string myGUID = Guid.NewGuid().ToString();
+
         int counter = 0;
 
 
@@ -135,16 +136,12 @@ namespace VVVV.Nodes
         {
             TransitionNames.Changed += HandleTransitionPins;
 
-            //dynamic enum attributes with unique name
-            FHost.GetNodePath(true, out EnumName); //get unique node path
-            EnumName += "AutomataUI"; // add unique name to path
+            //new way of enums
+            InputAttribute attr = new InputAttribute("DefaultState");
+            DefaultState = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);
 
-            attr = new InputAttribute("Default State"); //name of pin
-            attr.EnumName = EnumName;
-            attr.DefaultEnumEntry = "Init"; //default state
-            attr.Visibility = PinVisibility.OnlyInspector; //make invisible
-
-            DefaultState = FIOFactory.CreateDiffSpread<EnumEntry>(attr);
+            var pin = DefaultState.GetPluginIO() as IPin;
+            (pin as IEnumIn).SetSubType(myGUID + "_States");
 
         }
 
@@ -240,8 +237,9 @@ namespace VVVV.Nodes
                 }
                 catch { FLogger.Log(LogType.Debug, "Loading XML Graph failed!"); }
 
-
-                EnumManager.UpdateEnum(EnumName, stateList[0].Name, stateList.Select(x => x.Name).ToArray());
+                //new enum technique
+                EnumManager.UpdateEnum(myGUID + "_States", stateList[0].Name, stateList.Select(x => x.Name).ToArray());
+                EnumManager.UpdateEnum(myGUID + "_Transitions", transitionList[0].Name, transitionList.Select(x => x.Name).Distinct().ToArray());
 
                 //repair relation
                 foreach (Transition transition in transitionList)
@@ -296,9 +294,6 @@ namespace VVVV.Nodes
 
             if (p.bezierEdit.bezierStart.Contains(new Point(this.x, this.y)) && e.Button == MouseButtons.Left) dragState = "bezierStart";
             if (p.bezierEdit.bezierEnd.Contains(new Point(this.x, this.y)) && e.Button == MouseButtons.Left) dragState = "bezierEnd";
-
-
-
 
 
             // Override Active State by CTRL Mouseclick
@@ -596,7 +591,6 @@ namespace VVVV.Nodes
                 TransitionNames.Add(transition.Name);
                 TransitionTimeSettingOut.Add(transition.Frames);
             }
-
         }
 
         private void UpdateStateConfigs()
@@ -606,6 +600,10 @@ namespace VVVV.Nodes
             EnumManager.UpdateEnum(EnumName, stateList[0].Name, stateList.Select(x => x.Name).ToArray());
             StateXML[0] = State.DataSerializeState(stateList); //save config
             StatesChanged = true;
+
+            //new enum technique
+            EnumManager.UpdateEnum(myGUID + "_States", stateList[0].Name, stateList.Select(x => x.Name).ToArray());
+            FLogger.Log(LogType.Debug, "update enums state");
         }
 
         private void UpdateOutputs()
@@ -648,8 +646,8 @@ namespace VVVV.Nodes
             {
 
                 // Get Enum Index From Default State and Set Active State
-                ActiveStateIndex[ii] = DefaultState[ii].Index; // index ist 1 statt 0 beta34.2 bug
-                TargetStateIndex[ii] = DefaultState[ii].Index;
+                ActiveStateIndex[ii] = DefaultState.IOObject[ii].Index; // index ist 1 statt 0 beta34.2 bug
+                TargetStateIndex[ii] = DefaultState.IOObject[ii].Index;
                 ElapsedStateTime[ii] = 0; // Reset Timer
                 TransitionFramesOut[ii] = 0; // Reset Timer
                 this.Invalidate();
@@ -694,7 +692,6 @@ namespace VVVV.Nodes
                 }
             }
         }
-
 
         public void Evaluate(int SpreadMax)
         {
