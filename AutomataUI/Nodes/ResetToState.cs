@@ -18,17 +18,17 @@ using VVVV.Core.Logging;
 namespace VVVV.Nodes
 {
     #region PluginInfo
-    [PluginInfo(Name = "TriggerTransition",
+    [PluginInfo(Name = "ResetToState",
                 Category = "AutomataUI Animation",
                 Help = "trigger transitions",
                 Tags = "",
                 AutoEvaluate = true)]
     #endregion PluginInfo
-    public class TriggerTranstion : IPluginEvaluate, IPartImportsSatisfiedNotification
+    public class ResetToState : IPluginEvaluate, IPartImportsSatisfiedNotification
     {
         #region fields & pins
 
-        IIOContainer<IDiffSpread<EnumEntry>> TransitionEnum;
+        IIOContainer<IDiffSpread<EnumEntry>> StatesEnum;
 
         [Input("AutomataUI")]
         public Pin<AutomataUI> AutomataUI;
@@ -56,7 +56,7 @@ namespace VVVV.Nodes
 
             //new way of enums
             InputAttribute attr = new InputAttribute("Transition");
-            TransitionEnum = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);
+            StatesEnum = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);
         }
 
         private void Input_Disconnected(object sender, PinConnectionEventArgs args)
@@ -75,8 +75,8 @@ namespace VVVV.Nodes
         {
             if (init)
             {
-                var pin = TransitionEnum.GetPluginIO() as IPin;
-                (pin as IEnumIn).SetSubType(AutomataUI[0].myGUID + "_Transitions");
+                var pin = StatesEnum.GetPluginIO() as IPin;
+                (pin as IEnumIn).SetSubType(AutomataUI[0].myGUID + "_States");
                 init = false;
             }
         }
@@ -91,7 +91,7 @@ namespace VVVV.Nodes
                 Initialize();
                 for (int i = 0; i < FTrigger.SliceCount; i++)
                 {
-                    if (FTrigger[i]) AutomataUI[0].TriggerTransition(TransitionEnum.IOObject[i].Name, i,0);
+                    if (FTrigger[i]) AutomataUI[0].TriggerTransition("Reset To Default State", i, StatesEnum.IOObject[i].Index);
                 }
             }
         }

@@ -68,6 +68,7 @@
     <Compile Include="Main.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Nodes\ResetToState.cs" />
     <Compile Include="Nodes\SetTransition.cs" />
     <Compile Include="Nodes\TriggerTransition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

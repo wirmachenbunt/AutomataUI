@@ -36,6 +36,9 @@ namespace VVVV.Nodes
 
         IIOContainer<IDiffSpread<EnumEntry>> DefaultState;
 
+        [Config("Allow Multiple Connections")]
+        public ISpread<bool> FAllowMultiple;
+
         [Input("Focus Window", IsBang = true, Visibility = PinVisibility.OnlyInspector)]
         public IDiffSpread<bool> FocusWindow;
 
@@ -447,14 +450,14 @@ namespace VVVV.Nodes
                 if (transition.startState.ID == startState.ID
                 && transition.endState.ID == endState.ID)
                 {
-                    exists = true;
+                    exists = true;   // achtung test, war vorher true
                     break;
                 }
-                else exists = false;
+                else exists = false; 
             }
 
             // transition does not exist ? ok, create it
-            if (exists == false)
+            if (exists == false || FAllowMultiple[0])
             {
                 string input = "My Transition"; //dialog text
                 int frames = 1;
@@ -621,7 +624,7 @@ namespace VVVV.Nodes
 
         #endregion Management
 
-        public void TriggerTransition(string TransitionName, int ii)
+        public void TriggerTransition(string TransitionName, int ii, int ResetStateIndex)
         {
             //FLogger.Log(LogType.Debug,pin.ToString());
             UpdateOutputs(); // output all States and Transitions
@@ -630,8 +633,8 @@ namespace VVVV.Nodes
             {
 
                 // Get Enum Index From Default State and Set Active State
-                ActiveStateIndex[ii] = DefaultState.IOObject[ii].Index; // index ist 1 statt 0 beta34.2 bug
-                TargetStateIndex[ii] = DefaultState.IOObject[ii].Index;
+                ActiveStateIndex[ii] = ResetStateIndex;
+                TargetStateIndex[ii] = ResetStateIndex;
                 ElapsedStateTime[ii] = 0; // Reset Timer
                 TransitionFramesOut[ii] = 0; // Reset Timer
                 this.Invalidate();
@@ -696,7 +699,7 @@ namespace VVVV.Nodes
                     var diffpin = pin.Value.RawIOObject as IDiffSpread<bool>;
                     if (diffpin[ii] == true && diffpin.SliceCount != 0) //diffpin.IsChanged && JONAS WUNSCHKONZERT
                     {
-                        TriggerTransition(pin.Key, ii);
+                        TriggerTransition(pin.Key, ii,0);
                     }
                 }
             }
