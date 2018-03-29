@@ -39,6 +39,9 @@ namespace VVVV.Nodes
         [Config("Allow Multiple Connections")]
         public ISpread<bool> FAllowMultiple;
 
+        [Config("SpreadCount")]
+        public ISpread<int> FSpreadCount;
+
         [Input("Focus Window", IsBang = true, Visibility = PinVisibility.OnlyInspector)]
         public IDiffSpread<bool> FocusWindow;
 
@@ -684,15 +687,17 @@ namespace VVVV.Nodes
         {
             InitSettings(); // Load previous setting and setup certain variables
 
+            if (FSpreadCount[0] <= 0) FSpreadCount[0] = 1;
+
             ActiveStateIndex.SliceCount
                 = TargetStateIndex.SliceCount
                 = TransitionIndex.SliceCount
                 = TransitionFramesOut.SliceCount
                 = ElapsedStateTime.SliceCount
-                = FOutput.SliceCount = SpreadMax; //make spreadable , set Spreadmax
+                = FOutput.SliceCount = FSpreadCount[0]; //make spreadable , set Spreadmax
 
             #region TriggerTransitions
-            for (int ii = 0; ii < SpreadMax; ii++) //spreadable loop 01
+            for (int ii = 0; ii < FSpreadCount[0]; ii++) //spreadable loop 01
             {
                 foreach (var pin in FPins)
                 {
@@ -707,7 +712,7 @@ namespace VVVV.Nodes
 
             #region TimingAndIndices
 
-            for (int ii = 0; ii < SpreadMax; ii++) //spreadable loop 02
+            for (int ii = 0; ii < FSpreadCount[0]; ii++) //spreadable loop 02
             {
                 // set active Transition,State and Timers 
 
