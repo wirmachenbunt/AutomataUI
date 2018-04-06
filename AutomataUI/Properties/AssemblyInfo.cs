@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("wirmachenbunt")]
 [assembly: AssemblyProduct("AutomataUI")]
-[assembly: AssemblyCopyright("Chris Engler - Copyright ©  2017")]
+[assembly: AssemblyCopyright("Chris Engler - Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.0.49.1027")]
-[assembly: AssemblyFileVersion("1.7.49.1027")]
+[assembly: AssemblyVersion("0.0.63.1028")]
+[assembly: AssemblyFileVersion("1.8.1.1028")]
 [assembly: NeutralResourcesLanguage("de-DE")]
 

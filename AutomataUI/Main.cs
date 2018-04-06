@@ -16,6 +16,7 @@ using Automata.Drawing;
 
 
 using VVVV.Core.Logging;
+using System.Diagnostics;
 #endregion usings
 
 namespace VVVV.Nodes
@@ -34,12 +35,12 @@ namespace VVVV.Nodes
         //[Input("Default State", EnumName = "DefaultAutomataState", IsSingle = true, Visibility = PinVisibility.OnlyInspector)]
         //protected IDiffSpread<EnumEntry> DefaultState;
 
-        IIOContainer<IDiffSpread<EnumEntry>> DefaultState;
+        //IIOContainer<IDiffSpread<EnumEntry>> DefaultState;
 
         [Config("Allow Multiple Connections")]
         public ISpread<bool> FAllowMultiple;
 
-        [Config("SpreadCount")]
+        [Input("SpreadCount", MinValue = 1.0, DefaultValue = 1.0)]
         public ISpread<int> FSpreadCount;
 
         [Input("Focus Window", IsBang = true, Visibility = PinVisibility.OnlyInspector)]
@@ -126,7 +127,7 @@ namespace VVVV.Nodes
 
         public string myGUID = Guid.NewGuid().ToString();
 
-        public string licenseOwner = "Automata UI // Open Source Version";
+        public string licenseOwner = "Automata UI ";
 
         Dictionary<string, IIOContainer> FPins = new Dictionary<string, IIOContainer>(); //dynamic pins
 
@@ -139,12 +140,18 @@ namespace VVVV.Nodes
             TransitionNames.Changed += HandleTransitionPins;
 
             //new way of enums
-            InputAttribute attr = new InputAttribute("DefaultState");
-            DefaultState = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);
+            //InputAttribute attr = new InputAttribute("DefaultState");
+            //DefaultState = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);
 
-            var pin = DefaultState.GetPluginIO() as IPin;
-            (pin as IEnumIn).SetSubType(myGUID + "_States");
+            //var pin = DefaultState.GetPluginIO() as IPin;
+            //(pin as IEnumIn).SetSubType(myGUID + "_States");
 
+            ///
+            /// Getting File Version
+            ///
+            System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+            licenseOwner += fvi.FileVersion;
         }
 
         private void HandleTransitionPins(IDiffSpread<string> sender)
@@ -152,10 +159,10 @@ namespace VVVV.Nodes
             //FLogger.Log(LogType.Debug, "Update Pins");
 
             //empty automata tree ? -> create a reset pin
-            if (TransitionNames[0] == "")
-            {
-                TransitionNames[0] = "Init";
-            }
+            //if (TransitionNames[0] == "")
+            //{
+            //    TransitionNames[0] = "Init";
+            //}
 
             // CREATE INIT
             if (stateList.Count == 0)
@@ -583,7 +590,7 @@ namespace VVVV.Nodes
             TransitionXML[0] = Transition.DataSerializeTransition(transitionList);
             TransitionTimeSettingOut.SliceCount = 0;
             TransitionNames.SliceCount = 0;
-            TransitionNames.Add("Reset To Default State"); // Default Reset Transition to Init
+            //TransitionNames.Add("Reset To Default State"); // Default Reset Transition to Init
             foreach (Transition transition in transitionList) // Loop through List with foreach.
             {
                 TransitionNames.Add(transition.Name);

@@ -36,8 +36,11 @@ namespace VVVV.Nodes
         [Output("FadeInOut")]
         public ISpread<double> FadeInOut;
 
-        [Output("FadeDirection")]
-        public ISpread<string> FadeDirection;
+        [Output("In")]
+        public ISpread<bool> FIn;
+
+        [Output("Out")]
+        public ISpread<bool> FOut;
 
         [Output("StateActive")]
         public ISpread<bool> StateActive;
@@ -94,7 +97,7 @@ namespace VVVV.Nodes
                 Initialize();
 
                 StateActive.SliceCount = StatesEnum.IOObject.SliceCount * AutomataUI[0].ActiveStateIndex.SliceCount; //set Slicecount to amount of incoming Automatas
-                FadeInOut.SliceCount = ElapsedStateTime.SliceCount = FadeDirection.SliceCount = StateActive.SliceCount;
+                FadeInOut.SliceCount = ElapsedStateTime.SliceCount = FIn.SliceCount = FOut.SliceCount = StateActive.SliceCount;
 
                 for (int j = 0; j < StatesEnum.IOObject.SliceCount; j++)
                 {
@@ -108,14 +111,15 @@ namespace VVVV.Nodes
                             AutomataUI[0].ElapsedStateTime[i] > 0)
                         {
                             StateActive[offset] = true;
-                            ElapsedStateTime[offset] = AutomataUI[0].ElapsedStateTime[i];
-                            //FadeDirection[offset] = "reached";
+                            FIn[offset] = false;
+                            ElapsedStateTime[offset] = AutomataUI[0].ElapsedStateTime[i];                
                         }
                         else
                         {
                             StateActive[offset] = false;
                             ElapsedStateTime[offset] = 0;
-                            FadeDirection[offset] = "";
+                            FIn[offset] = false;
+                            FOut[offset] = false;
                         }
 
                         //output in timing
@@ -123,7 +127,7 @@ namespace VVVV.Nodes
                             AutomataUI[0].transitionList.ElementAt(AutomataUI[0].TransitionIndex[i]).endState == AutomataUI[0].stateList.ElementAt(StatesEnum.IOObject[j].Index)) // is the selected state the target state of the active transition ?
                         {
                             FadeInOut[offset] = 1.0 - ((1.0 / AutomataUI[0].transitionList.ElementAt(AutomataUI[0].TransitionIndex[i]).Frames) * AutomataUI[0].TransitionFramesOut[i]);
-                            FadeDirection[offset] = "in";
+                            FIn[offset] = true;
                         }
                         else FadeInOut[offset] = Convert.ToDouble(StateActive[offset]);
 
@@ -131,7 +135,7 @@ namespace VVVV.Nodes
                             AutomataUI[0].transitionList.ElementAt(AutomataUI[0].TransitionIndex[i]).startState == AutomataUI[0].stateList.ElementAt(StatesEnum.IOObject[j].Index)) // is the selected state the target state of the active transition ?
                         {
                             FadeInOut[offset] = (1.0 / AutomataUI[0].transitionList.ElementAt(AutomataUI[0].TransitionIndex[i]).Frames) * AutomataUI[0].TransitionFramesOut[i];
-                            FadeDirection[offset] = "out";
+                            FOut[offset] = true;
                         }
                     }
                 }

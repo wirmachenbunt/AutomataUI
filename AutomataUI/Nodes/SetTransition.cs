@@ -14,6 +14,7 @@ using System.Linq;
 using VVVV.Nodes;
 
 using VVVV.Core.Logging;
+using Automata.Data;
 #endregion usings
 
 namespace VVVV.Nodes
@@ -79,7 +80,7 @@ namespace VVVV.Nodes
             if (init)
             {
                 var pin = TransitionEnum.GetPluginIO() as IPin;
-                (pin as IEnumIn).SetSubType(AutomataUI[0].myGUID + "_AllTransitions");
+                (pin as IEnumIn).SetSubType(AutomataUI[0].myGUID + "_Transitions");
                 init = false;
             }
         }
@@ -96,13 +97,15 @@ namespace VVVV.Nodes
                 {
                     if (SetTime.IsChanged && SetTime[i])
                     {
-                        var item = AutomataUI[0].transitionList.FirstOrDefault(r => r.Name == TransitionEnum.IOObject[i]);
-                        item.Frames = TransitionTime[i];
+                        var listOfItems = AutomataUI[0].transitionList.Where(r => r.Name == TransitionEnum.IOObject[i]).ToList();
+
+                        foreach (var item in listOfItems)
+                        {
+                            item.Frames = TransitionTime[i];
+                        }
                         AutomataUI[0].Invalidate();
                     }
                 }
-
-
             }
 
             else { FLogger.Log(LogType.Debug, "No Connection"); }
