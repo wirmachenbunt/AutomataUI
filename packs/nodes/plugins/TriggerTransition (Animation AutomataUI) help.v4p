@@ -2,7 +2,7 @@
    <PATCH nodename="C:\AutomataUI\packs\nodes\plugins\TriggerTransition (Animation AutomataUI) help.v4p" systemname="TriggerTransition (Animation AutomataUI) help" filename="C:\AutomataUI\packs\nodes\plugins\TriggerTransition (Animation AutomataUI) help.v4p" scrollx="0" scrolly="-360">
    <BOUNDS type="Window" left="1575" top="8745" width="18165" height="7305">
    </BOUNDS>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.0.5">
    </PACK>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -149,7 +149,7 @@
    </PIN>
    <PIN pinname="SpreadCount" visible="1">
    </PIN>
-   <PIN pinname="Show Slice" slicecount="1" values="0">
+   <PIN pinname="Show Slice" slicecount="1" values="2">
    </PIN>
    </NODE>
    <NODE systemname="TriggerTransition (AutomataUI Animation)" filename="AutomataUI.dll" nodename="TriggerTransition (AutomataUI Animation)" componentmode="Hidden" id="31">
@@ -213,7 +213,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="13245" top="2055" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,0.77,0.49,1">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,0.77,0.49,1.4">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="s">
    </PIN>

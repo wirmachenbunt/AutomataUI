@@ -1,0 +1,9 @@
+*~.xml
+*_dynamic_.*.dll
+*_dynamic_.*.pdb
+
+
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+server.pid

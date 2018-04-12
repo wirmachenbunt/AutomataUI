@@ -1,8 +1,8 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
    <PATCH nodename="C:\AutomataUI\packs\nodes\plugins\GetState (Animation AutomataUI) help.v4p" systemname="GetState (Animation AutomataUI) help" filename="C:\AutomataUI\packs\nodes\plugins\GetState (Animation AutomataUI) help.v4p" scrollx="0" scrolly="-360">
-   <BOUNDS type="Window" left="1575" top="8745" width="17565" height="9630">
+   <BOUNDS type="Window" left="1575" top="7770" width="13755" height="8625">
    </BOUNDS>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.0.5">
    </PACK>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -11,7 +11,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="585" top="2235" width="3000" height="3000">
    </BOUNDS>
-   <BOUNDS type="Window" left="1575" top="255" width="14385" height="8610">
+   <BOUNDS type="Window" left="1560" top="0" width="9600" height="7905">
    </BOUNDS>
    <PIN pinname="StateXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfState xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;111&lt;/X&gt;&cr;&lf;        &lt;Y&gt;208&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;111&lt;/X&gt;&cr;&lf;      &lt;Y&gt;208&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;hzr6xfic&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;100&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;373&lt;/X&gt;&cr;&lf;        &lt;Y&gt;72&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;373&lt;/X&gt;&cr;&lf;      &lt;Y&gt;72&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;UZeCV2w5&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;100&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;398&lt;/X&gt;&cr;&lf;        &lt;Y&gt;315&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;398&lt;/X&gt;&cr;&lf;      &lt;Y&gt;315&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;&lt;/ArrayOfState&gt;|">
    </PIN>
@@ -51,9 +51,9 @@
    <LINK srcnodeid="0" srcpinname="AutomataUI" dstnodeid="1" dstpinname="AutomataUI">
    </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="2">
-   <BOUNDS type="Box" left="10425" top="2235" width="2490" height="810">
+   <BOUNDS type="Box" left="10425" top="2220" width="2490" height="810">
    </BOUNDS>
-   <BOUNDS type="Node" left="10425" top="2235" width="0" height="0">
+   <BOUNDS type="Node" left="10425" top="2220" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="3" visible="1" values="Init,Menu,Gallery">
    </PIN>
@@ -71,7 +71,7 @@
    <LINK srcnodeid="2" srcpinname="Output Enum" dstnodeid="1" dstpinname="State">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="3">
-   <BOUNDS type="Box" left="10410" top="3735" width="810" height="1200">
+   <BOUNDS type="Box" left="10410" top="3735" width="600" height="1185">
    </BOUNDS>
    <BOUNDS type="Node" left="10410" top="3735" width="0" height="0">
    </BOUNDS>
