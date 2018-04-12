@@ -171,7 +171,7 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8">
-   <BOUNDS type="Box" left="5070" top="3930" width="1620" height="2340">
+   <BOUNDS type="Box" left="5070" top="3930" width="870" height="2415">
    </BOUNDS>
    <BOUNDS type="Node" left="5070" top="3930" width="0" height="0">
    </BOUNDS>
@@ -193,9 +193,9 @@
    <LINK srcnodeid="1" srcpinname="FadeInOut" dstnodeid="8" dstpinname="Y Input Value">
    </LINK>
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="9">
-   <BOUNDS type="Node" left="4470" top="6600" width="3015" height="270">
+   <BOUNDS type="Node" left="5055" top="6570" width="3015" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="4470" top="6600" width="3015" height="270">
+   <BOUNDS type="Box" left="5055" top="6570" width="3015" height="270">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|FadeInOut is related to transition timing|">
    </PIN>
@@ -283,9 +283,9 @@
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="14">
    <BOUNDS type="Node" left="6825" top="5625" width="2445" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="6825" top="5625" width="2445" height="270">
+   <BOUNDS type="Box" left="6825" top="5625" width="2610" height="285">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|are we moving towards the state|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|are we moving towards the state ?|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -297,9 +297,9 @@
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="15">
    <BOUNDS type="Node" left="9300" top="7215" width="2445" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="9300" top="7215" width="2445" height="270">
+   <BOUNDS type="Box" left="9300" top="7215" width="2445" height="285">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|are we leaving the state|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|are we leaving the state ?|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -311,9 +311,9 @@
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="16">
    <BOUNDS type="Node" left="10395" top="5220" width="1380" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="10395" top="5220" width="1380" height="270">
+   <BOUNDS type="Box" left="10395" top="5220" width="1665" height="360">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|is the state active|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|is the state active ?|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
