@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
-   <PATCH nodename="C:\AutomataUI\packs\girlpower\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\AutomataUI\packs\girlpower\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="6105" scrolly="2310">
    <BOUNDS type="Window" left="1020" top="2985" width="15570" height="9810">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.0.0">
@@ -420,20 +420,6 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="107">
-   <BOUNDS type="Box" left="17415" top="9015" width="1590" height="270">
-   </BOUNDS>
-   <BOUNDS type="Node" left="17415" top="9015" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Menu">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="Init">
-   </PIN>
-   <PIN pinname="File Mask" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
-   </PIN>
-   </NODE>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="120">
@@ -735,9 +721,9 @@
    </PIN>
    <PIN pinname="Trigger" visible="1" slicecount="6" values="0,0,0,0,0,0">
    </PIN>
+   <PIN pinname="State" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="107" srcpinname="Output Enum" dstnodeid="105" dstpinname="Transition">
-   </LINK>
    <LINK srcnodeid="106" srcpinname="Y Output Value" dstnodeid="105" dstpinname="Trigger">
    </LINK>
    <NODE systemname="AutomataUI (Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="AutomataUI (Animation)" componentmode="InAWindow" id="124">
@@ -799,5 +785,21 @@
    <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="99" dstpinname="AutomataUI" hiddenwhenlocked="1">
    </LINK>
    <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="105" dstpinname="AutomataUI" hiddenwhenlocked="1">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="135">
+   <BOUNDS type="Box" left="17415" top="8925" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="17415" top="8925" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Init">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="Init">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="135" srcpinname="Output Enum" dstnodeid="105" dstpinname="State">
    </LINK>
    </PATCH>

@@ -55,7 +55,7 @@ namespace VVVV.Nodes
             AutomataUI.Disconnected += Input_Disconnected;
 
             //new way of enums
-            InputAttribute attr = new InputAttribute("Transition");
+            InputAttribute attr = new InputAttribute("State");
             StatesEnum = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);
         }
 

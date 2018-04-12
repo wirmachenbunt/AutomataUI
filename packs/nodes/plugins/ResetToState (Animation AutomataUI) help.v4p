@@ -2,7 +2,7 @@
    <PATCH nodename="C:\AutomataUI\packs\nodes\plugins\ResetToState (Animation AutomataUI) help.v4p" systemname="ResetToState (Animation AutomataUI) help" filename="C:\AutomataUI\packs\nodes\plugins\ResetToState (Animation AutomataUI) help.v4p" scrollx="0" scrolly="-360">
    <BOUNDS type="Window" left="1575" top="8745" width="11490" height="7080">
    </BOUNDS>
-   <PACK Name="dx11" Version="1.2">
+   <PACK Name="dx11" Version="1.0.5">
    </PACK>
    <PACK Name="addonpack" Version="36.0.0">
    </PACK>
@@ -38,6 +38,8 @@
    <PIN pinname="Transition" visible="1">
    </PIN>
    <PIN pinname="Trigger" visible="1">
+   </PIN>
+   <PIN pinname="State" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="AutomataUI" dstnodeid="38" dstpinname="AutomataUI">
@@ -122,24 +124,6 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="43">
-   <BOUNDS type="Box" left="7395" top="3465" width="1590" height="270">
-   </BOUNDS>
-   <BOUNDS type="Node" left="7395" top="3465" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Init">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="Init">
-   </PIN>
-   <PIN pinname="File Mask" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="State">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="43" srcpinname="Output Enum" dstnodeid="38" dstpinname="Transition">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="44">
    <BOUNDS type="Box" left="5775" top="2310" width="1275" height="1245">
    </BOUNDS>
@@ -176,4 +160,22 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="46">
+   <BOUNDS type="Box" left="7380" top="3585" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7380" top="3585" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Init">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="Init">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="State">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="46" srcpinname="Output Enum" dstnodeid="38" dstpinname="State">
+   </LINK>
    </PATCH>
