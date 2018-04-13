@@ -18,3 +18,5 @@ C:\AutomataUI\AutomataUI\obj\Debug\AutomataUI.dll
 C:\AutomataUI\AutomataUI\obj\Debug\AutomataUI.pdb
 C:\AutomataUI\packs\nodes\plugins\AutomataUI.dll
 C:\AutomataUI\packs\nodes\plugins\AutomataUI.pdb
+C:\AutomataUI\packs\AutomataUI\nodes\plugins\AutomataUI.dll
+C:\AutomataUI\packs\AutomataUI\nodes\plugins\AutomataUI.pdb
