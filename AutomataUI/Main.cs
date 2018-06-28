@@ -105,6 +105,7 @@ namespace VVVV.Nodes
         public int x = 0; //mouse koordinaten
         public int y = 0;
         public Point previousPosition;
+        public Point holdMousePos;
 
         State hitState = new State(); //hit detection
         Transition hitTransition = new Transition(); //hit detection
@@ -275,7 +276,9 @@ namespace VVVV.Nodes
             hitState = stateList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
             hitTransition = transitionList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
 
-            previousPosition = MousePosition;
+            previousPosition = MousePosition; // get mouse position difference 
+
+            holdMousePos = new Point(x, y); // on mouse down hold last position
 
             //delete transitions
             if (e.Button == MouseButtons.Middle) DeleteTransition(e);
@@ -416,7 +419,7 @@ namespace VVVV.Nodes
             }
             #endregion
 
-            #region drag states
+            #region drag things
             if (selectedState == null && e.Button == MouseButtons.Right)
             {
                 Point mousePos = MousePosition;
@@ -442,6 +445,8 @@ namespace VVVV.Nodes
             }
             else targetConnectionState = null;
             #endregion
+
+            SetSelectionRectangle(e);
 
             this.Invalidate(); //redraw
         }
@@ -631,6 +636,22 @@ namespace VVVV.Nodes
             }
             TransitionsOut.Add("∅");
         }
+
+        public void SetSelectionRectangle(System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                
+                //negative and positive rectangle since drawing doesnt work with negative values
+                var rc = new Rectangle(
+                                        Math.Min(holdMousePos.X, x),
+                                        Math.Min(holdMousePos.Y, y),
+                                        Math.Abs(x - holdMousePos.X),
+                                        Math.Abs(y - holdMousePos.Y));     
+                p.selectionRectangle = rc;              
+            }
+        }
+
 
         #endregion Management
 

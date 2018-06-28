@@ -52,8 +52,11 @@ namespace Automata.Drawing
         public List<GraphicsPath> transitionPaths = new List<GraphicsPath>(); //add transitions paths for bezier curves
 
         public BezierEditData bezierEdit = new BezierEditData();
-        
-        
+
+        // selection and region rectangle
+        public Rectangle selectionRectangle = new Rectangle(); //multiselection rectangle
+        Brush selectbrush = new SolidBrush(Color.FromArgb(150, 255, 255, 255));
+
         #endregion
 
         // Methoden //
@@ -267,6 +270,12 @@ namespace Automata.Drawing
             }
         }
 
+        private void PaintSelectionRect(PaintEventArgs e)
+        {
+            Brush selectbrush = new SolidBrush(Color.FromArgb(50, 255, 255, 255));
+            e.Graphics.FillRectangle(selectbrush, selectionRectangle);
+        }
+
         public void JoregMode(object sender, bool JMode)
         {
             AutomataUI fw = sender as AutomataUI; // connect to encapsulating class GUIAutomataUINode aka main.cs
@@ -341,6 +350,8 @@ namespace Automata.Drawing
                         PaintStateHighlight(sender, e, fw.TargetStateIndex[fw.ShowSlice[0]], new Pen(MyDarkCyan, 10.0f)); //draw target state highlight
                         PaintStateHighlight(sender, e, fw.ActiveStateIndex[fw.ShowSlice[0]], new Pen(MyColorDarkOrange, 10.0f)); //draw active state highlight 
                     }
+
+                    PaintSelectionRect(e);
 
                     PaintStates(sender, e); //draw states
       
