@@ -385,6 +385,14 @@ namespace VVVV.Nodes
                 TransitionXML[0] = Transition.DataSerializeTransition(transitionList);
             }
 
+            //new selection rectangle ? create region
+            if (p.selectionRectangle.Height != 0)
+            {
+                CreateRegion();
+                p.selectionRectangle.Height = 0;
+            }
+
+
         }
 
         private void Form1_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -533,7 +541,7 @@ namespace VVVV.Nodes
         private void AddState(string input)
         {
             int frames = 0;
-            if (PaintAutomataClass.Dialogs.ShowInputDialog(ref input, ref frames, "Add State", p.dpi) == DialogResult.OK)
+            if (PaintAutomataClass.Dialogs.ShowInputDialog(ref input, ref frames, "Add Region", p.dpi) == DialogResult.OK)
             {
                 //add state to state list
                 stateList.Add(new State()
@@ -639,7 +647,7 @@ namespace VVVV.Nodes
 
         public void SetSelectionRectangle(System.Windows.Forms.MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left && ModifierKeys == Keys.Control)
             {
                 
                 //negative and positive rectangle since drawing doesnt work with negative values
@@ -648,10 +656,19 @@ namespace VVVV.Nodes
                                         Math.Min(holdMousePos.Y, y),
                                         Math.Abs(x - holdMousePos.X),
                                         Math.Abs(y - holdMousePos.Y));     
-                p.selectionRectangle = rc;              
+                p.selectionRectangle = rc;
             }
         }
 
+        private void CreateRegion()
+        {
+            string input = "hallo";
+
+            if (PaintAutomataClass.Dialogs.RegionDialog(ref input, "Add State", p.dpi) == DialogResult.OK)
+            {
+
+            }
+        }
 
         #endregion Management
 

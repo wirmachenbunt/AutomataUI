@@ -274,6 +274,7 @@ namespace Automata.Drawing
         {
             Brush selectbrush = new SolidBrush(Color.FromArgb(50, 255, 255, 255));
             e.Graphics.FillRectangle(selectbrush, selectionRectangle);
+            
         }
 
         public void JoregMode(object sender, bool JMode)
@@ -534,6 +535,52 @@ namespace Automata.Drawing
                 else input = "empty";
                 frames = Convert.ToInt16(timeUpDown.Value);
                 pingpong = isPingPong.Checked;
+                return result;
+            }
+
+            public static DialogResult RegionDialog(ref string input, string DialogName, float dpi)
+            {
+                System.Drawing.Size size = new System.Drawing.Size(200, 130);
+
+                Form inputBox = new Form();
+
+                inputBox.StartPosition = FormStartPosition.Manual;
+                inputBox.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
+
+                inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+                inputBox.ClientSize = size;
+                inputBox.Text = DialogName;
+
+                System.Windows.Forms.TextBox textBox = new TextBox();
+                textBox.Size = new System.Drawing.Size(size.Width - 10, 23);
+                textBox.Location = new System.Drawing.Point(5, 5);
+                textBox.Text = input;
+                inputBox.Controls.Add(textBox);
+          
+                Button okButton = new Button();
+                okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+                okButton.Name = "okButton";
+                okButton.Size = new System.Drawing.Size(90, 23);
+                okButton.Text = "&OK";
+                okButton.Location = new System.Drawing.Point(5, 99);
+                inputBox.Controls.Add(okButton);
+
+                Button cancelButton = new Button();
+                cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                cancelButton.Name = "cancelButton";
+                cancelButton.Size = new System.Drawing.Size(90, 23);
+                cancelButton.Text = "&Cancel";
+                cancelButton.Location = new System.Drawing.Point(size.Width - 95, 99);
+                inputBox.Controls.Add(cancelButton);
+
+                inputBox.AcceptButton = okButton;
+                inputBox.CancelButton = cancelButton;
+
+                inputBox.Scale(dpi);
+
+                DialogResult result = inputBox.ShowDialog();
+                if (textBox.Text.Length > 0) input = textBox.Text;
+                else input = "empty";
                 return result;
             }
         }
