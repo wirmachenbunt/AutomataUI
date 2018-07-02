@@ -112,6 +112,7 @@ namespace VVVV.Nodes
 
         public List<State> stateList = new List<State>();
         public List<Transition> transitionList = new List<Transition>();
+        public List<AutomataRegion> regionList = new List<AutomataRegion>();
 
         public State selectedState = null;
         public State startConnectionState = null;
@@ -664,7 +665,7 @@ namespace VVVV.Nodes
         {
             string input = "hallo";
 
-            if (PaintAutomataClass.Dialogs.RegionDialog(ref input, "Add State", p.dpi) == DialogResult.OK)
+            if (PaintAutomataClass.Dialogs.RegionDialog(ref input, "Create Region", p.dpi) == DialogResult.OK)
             {
 
             }

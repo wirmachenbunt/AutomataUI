@@ -166,6 +166,25 @@ namespace Automata.Data
 
     }
 
+    public class AutomataRegion
+    {
+        public string Name
+        {
+            get;
+            set;
+        }
 
+        public Rectangle Bounds
+        {
+            get;
+            set;
+        }
+
+        public Rectangle SizeHandle
+        {
+            get;
+            set;
+        }
+    }
 
 }
