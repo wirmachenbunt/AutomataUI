@@ -410,7 +410,8 @@ namespace Automata.Drawing
 
                 Form inputBox = new Form();
 
-                inputBox.StartPosition = FormStartPosition.CenterScreen;
+                inputBox.StartPosition = FormStartPosition.Manual;
+                inputBox.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
 
                 inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
                 inputBox.ClientSize = size;
@@ -473,7 +474,8 @@ namespace Automata.Drawing
 
                 Form inputBox = new Form();
 
-                inputBox.StartPosition = FormStartPosition.CenterScreen;
+                inputBox.StartPosition = FormStartPosition.Manual;
+                inputBox.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
 
                 inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
                 inputBox.ClientSize = size;

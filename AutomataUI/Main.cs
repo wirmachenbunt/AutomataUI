@@ -52,6 +52,9 @@ namespace VVVV.Nodes
         [Config("TransitionXML")]
         public IDiffSpread<string> TransitionXML;
 
+        [Config("RegionXML")]
+        public IDiffSpread<string> RegionXML;
+
         [Config("TransitionNames")]
         public IDiffSpread<string> TransitionNames;
 
