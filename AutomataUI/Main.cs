@@ -32,11 +32,6 @@ namespace VVVV.Nodes
     {
         #region fields & pins
 
-        //[Input("Default State", EnumName = "DefaultAutomataState", IsSingle = true, Visibility = PinVisibility.OnlyInspector)]
-        //protected IDiffSpread<EnumEntry> DefaultState;
-
-        //IIOContainer<IDiffSpread<EnumEntry>> DefaultState;
-
         [Config("Allow Multiple Connections")]
         public ISpread<bool> FAllowMultiple;
 
@@ -146,13 +141,6 @@ namespace VVVV.Nodes
         {
             TransitionNames.Changed += HandleTransitionPins;
 
-            //new way of enums
-            //InputAttribute attr = new InputAttribute("DefaultState");
-            //DefaultState = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);
-
-            //var pin = DefaultState.GetPluginIO() as IPin;
-            //(pin as IEnumIn).SetSubType(myGUID + "_States");
-
             ///
             /// Getting File Version
             ///
@@ -164,12 +152,6 @@ namespace VVVV.Nodes
         private void HandleTransitionPins(IDiffSpread<string> sender)
         {
             //FLogger.Log(LogType.Debug, "Update Pins");
-
-            //empty automata tree ? -> create a reset pin
-            //if (TransitionNames[0] == "")
-            //{
-            //    TransitionNames[0] = "Init";
-            //}
 
             // CREATE INIT
             if (stateList.Count == 0)
@@ -247,6 +229,9 @@ namespace VVVV.Nodes
                 {
                     stateList = State.DataDeserializeState(StateXML[0]);
                     transitionList = Transition.DataDeserializeTransition(TransitionXML[0]);
+
+                    if (RegionXML[0].Length > 3) regionList = AutomataRegion.DataDeserializeRegion(RegionXML[0]);
+                    EnumManager.UpdateEnum(myGUID + "_Regions", regionList[0].Name, regionList.Select(x => x.Name).ToArray());
                 }
                 catch { FLogger.Log(LogType.Debug, "Loading XML Graph failed!"); }
 
@@ -393,6 +378,8 @@ namespace VVVV.Nodes
 
             if (stateList.Count > 2) StateXML[0] = State.DataSerializeState(stateList); //update config
 
+            if (regionList.Count > 0) RegionXML[0] = AutomataRegion.DataSerializeRegion(regionList); //update region config
+
             if (dragState != null)
             {
                 dragState = null;
@@ -445,6 +432,8 @@ namespace VVVV.Nodes
             #endregion
 
             #region drag things
+
+            //drag stage
             if (selectedState == null && e.Button == MouseButtons.Right)
             {
                 Point mousePos = MousePosition;
@@ -455,15 +444,14 @@ namespace VVVV.Nodes
                 p.StagePos.Y += deltaY;
             }
 
+            //drag state
             if (selectedState != null && e.Button == MouseButtons.Left && dragState == null)
             {
                 selectedState.Move(new Point(Convert.ToInt32(e.X / p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.X / p.dpi), Convert.ToInt32(e.Y / p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.Y / p.dpi)));
             }
 
-            
-
-
-            if (selectedState == null && hitRegion != null && e.Button == MouseButtons.Left && hitsizeHandle == null)
+            //drag region
+            if (selectedState == null && hitRegion != null && e.Button == MouseButtons.Left && hitsizeHandle == null && dragState == null)
             {
                 Point mousePos = MousePosition;
                 int deltaX = (mousePos.X - previousPosition.X);
@@ -472,6 +460,28 @@ namespace VVVV.Nodes
                 hitRegion.Bounds = new Rectangle(hitRegion.Bounds.X + deltaX, hitRegion.Bounds.Y + deltaY, hitRegion.Bounds.Width, hitRegion.Bounds.Height);
                 hitRegion.SizeHandle = new Rectangle(hitRegion.SizeHandle.X + deltaX, hitRegion.SizeHandle.Y + deltaY, 10, 10);
             }
+
+            //drag size
+
+            if(e.Button == MouseButtons.Left && hitsizeHandle != null)
+            {
+                Point mousePos = MousePosition;
+                int deltaX = (mousePos.X - previousPosition.X);
+                int deltaY = (mousePos.Y - previousPosition.Y);
+                previousPosition = MousePosition;
+
+
+                int sizeX = hitsizeHandle.SizeHandle.X + deltaX;
+                int sizeY = hitsizeHandle.SizeHandle.Y + deltaY;
+
+                if ((sizeX - hitsizeHandle.Bounds.X + 10) < 100) sizeX = hitsizeHandle.Bounds.X + 90;
+                if ((sizeY - hitsizeHandle.Bounds.Y + 10) < 100) sizeY = hitsizeHandle.Bounds.Y + 90;
+
+                hitsizeHandle.SizeHandle = new Rectangle(sizeX, sizeY, 10,10);
+                hitsizeHandle.Bounds = new Rectangle(hitsizeHandle.Bounds.X, hitsizeHandle.Bounds.Y, sizeX - hitsizeHandle.Bounds.X +10, sizeY - hitsizeHandle.Bounds.Y+10);
+
+            }
+
 
             #endregion
 
@@ -677,7 +687,7 @@ namespace VVVV.Nodes
 
         public void SetSelectionRectangle(System.Windows.Forms.MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && ModifierKeys == Keys.Shift)
+            if (e.Button == MouseButtons.Left && ModifierKeys == Keys.Shift && hitRegion == null && hitsizeHandle == null)
             {
 
                 //negative and positive rectangle since drawing doesnt work with negative values
@@ -705,7 +715,19 @@ namespace VVVV.Nodes
                     p.selectionRectangle.Y +p.selectionRectangle.Height - 10,
                     10,10)
                 });
+                this.Invalidate(); //redraw
+                UpdateRegionsConfigs();
             }
+          
+        }
+
+        private void UpdateRegionsConfigs()
+        {
+            // Update Config Pin if there is a change
+            RegionXML[0] = AutomataRegion.DataSerializeRegion(regionList);
+
+            //new enum technique
+            EnumManager.UpdateEnum(myGUID + "_Regions", regionList[0].Name, regionList.Select(x => x.Name).ToArray());
         }
 
         private void EditRegion(AutomataRegion region)
@@ -717,8 +739,10 @@ namespace VVVV.Nodes
             if (PaintAutomataClass.Dialogs.RegionDialog(ref input, "Edit Region", p.dpi) == DialogResult.OK)
             {
                 region.Name = input;
+                this.Invalidate(); //redraw
+                UpdateRegionsConfigs();
             }
-
+            
         }
 
         private void DeleteRegion(System.Windows.Forms.MouseEventArgs e)
@@ -726,6 +750,7 @@ namespace VVVV.Nodes
             if (hitState == null && hitTransition == null)
             {
                 regionList.RemoveAll(x => x.Bounds.Contains(new Point(this.x, this.y)));
+                UpdateRegionsConfigs();
             }
         }
 

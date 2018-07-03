@@ -35,7 +35,7 @@ namespace Automata.Drawing
         SolidBrush whiteBrush = new SolidBrush(Color.FromArgb(190, 190, 190));
         SolidBrush OrangeBrush = new SolidBrush(Color.Orange);
         SolidBrush selectbrush = new SolidBrush(Color.FromArgb(50, 255, 255, 255));
-        SolidBrush blackbrush = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
+        
 
 
         Color MyColorDarkOrange = Color.DarkOrange;
@@ -283,13 +283,12 @@ namespace Automata.Drawing
                 {
                     string regionName = region.Name;
                     e.Graphics.FillRectangle(selectbrush, region.Bounds);
-                    e.Graphics.FillRectangle(OrangeBrush, region.SizeHandle);
 
-                    /*
-                    StringFormat stringFormat = new StringFormat();
-                    stringFormat.Alignment = StringAlignment.Near;
-                    stringFormat.LineAlignment = StringAlignment.Near;
-                    */
+                    Point[] points = {
+                        new Point(region.SizeHandle.X, region.SizeHandle.Y + region.SizeHandle.Height),
+                        new Point(region.SizeHandle.X + region.SizeHandle.Width, region.SizeHandle.Y),
+                        new Point(region.SizeHandle.X + region.SizeHandle.Width, region.SizeHandle.Y + region.SizeHandle.Height) };
+                    e.Graphics.FillPolygon(whiteBrush, points);
 
                     SizeF stringSize = new SizeF();
                     stringSize = e.Graphics.MeasureString(regionName, largefont, 1000);
@@ -370,11 +369,11 @@ namespace Automata.Drawing
                     e.Graphics.Clear(MyBackgroundColor);
                     e.Graphics.FillEllipse(StateBrush, fw.x - 10, fw.y - 10, 20, 20); // draw mouse                   
 
+                    PaintRegions(sender, e);
+
                     PaintTransitions(sender, e); //draw transitions
 
-                    PaintEditTransition(sender, e); //draw add connection
-
-                    PaintRegions(sender, e);
+                    PaintEditTransition(sender, e); //draw add connection             
 
                     if (fw.stateList.Count > 1)
                     {
