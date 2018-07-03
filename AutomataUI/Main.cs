@@ -113,6 +113,7 @@ namespace VVVV.Nodes
         State hitState = new State(); //hit detection
         Transition hitTransition = new Transition(); //hit detection
         AutomataRegion hitRegion = new AutomataRegion();
+        AutomataRegion hitsizeHandle = new AutomataRegion();
 
         public List<State> stateList = new List<State>();
         public List<Transition> transitionList = new List<Transition>();
@@ -281,6 +282,9 @@ namespace VVVV.Nodes
             hitState = stateList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
             hitTransition = transitionList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
             hitRegion = regionList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
+            hitsizeHandle = regionList.FirstOrDefault(x => x.SizeHandle.Contains(new Point(this.x, this.y)));
+
+            if (hitsizeHandle != null) hitRegion = null;
 
             previousPosition = MousePosition; // get mouse position difference 
 
@@ -403,6 +407,7 @@ namespace VVVV.Nodes
             }
 
             hitRegion = null;
+            hitsizeHandle = null;
         }
 
         private void Form1_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -453,6 +458,19 @@ namespace VVVV.Nodes
             if (selectedState != null && e.Button == MouseButtons.Left && dragState == null)
             {
                 selectedState.Move(new Point(Convert.ToInt32(e.X / p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.X / p.dpi), Convert.ToInt32(e.Y / p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.Y / p.dpi)));
+            }
+
+            
+
+
+            if (selectedState == null && hitRegion != null && e.Button == MouseButtons.Left && hitsizeHandle == null)
+            {
+                Point mousePos = MousePosition;
+                int deltaX = (mousePos.X - previousPosition.X);
+                int deltaY = (mousePos.Y - previousPosition.Y);
+                previousPosition = MousePosition;
+                hitRegion.Bounds = new Rectangle(hitRegion.Bounds.X + deltaX, hitRegion.Bounds.Y + deltaY, hitRegion.Bounds.Width, hitRegion.Bounds.Height);
+                hitRegion.SizeHandle = new Rectangle(hitRegion.SizeHandle.X + deltaX, hitRegion.SizeHandle.Y + deltaY, 10, 10);
             }
 
             #endregion
@@ -682,7 +700,10 @@ namespace VVVV.Nodes
                 regionList.Add(new AutomataRegion()
                 {
                     Name = input,
-                    Bounds = new Rectangle(p.selectionRectangle.Location, p.selectionRectangle.Size)
+                    Bounds = new Rectangle(p.selectionRectangle.Location, p.selectionRectangle.Size),
+                    SizeHandle = new Rectangle(p.selectionRectangle.X + p.selectionRectangle.Width - 10,
+                    p.selectionRectangle.Y +p.selectionRectangle.Height - 10,
+                    10,10)
                 });
             }
         }

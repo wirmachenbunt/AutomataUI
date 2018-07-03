@@ -283,6 +283,7 @@ namespace Automata.Drawing
                 {
                     string regionName = region.Name;
                     e.Graphics.FillRectangle(selectbrush, region.Bounds);
+                    e.Graphics.FillRectangle(OrangeBrush, region.SizeHandle);
 
                     /*
                     StringFormat stringFormat = new StringFormat();
@@ -291,7 +292,7 @@ namespace Automata.Drawing
                     */
 
                     SizeF stringSize = new SizeF();
-                    stringSize = e.Graphics.MeasureString(regionName, largefont, 100);
+                    stringSize = e.Graphics.MeasureString(regionName, largefont, 1000);
                     Rectangle textbounds = new Rectangle(region.Bounds.Location, new Size((int)stringSize.Width + 10, (int)stringSize.Height +10));
 
                     e.Graphics.DrawString(regionName, largefont, whiteBrush, textbounds, format); //text
