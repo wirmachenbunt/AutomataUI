@@ -34,6 +34,8 @@ namespace Automata.Drawing
         SolidBrush StateBrush = new SolidBrush(Color.FromArgb(50, 50, 50));
         SolidBrush whiteBrush = new SolidBrush(Color.FromArgb(190, 190, 190));
         SolidBrush OrangeBrush = new SolidBrush(Color.Orange);
+        SolidBrush selectbrush = new SolidBrush(Color.FromArgb(50, 255, 255, 255));
+        SolidBrush blackbrush = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
 
 
         Color MyColorDarkOrange = Color.DarkOrange;
@@ -44,6 +46,8 @@ namespace Automata.Drawing
         AdjustableArrowCap noArrow = new AdjustableArrowCap(0, 0);
 
         Font myfont = new Font("Serif", 8, FontStyle.Regular);
+        Font largefont = new Font("Serif", 15, FontStyle.Regular);
+
 
         StringFormat format = new StringFormat();
 
@@ -55,7 +59,7 @@ namespace Automata.Drawing
 
         // selection and region rectangle
         public Rectangle selectionRectangle = new Rectangle(); //multiselection rectangle
-        Brush selectbrush = new SolidBrush(Color.FromArgb(150, 255, 255, 255));
+        
 
         #endregion
 
@@ -270,11 +274,34 @@ namespace Automata.Drawing
             }
         }
 
-        private void PaintSelectionRect(PaintEventArgs e)
+        private void PaintRegions(object sender, PaintEventArgs e)
         {
-            Brush selectbrush = new SolidBrush(Color.FromArgb(50, 255, 255, 255));
-            e.Graphics.FillRectangle(selectbrush, selectionRectangle);
-            
+            AutomataUI fw = sender as AutomataUI;
+            if (fw.regionList.Count != 0)
+            {
+                foreach (AutomataRegion region in fw.regionList) // Loop through List with foreach.
+                {
+                    string regionName = region.Name;
+                    e.Graphics.FillRectangle(selectbrush, region.Bounds);
+
+                    /*
+                    StringFormat stringFormat = new StringFormat();
+                    stringFormat.Alignment = StringAlignment.Near;
+                    stringFormat.LineAlignment = StringAlignment.Near;
+                    */
+
+                    SizeF stringSize = new SizeF();
+                    stringSize = e.Graphics.MeasureString(regionName, largefont, 100);
+                    Rectangle textbounds = new Rectangle(region.Bounds.Location, new Size((int)stringSize.Width + 10, (int)stringSize.Height +10));
+
+                    e.Graphics.DrawString(regionName, largefont, whiteBrush, textbounds, format); //text
+                }
+            }
+        }
+
+        private void PaintSelectionRect(PaintEventArgs e)
+        {     
+            e.Graphics.FillRectangle(selectbrush, selectionRectangle);      
         }
 
         public void JoregMode(object sender, bool JMode)
@@ -340,18 +367,20 @@ namespace Automata.Drawing
                     e.Graphics.ScaleTransform(dpi, dpi); //dpi scaling 
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias; // shapeman
                     e.Graphics.Clear(MyBackgroundColor);
-                    e.Graphics.FillEllipse(StateBrush, fw.x - 10, fw.y - 10, 20, 20); // draw mouse
+                    e.Graphics.FillEllipse(StateBrush, fw.x - 10, fw.y - 10, 20, 20); // draw mouse                   
 
                     PaintTransitions(sender, e); //draw transitions
 
                     PaintEditTransition(sender, e); //draw add connection
+
+                    PaintRegions(sender, e);
 
                     if (fw.stateList.Count > 1)
                     {
                         PaintStateHighlight(sender, e, fw.TargetStateIndex[fw.ShowSlice[0]], new Pen(MyDarkCyan, 10.0f)); //draw target state highlight
                         PaintStateHighlight(sender, e, fw.ActiveStateIndex[fw.ShowSlice[0]], new Pen(MyColorDarkOrange, 10.0f)); //draw active state highlight 
                     }
-
+                   
                     PaintSelectionRect(e);
 
                     PaintStates(sender, e); //draw states

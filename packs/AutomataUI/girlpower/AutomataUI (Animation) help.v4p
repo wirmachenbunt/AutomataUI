@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
    <PATCH nodename="C:\AutomataUI\packs\AutomataUI\girlpower\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1230" top="5820" width="14760" height="7830">
+   <BOUNDS type="Window" left="1395" top="10050" width="14760" height="7830">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.0.0">
    </PACK>
@@ -543,9 +543,9 @@
    </PIN>
    </NODE>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="130">
-   <BOUNDS type="Node" left="8985" top="1395" width="100" height="100">
+   <BOUNDS type="Node" left="8985" top="1380" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="8985" top="1395" width="480" height="480">
+   <BOUNDS type="Box" left="8985" top="1380" width="480" height="480">
    </BOUNDS>
    <PIN pinname="Value Type" slicecount="1" values="Boolean">
    </PIN>
@@ -715,7 +715,7 @@
    <NODE systemname="AutomataUI (Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="AutomataUI (Animation)" componentmode="InAWindow" id="124">
    <BOUNDS type="Node" left="7316" top="2188" width="6670" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="1215" top="-165" width="8025" height="6075">
+   <BOUNDS type="Window" left="16260" top="8625" width="13485" height="9525">
    </BOUNDS>
    <PIN pinname="StateXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfState xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;40&lt;/X&gt;&cr;&lf;        &lt;Y&gt;59&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;40&lt;/X&gt;&cr;&lf;      &lt;Y&gt;59&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;233&lt;/X&gt;&cr;&lf;        &lt;Y&gt;62&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;233&lt;/X&gt;&cr;&lf;      &lt;Y&gt;62&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;425&lt;/X&gt;&cr;&lf;        &lt;Y&gt;146&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;425&lt;/X&gt;&cr;&lf;      &lt;Y&gt;146&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;212&lt;/X&gt;&cr;&lf;        &lt;Y&gt;252&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;212&lt;/X&gt;&cr;&lf;      &lt;Y&gt;252&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;&lt;/ArrayOfState&gt;|">
    </PIN>

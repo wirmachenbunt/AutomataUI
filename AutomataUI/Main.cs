@@ -112,6 +112,7 @@ namespace VVVV.Nodes
 
         State hitState = new State(); //hit detection
         Transition hitTransition = new Transition(); //hit detection
+        AutomataRegion hitRegion = new AutomataRegion();
 
         public List<State> stateList = new List<State>();
         public List<Transition> transitionList = new List<Transition>();
@@ -279,13 +280,18 @@ namespace VVVV.Nodes
             //hit detection for various use
             hitState = stateList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
             hitTransition = transitionList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
+            hitRegion = regionList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
 
             previousPosition = MousePosition; // get mouse position difference 
 
             holdMousePos = new Point(x, y); // on mouse down hold last position
 
-            //delete transitions
-            if (e.Button == MouseButtons.Middle) DeleteTransition(e);
+            //delete transitions or Regions
+            if (e.Button == MouseButtons.Middle)
+            {
+                DeleteTransition(e);
+                DeleteRegion(e);
+            }
 
             //hit detection bezier transition
             if (e.Button == MouseButtons.Right)
@@ -396,7 +402,7 @@ namespace VVVV.Nodes
                 p.selectionRectangle.Height = 0;
             }
 
-
+            hitRegion = null;
         }
 
         private void Form1_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -405,11 +411,13 @@ namespace VVVV.Nodes
             y = Convert.ToInt32((e.Y - p.StagePos.Y) / p.dpi);
             TransitionFramesOut[0] = 0;
 
-            if (hitState == null && hitTransition == null && e.Button == MouseButtons.Left) AddState("MyState"); // Add State 
+            if (hitState == null && hitTransition == null && e.Button == MouseButtons.Left && ModifierKeys != Keys.Shift) AddState("MyState"); // Add State 
 
             else if (hitState != null && hitTransition == null) EditState(hitState); //Edit State
 
             if (hitTransition != null && hitState == null) EditTransition(hitTransition); //Edit Transition
+
+            if (hitState == null && hitTransition == null && hitRegion != null && ModifierKeys == Keys.Shift && e.Button == MouseButtons.Left) EditRegion(hitRegion); // edit region
 
         }
 
@@ -480,7 +488,7 @@ namespace VVVV.Nodes
                     exists = true;   // achtung test, war vorher true
                     break;
                 }
-                else exists = false; 
+                else exists = false;
             }
 
             // transition does not exist ? ok, create it
@@ -545,7 +553,7 @@ namespace VVVV.Nodes
         private void AddState(string input)
         {
             int frames = 0;
-            if (PaintAutomataClass.Dialogs.ShowInputDialog(ref input, ref frames, "Add Region", p.dpi) == DialogResult.OK)
+            if (PaintAutomataClass.Dialogs.ShowInputDialog(ref input, ref frames, "Add State", p.dpi) == DialogResult.OK)
             {
                 //add state to state list
                 stateList.Add(new State()
@@ -624,7 +632,7 @@ namespace VVVV.Nodes
             //update Default State Enum
             EnumManager.UpdateEnum(EnumName, stateList[0].Name, stateList.Select(x => x.Name).ToArray());
             StateXML[0] = State.DataSerializeState(stateList); //save config
-            
+
             //new enum technique
             EnumManager.UpdateEnum(myGUID + "_States", stateList[0].Name, stateList.Select(x => x.Name).ToArray());
             FLogger.Log(LogType.Debug, "update enums state");
@@ -651,26 +659,52 @@ namespace VVVV.Nodes
 
         public void SetSelectionRectangle(System.Windows.Forms.MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && ModifierKeys == Keys.Control)
+            if (e.Button == MouseButtons.Left && ModifierKeys == Keys.Shift)
             {
-                
+
                 //negative and positive rectangle since drawing doesnt work with negative values
                 var rc = new Rectangle(
                                         Math.Min(holdMousePos.X, x),
                                         Math.Min(holdMousePos.Y, y),
                                         Math.Abs(x - holdMousePos.X),
-                                        Math.Abs(y - holdMousePos.Y));     
+                                        Math.Abs(y - holdMousePos.Y));
                 p.selectionRectangle = rc;
             }
         }
 
         private void CreateRegion()
         {
-            string input = "hallo";
+            string input = "Region";
 
             if (PaintAutomataClass.Dialogs.RegionDialog(ref input, "Create Region", p.dpi) == DialogResult.OK)
             {
+                //add state to state list
+                regionList.Add(new AutomataRegion()
+                {
+                    Name = input,
+                    Bounds = new Rectangle(p.selectionRectangle.Location, p.selectionRectangle.Size)
+                });
+            }
+        }
 
+        private void EditRegion(AutomataRegion region)
+        {
+
+            string input = region.Name;
+
+
+            if (PaintAutomataClass.Dialogs.RegionDialog(ref input, "Edit Region", p.dpi) == DialogResult.OK)
+            {
+                region.Name = input;
+            }
+
+        }
+
+        private void DeleteRegion(System.Windows.Forms.MouseEventArgs e)
+        {
+            if (hitState == null && hitTransition == null)
+            {
+                regionList.RemoveAll(x => x.Bounds.Contains(new Point(this.x, this.y)));
             }
         }
 
@@ -753,7 +787,7 @@ namespace VVVV.Nodes
                     var diffpin = pin.Value.RawIOObject as IDiffSpread<bool>;
                     if (diffpin[ii] == true && diffpin.SliceCount != 0) //diffpin.IsChanged && JONAS WUNSCHKONZERT
                     {
-                        TriggerTransition(pin.Key, ii,0);
+                        TriggerTransition(pin.Key, ii, 0);
                     }
                 }
             }
