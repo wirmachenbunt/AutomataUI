@@ -32,11 +32,6 @@ namespace VVVV.Nodes
     {
         #region fields & pins
 
-        //[Input("Default State", EnumName = "DefaultAutomataState", IsSingle = true, Visibility = PinVisibility.OnlyInspector)]
-        //protected IDiffSpread<EnumEntry> DefaultState;
-
-        //IIOContainer<IDiffSpread<EnumEntry>> DefaultState;
-
         [Config("Allow Multiple Connections")]
         public ISpread<bool> FAllowMultiple;
 
@@ -51,6 +46,9 @@ namespace VVVV.Nodes
 
         [Config("TransitionXML")]
         public IDiffSpread<string> TransitionXML;
+
+        [Config("RegionXML")]
+        public IDiffSpread<string> RegionXML;
 
         [Config("TransitionNames")]
         public IDiffSpread<string> TransitionNames;
@@ -105,12 +103,16 @@ namespace VVVV.Nodes
         public int x = 0; //mouse koordinaten
         public int y = 0;
         public Point previousPosition;
+        public Point holdMousePos;
 
         State hitState = new State(); //hit detection
         Transition hitTransition = new Transition(); //hit detection
+        AutomataRegion hitRegion = new AutomataRegion();
+        AutomataRegion hitsizeHandle = new AutomataRegion();
 
         public List<State> stateList = new List<State>();
         public List<Transition> transitionList = new List<Transition>();
+        public List<AutomataRegion> regionList = new List<AutomataRegion>();
 
         public State selectedState = null;
         public State startConnectionState = null;
@@ -139,13 +141,6 @@ namespace VVVV.Nodes
         {
             TransitionNames.Changed += HandleTransitionPins;
 
-            //new way of enums
-            //InputAttribute attr = new InputAttribute("DefaultState");
-            //DefaultState = FIOFactory.CreateIOContainer<IDiffSpread<EnumEntry>>(attr, true);
-
-            //var pin = DefaultState.GetPluginIO() as IPin;
-            //(pin as IEnumIn).SetSubType(myGUID + "_States");
-
             ///
             /// Getting File Version
             ///
@@ -157,12 +152,6 @@ namespace VVVV.Nodes
         private void HandleTransitionPins(IDiffSpread<string> sender)
         {
             //FLogger.Log(LogType.Debug, "Update Pins");
-
-            //empty automata tree ? -> create a reset pin
-            //if (TransitionNames[0] == "")
-            //{
-            //    TransitionNames[0] = "Init";
-            //}
 
             // CREATE INIT
             if (stateList.Count == 0)
@@ -240,6 +229,9 @@ namespace VVVV.Nodes
                 {
                     stateList = State.DataDeserializeState(StateXML[0]);
                     transitionList = Transition.DataDeserializeTransition(TransitionXML[0]);
+
+                    if (RegionXML[0].Length > 3) regionList = AutomataRegion.DataDeserializeRegion(RegionXML[0]);
+                    EnumManager.UpdateEnum(myGUID + "_Regions", regionList[0].Name, regionList.Select(x => x.Name).ToArray());
                 }
                 catch { FLogger.Log(LogType.Debug, "Loading XML Graph failed!"); }
 
@@ -274,11 +266,21 @@ namespace VVVV.Nodes
             //hit detection for various use
             hitState = stateList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
             hitTransition = transitionList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
+            hitRegion = regionList.FirstOrDefault(x => x.Bounds.Contains(new Point(this.x, this.y)));
+            hitsizeHandle = regionList.FirstOrDefault(x => x.SizeHandle.Contains(new Point(this.x, this.y)));
 
-            previousPosition = MousePosition;
+            if (hitsizeHandle != null) hitRegion = null;
 
-            //delete transitions
-            if (e.Button == MouseButtons.Middle) DeleteTransition(e);
+            previousPosition = MousePosition; // get mouse position difference 
+
+            holdMousePos = new Point(x, y); // on mouse down hold last position
+
+            //delete transitions or Regions
+            if (e.Button == MouseButtons.Middle)
+            {
+                DeleteTransition(e);
+                DeleteRegion(e);
+            }
 
             //hit detection bezier transition
             if (e.Button == MouseButtons.Right)
@@ -376,12 +378,23 @@ namespace VVVV.Nodes
 
             if (stateList.Count > 2) StateXML[0] = State.DataSerializeState(stateList); //update config
 
+            if (regionList.Count > 0) RegionXML[0] = AutomataRegion.DataSerializeRegion(regionList); //update region config
+
             if (dragState != null)
             {
                 dragState = null;
                 TransitionXML[0] = Transition.DataSerializeTransition(transitionList);
             }
 
+            //new selection rectangle ? create region
+            if (p.selectionRectangle.Height != 0)
+            {
+                CreateRegion();
+                p.selectionRectangle.Height = 0;
+            }
+
+            hitRegion = null;
+            hitsizeHandle = null;
         }
 
         private void Form1_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -390,11 +403,13 @@ namespace VVVV.Nodes
             y = Convert.ToInt32((e.Y - p.StagePos.Y) / p.dpi);
             TransitionFramesOut[0] = 0;
 
-            if (hitState == null && hitTransition == null && e.Button == MouseButtons.Left) AddState("MyState"); // Add State 
+            if (hitState == null && hitTransition == null && e.Button == MouseButtons.Left && ModifierKeys != Keys.Shift) AddState("MyState"); // Add State 
 
             else if (hitState != null && hitTransition == null) EditState(hitState); //Edit State
 
             if (hitTransition != null && hitState == null) EditTransition(hitTransition); //Edit Transition
+
+            if (hitState == null && hitTransition == null && hitRegion != null && ModifierKeys == Keys.Shift && e.Button == MouseButtons.Left) EditRegion(hitRegion); // edit region
 
         }
 
@@ -416,7 +431,9 @@ namespace VVVV.Nodes
             }
             #endregion
 
-            #region drag states
+            #region drag things
+
+            //drag stage
             if (selectedState == null && e.Button == MouseButtons.Right)
             {
                 Point mousePos = MousePosition;
@@ -427,10 +444,44 @@ namespace VVVV.Nodes
                 p.StagePos.Y += deltaY;
             }
 
+            //drag state
             if (selectedState != null && e.Button == MouseButtons.Left && dragState == null)
             {
                 selectedState.Move(new Point(Convert.ToInt32(e.X / p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.X / p.dpi), Convert.ToInt32(e.Y / p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.Y / p.dpi)));
             }
+
+            //drag region
+            if (selectedState == null && hitRegion != null && e.Button == MouseButtons.Left && hitsizeHandle == null && dragState == null)
+            {
+                Point mousePos = MousePosition;
+                int deltaX = (mousePos.X - previousPosition.X);
+                int deltaY = (mousePos.Y - previousPosition.Y);
+                previousPosition = MousePosition;
+                hitRegion.Bounds = new Rectangle(hitRegion.Bounds.X + deltaX, hitRegion.Bounds.Y + deltaY, hitRegion.Bounds.Width, hitRegion.Bounds.Height);
+                hitRegion.SizeHandle = new Rectangle(hitRegion.SizeHandle.X + deltaX, hitRegion.SizeHandle.Y + deltaY, 10, 10);
+            }
+
+            //drag size
+
+            if(e.Button == MouseButtons.Left && hitsizeHandle != null)
+            {
+                Point mousePos = MousePosition;
+                int deltaX = (mousePos.X - previousPosition.X);
+                int deltaY = (mousePos.Y - previousPosition.Y);
+                previousPosition = MousePosition;
+
+
+                int sizeX = hitsizeHandle.SizeHandle.X + deltaX;
+                int sizeY = hitsizeHandle.SizeHandle.Y + deltaY;
+
+                if ((sizeX - hitsizeHandle.Bounds.X + 10) < 100) sizeX = hitsizeHandle.Bounds.X + 90;
+                if ((sizeY - hitsizeHandle.Bounds.Y + 10) < 100) sizeY = hitsizeHandle.Bounds.Y + 90;
+
+                hitsizeHandle.SizeHandle = new Rectangle(sizeX, sizeY, 10,10);
+                hitsizeHandle.Bounds = new Rectangle(hitsizeHandle.Bounds.X, hitsizeHandle.Bounds.Y, sizeX - hitsizeHandle.Bounds.X +10, sizeY - hitsizeHandle.Bounds.Y+10);
+
+            }
+
 
             #endregion
 
@@ -442,6 +493,8 @@ namespace VVVV.Nodes
             }
             else targetConnectionState = null;
             #endregion
+
+            SetSelectionRectangle(e);
 
             this.Invalidate(); //redraw
         }
@@ -463,13 +516,13 @@ namespace VVVV.Nodes
                     exists = true;   // achtung test, war vorher true
                     break;
                 }
-                else exists = false; 
+                else exists = false;
             }
 
             // transition does not exist ? ok, create it
             if (exists == false || FAllowMultiple[0])
             {
-                string input = "My Transition"; //dialog text
+                string input = "to" + endState.Name; //dialog text
                 int frames = 1;
                 bool pingpong = false;
                 {
@@ -596,9 +649,18 @@ namespace VVVV.Nodes
                 TransitionNames.Add(transition.Name);
                 TransitionTimeSettingOut.Add(transition.Frames);
             }
-            //new enum technique
-            EnumManager.UpdateEnum(myGUID + "_Transitions", transitionList[0].Name, transitionList.Select(x => x.Name).Distinct().ToArray());
-            EnumManager.UpdateEnum(myGUID + "_AllTransitions", transitionList[0].Name, transitionList.Select(x => x.Name).ToArray());
+
+            if(transitionList.Count > 0)
+            {
+                //new enum technique
+                EnumManager.UpdateEnum(myGUID + "_Transitions", transitionList[0].Name, transitionList.Select(x => x.Name).Distinct().ToArray());
+                EnumManager.UpdateEnum(myGUID + "_AllTransitions", transitionList[0].Name, transitionList.Select(x => x.Name).ToArray());
+            } else
+            {
+                //EnumManager.UpdateEnum(myGUID + "_Transitions", "", transitionList.Select(x => x.Name).Distinct().ToArray());
+                //EnumManager.UpdateEnum(myGUID + "_AllTransitions", "", transitionList.Select(x => x.Name).ToArray());
+            }
+            
         }
 
         private void UpdateStateConfigs()
@@ -607,7 +669,7 @@ namespace VVVV.Nodes
             //update Default State Enum
             EnumManager.UpdateEnum(EnumName, stateList[0].Name, stateList.Select(x => x.Name).ToArray());
             StateXML[0] = State.DataSerializeState(stateList); //save config
-            
+
             //new enum technique
             EnumManager.UpdateEnum(myGUID + "_States", stateList[0].Name, stateList.Select(x => x.Name).ToArray());
             FLogger.Log(LogType.Debug, "update enums state");
@@ -630,6 +692,85 @@ namespace VVVV.Nodes
                 TransitionTimeSettingOut.Add(transition.Frames);
             }
             TransitionsOut.Add("∅");
+        }
+
+        public void SetSelectionRectangle(System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && ModifierKeys == Keys.Shift && hitRegion == null && hitsizeHandle == null)
+            {
+
+                //negative and positive rectangle since drawing doesnt work with negative values
+                var rc = new Rectangle(
+                                        Math.Min(holdMousePos.X, x),
+                                        Math.Min(holdMousePos.Y, y),
+                                        Math.Abs(x - holdMousePos.X),
+                                        Math.Abs(y - holdMousePos.Y));
+                p.selectionRectangle = rc;
+            }
+        }
+
+        private void CreateRegion()
+        {
+            string input = "Region";
+
+            if (PaintAutomataClass.Dialogs.RegionDialog(ref input, "Create Region", p.dpi) == DialogResult.OK)
+            {
+                //add state to state list
+                regionList.Add(new AutomataRegion()
+                {
+                    Name = input,
+                    Bounds = new Rectangle(p.selectionRectangle.Location, p.selectionRectangle.Size),
+                    SizeHandle = new Rectangle(p.selectionRectangle.X + p.selectionRectangle.Width - 10,
+                    p.selectionRectangle.Y +p.selectionRectangle.Height - 10,
+                    10,10)
+                });
+                this.Invalidate(); //redraw
+                UpdateRegionsConfigs();
+            }
+          
+        }
+
+        private void UpdateRegionsConfigs()
+        {
+            // Update Config Pin if there is a change
+
+            if (regionList.Count > 0)
+            {
+                RegionXML[0] = AutomataRegion.DataSerializeRegion(regionList);
+                EnumManager.UpdateEnum(myGUID + "_Regions", regionList[0].Name, regionList.Select(x => x.Name).ToArray());
+            }
+                           
+            else
+            {
+                RegionXML[0] = "";
+                //EnumManager.UpdateEnum(myGUID + "_Regions", "", regionList.Select(x => x.Name).ToArray());
+                
+            }
+
+        }
+
+        private void EditRegion(AutomataRegion region)
+        {
+
+            string input = region.Name;
+
+
+            if (PaintAutomataClass.Dialogs.RegionDialog(ref input, "Edit Region", p.dpi) == DialogResult.OK)
+            {
+                region.Name = input;
+                this.Invalidate(); //redraw
+                UpdateRegionsConfigs();
+            }
+            
+        }
+
+        private void DeleteRegion(System.Windows.Forms.MouseEventArgs e)
+        {
+            if (hitState == null && hitTransition == null)
+            {
+                regionList.RemoveAll(x => x.Bounds.Contains(new Point(this.x, this.y)));
+                UpdateRegionsConfigs();
+            }
         }
 
         #endregion Management
@@ -711,7 +852,7 @@ namespace VVVV.Nodes
                     var diffpin = pin.Value.RawIOObject as IDiffSpread<bool>;
                     if (diffpin[ii] == true && diffpin.SliceCount != 0) //diffpin.IsChanged && JONAS WUNSCHKONZERT
                     {
-                        TriggerTransition(pin.Key, ii,0);
+                        TriggerTransition(pin.Key, ii, 0);
                     }
                 }
             }

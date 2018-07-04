@@ -166,6 +166,41 @@ namespace Automata.Data
 
     }
 
+    public class AutomataRegion
+    {
+        public string Name
+        {
+            get;
+            set;
+        }
 
+        public Rectangle Bounds
+        {
+            get;
+            set;
+        }
 
+        public Rectangle SizeHandle
+        {
+            get;
+            set;
+        }
+
+        //serialize deserialize
+        public static string DataSerializeRegion(List<AutomataRegion> myList)
+        {
+            StringWriter sw = new StringWriter();
+            XmlSerializer s = new XmlSerializer(myList.GetType());
+            s.Serialize(sw, myList);
+            return sw.ToString();
+        }
+
+        public static List<AutomataRegion> DataDeserializeRegion(string data)
+        {
+            XmlSerializer xs = new XmlSerializer(typeof(List<AutomataRegion>));
+            List<AutomataRegion> newList = (List<AutomataRegion>)xs.Deserialize(new StringReader(data));
+            return newList;
+        }
+        //serialize deserialize
+    }
 }

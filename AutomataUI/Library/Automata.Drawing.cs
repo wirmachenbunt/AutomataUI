@@ -34,6 +34,8 @@ namespace Automata.Drawing
         SolidBrush StateBrush = new SolidBrush(Color.FromArgb(50, 50, 50));
         SolidBrush whiteBrush = new SolidBrush(Color.FromArgb(190, 190, 190));
         SolidBrush OrangeBrush = new SolidBrush(Color.Orange);
+        SolidBrush selectbrush = new SolidBrush(Color.FromArgb(50, 255, 255, 255));
+        
 
 
         Color MyColorDarkOrange = Color.DarkOrange;
@@ -44,6 +46,8 @@ namespace Automata.Drawing
         AdjustableArrowCap noArrow = new AdjustableArrowCap(0, 0);
 
         Font myfont = new Font("Serif", 8, FontStyle.Regular);
+        Font largefont = new Font("Serif", 15, FontStyle.Regular);
+
 
         StringFormat format = new StringFormat();
 
@@ -52,8 +56,11 @@ namespace Automata.Drawing
         public List<GraphicsPath> transitionPaths = new List<GraphicsPath>(); //add transitions paths for bezier curves
 
         public BezierEditData bezierEdit = new BezierEditData();
+
+        // selection and region rectangle
+        public Rectangle selectionRectangle = new Rectangle(); //multiselection rectangle
         
-        
+
         #endregion
 
         // Methoden //
@@ -267,6 +274,36 @@ namespace Automata.Drawing
             }
         }
 
+        private void PaintRegions(object sender, PaintEventArgs e)
+        {
+            AutomataUI fw = sender as AutomataUI;
+            if (fw.regionList.Count != 0)
+            {
+                foreach (AutomataRegion region in fw.regionList) // Loop through List with foreach.
+                {
+                    string regionName = region.Name;
+                    e.Graphics.FillRectangle(selectbrush, region.Bounds);
+
+                    Point[] points = {
+                        new Point(region.SizeHandle.X, region.SizeHandle.Y + region.SizeHandle.Height),
+                        new Point(region.SizeHandle.X + region.SizeHandle.Width, region.SizeHandle.Y),
+                        new Point(region.SizeHandle.X + region.SizeHandle.Width, region.SizeHandle.Y + region.SizeHandle.Height) };
+                    e.Graphics.FillPolygon(whiteBrush, points);
+
+                    SizeF stringSize = new SizeF();
+                    stringSize = e.Graphics.MeasureString(regionName, largefont, 1000);
+                    Rectangle textbounds = new Rectangle(region.Bounds.Location, new Size((int)stringSize.Width + 10, (int)stringSize.Height +10));
+
+                    e.Graphics.DrawString(regionName, largefont, whiteBrush, textbounds, format); //text
+                }
+            }
+        }
+
+        private void PaintSelectionRect(PaintEventArgs e)
+        {     
+            e.Graphics.FillRectangle(selectbrush, selectionRectangle);      
+        }
+
         public void JoregMode(object sender, bool JMode)
         {
             AutomataUI fw = sender as AutomataUI; // connect to encapsulating class GUIAutomataUINode aka main.cs
@@ -330,17 +367,21 @@ namespace Automata.Drawing
                     e.Graphics.ScaleTransform(dpi, dpi); //dpi scaling 
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias; // shapeman
                     e.Graphics.Clear(MyBackgroundColor);
-                    e.Graphics.FillEllipse(StateBrush, fw.x - 10, fw.y - 10, 20, 20); // draw mouse
+                    e.Graphics.FillEllipse(StateBrush, fw.x - 10, fw.y - 10, 20, 20); // draw mouse                   
+
+                    PaintRegions(sender, e);
 
                     PaintTransitions(sender, e); //draw transitions
 
-                    PaintEditTransition(sender, e); //draw add connection
+                    PaintEditTransition(sender, e); //draw add connection             
 
                     if (fw.stateList.Count > 1)
                     {
                         PaintStateHighlight(sender, e, fw.TargetStateIndex[fw.ShowSlice[0]], new Pen(MyDarkCyan, 10.0f)); //draw target state highlight
                         PaintStateHighlight(sender, e, fw.ActiveStateIndex[fw.ShowSlice[0]], new Pen(MyColorDarkOrange, 10.0f)); //draw active state highlight 
                     }
+                   
+                    PaintSelectionRect(e);
 
                     PaintStates(sender, e); //draw states
       
@@ -398,7 +439,8 @@ namespace Automata.Drawing
 
                 Form inputBox = new Form();
 
-                inputBox.StartPosition = FormStartPosition.CenterScreen;
+                inputBox.StartPosition = FormStartPosition.Manual;
+                inputBox.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
 
                 inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
                 inputBox.ClientSize = size;
@@ -461,7 +503,8 @@ namespace Automata.Drawing
 
                 Form inputBox = new Form();
 
-                inputBox.StartPosition = FormStartPosition.CenterScreen;
+                inputBox.StartPosition = FormStartPosition.Manual;
+                inputBox.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
 
                 inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
                 inputBox.ClientSize = size;
@@ -523,6 +566,52 @@ namespace Automata.Drawing
                 else input = "empty";
                 frames = Convert.ToInt16(timeUpDown.Value);
                 pingpong = isPingPong.Checked;
+                return result;
+            }
+
+            public static DialogResult RegionDialog(ref string input, string DialogName, float dpi)
+            {
+                System.Drawing.Size size = new System.Drawing.Size(200, 130);
+
+                Form inputBox = new Form();
+
+                inputBox.StartPosition = FormStartPosition.Manual;
+                inputBox.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
+
+                inputBox.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+                inputBox.ClientSize = size;
+                inputBox.Text = DialogName;
+
+                System.Windows.Forms.TextBox textBox = new TextBox();
+                textBox.Size = new System.Drawing.Size(size.Width - 10, 23);
+                textBox.Location = new System.Drawing.Point(5, 5);
+                textBox.Text = input;
+                inputBox.Controls.Add(textBox);
+          
+                Button okButton = new Button();
+                okButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+                okButton.Name = "okButton";
+                okButton.Size = new System.Drawing.Size(90, 23);
+                okButton.Text = "&OK";
+                okButton.Location = new System.Drawing.Point(5, 99);
+                inputBox.Controls.Add(okButton);
+
+                Button cancelButton = new Button();
+                cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+                cancelButton.Name = "cancelButton";
+                cancelButton.Size = new System.Drawing.Size(90, 23);
+                cancelButton.Text = "&Cancel";
+                cancelButton.Location = new System.Drawing.Point(size.Width - 95, 99);
+                inputBox.Controls.Add(cancelButton);
+
+                inputBox.AcceptButton = okButton;
+                inputBox.CancelButton = cancelButton;
+
+                inputBox.Scale(dpi);
+
+                DialogResult result = inputBox.ShowDialog();
+                if (textBox.Text.Length > 0) input = textBox.Text;
+                else input = "empty";
                 return result;
             }
         }

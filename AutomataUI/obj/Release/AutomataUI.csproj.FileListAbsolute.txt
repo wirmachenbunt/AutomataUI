@@ -16,3 +16,5 @@ C:\AutomataUI\AutomataUI\bin\Release\AutomataUI.pdb
 C:\AutomataUI\AutomataUI\obj\Release\AutomataUI.csprojResolveAssemblyReference.cache
 C:\AutomataUI\AutomataUI\obj\Release\AutomataUI.dll
 C:\AutomataUI\AutomataUI\obj\Release\AutomataUI.pdb
+C:\AutomataUI\packs\AutomataUI\nodes\plugins\AutomataUI.dll
+C:\AutomataUI\packs\AutomataUI\nodes\plugins\AutomataUI.pdb

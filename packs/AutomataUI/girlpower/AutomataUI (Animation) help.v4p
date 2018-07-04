@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
-   <PATCH nodename="C:\AutomataUI\packs\AutomataUI\girlpower\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1230" top="5820" width="14760" height="7830">
+   <PATCH nodename="C:\AutomataUI\packs\AutomataUI\girlpower\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="1725" scrolly="5775">
+   <BOUNDS type="Window" left="1395" top="10050" width="23385" height="10500">
    </BOUNDS>
    <PACK Name="addonpack" Version="35.0.0">
    </PACK>
@@ -39,9 +39,9 @@
    <NODE nodename="IOBox (String)" componentmode="InABox" id="32" systemname="IOBox (String)">
    <BOUNDS type="Node" left="216" top="153" width="1005" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="216" top="153" width="4800" height="600">
+   <BOUNDS type="Box" left="216" top="153" width="4815" height="585">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|Automata UI 1.8|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Automata UI 1.9|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -255,9 +255,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="80">
-   <BOUNDS type="Box" left="16155" top="13170" width="2865" height="315">
+   <BOUNDS type="Box" left="16245" top="15360" width="2865" height="315">
    </BOUNDS>
-   <BOUNDS type="Node" left="16155" top="13170" width="0" height="0">
+   <BOUNDS type="Node" left="16245" top="15360" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input String" slicecount="1" visible="1" values="..\Users\Chris\Desktop\lala.txt">
    </PIN>
@@ -271,9 +271,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="86">
-   <BOUNDS type="Box" left="17430" top="13785" width="1740" height="270">
+   <BOUNDS type="Box" left="17520" top="15975" width="1740" height="270">
    </BOUNDS>
-   <BOUNDS type="Node" left="17430" top="13785" width="0" height="0">
+   <BOUNDS type="Node" left="17520" top="15975" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input String" slicecount="1" visible="1" values="|custom message|">
    </PIN>
@@ -287,9 +287,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="89">
-   <BOUNDS type="Node" left="14835" top="14460" width="2655" height="270">
+   <BOUNDS type="Node" left="14925" top="16650" width="2655" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="14835" top="14460" width="2655" height="270">
+   <BOUNDS type="Box" left="14925" top="16650" width="2655" height="270">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|log Automata changes for statistics|">
    </PIN>
@@ -315,9 +315,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="92">
-   <BOUNDS type="Box" left="16575" top="10860" width="480" height="480">
+   <BOUNDS type="Box" left="16665" top="13050" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="16575" top="10860" width="0" height="0">
+   <BOUNDS type="Node" left="16665" top="13050" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -337,9 +337,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="93">
-   <BOUNDS type="Box" left="15405" top="11565" width="795" height="240">
+   <BOUNDS type="Box" left="15495" top="13755" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="15405" top="11565" width="0" height="0">
+   <BOUNDS type="Node" left="15495" top="13755" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="154">
    </PIN>
@@ -355,9 +355,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="94">
-   <BOUNDS type="Box" left="17265" top="11550" width="1590" height="270">
+   <BOUNDS type="Box" left="17355" top="13740" width="1590" height="270">
    </BOUNDS>
-   <BOUNDS type="Node" left="17265" top="11550" width="0" height="0">
+   <BOUNDS type="Node" left="17355" top="13740" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="do">
    </PIN>
@@ -367,9 +367,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="100">
-   <BOUNDS type="Box" left="17205" top="7380" width="1380" height="270">
+   <BOUNDS type="Box" left="17295" top="9570" width="1380" height="270">
    </BOUNDS>
-   <BOUNDS type="Node" left="17205" top="7380" width="0" height="0">
+   <BOUNDS type="Node" left="17295" top="9570" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="open">
    </PIN>
@@ -385,9 +385,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="106">
-   <BOUNDS type="Box" left="16350" top="8895" width="435" height="495">
+   <BOUNDS type="Box" left="16440" top="11085" width="435" height="495">
    </BOUNDS>
-   <BOUNDS type="Node" left="16350" top="8895" width="0" height="0">
+   <BOUNDS type="Node" left="16440" top="11085" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -409,9 +409,9 @@
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="120">
-   <BOUNDS type="Node" left="15195" top="8115" width="2715" height="270">
+   <BOUNDS type="Node" left="15285" top="10305" width="2715" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="15195" top="8115" width="2775" height="330">
+   <BOUNDS type="Box" left="15285" top="10305" width="2775" height="330">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|trigger transitions from everywhere|">
    </PIN>
@@ -423,9 +423,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="121">
-   <BOUNDS type="Node" left="15255" top="9780" width="1785" height="270">
+   <BOUNDS type="Node" left="15345" top="11970" width="1785" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="15255" top="9780" width="2565" height="765">
+   <BOUNDS type="Box" left="15345" top="11970" width="2565" height="765">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|force jump to any state&cr;&lf;overrides any running transition|">
    </PIN>
@@ -485,9 +485,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="127">
-   <BOUNDS type="Box" left="10635" top="1395" width="480" height="480">
+   <BOUNDS type="Box" left="9960" top="1485" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="10635" top="1395" width="0" height="0">
+   <BOUNDS type="Node" left="9960" top="1485" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -507,9 +507,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="128">
-   <BOUNDS type="Box" left="12270" top="1395" width="480" height="480">
+   <BOUNDS type="Box" left="11280" top="1515" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="12270" top="1395" width="0" height="0">
+   <BOUNDS type="Node" left="11280" top="1515" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -525,9 +525,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="129">
-   <BOUNDS type="Box" left="13935" top="1395" width="480" height="480">
+   <BOUNDS type="Box" left="12600" top="1455" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="13935" top="1395" width="0" height="0">
+   <BOUNDS type="Node" left="12600" top="1455" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -543,9 +543,9 @@
    </PIN>
    </NODE>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="130">
-   <BOUNDS type="Node" left="8985" top="1395" width="100" height="100">
+   <BOUNDS type="Node" left="8640" top="1410" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="8985" top="1395" width="480" height="480">
+   <BOUNDS type="Box" left="8640" top="1410" width="480" height="480">
    </BOUNDS>
    <PIN pinname="Value Type" slicecount="1" values="Boolean">
    </PIN>
@@ -575,9 +575,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="132">
-   <BOUNDS type="Node" left="15225" top="12315" width="3075" height="270">
+   <BOUNDS type="Node" left="15315" top="14505" width="3075" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="15225" top="12315" width="3075" height="270">
+   <BOUNDS type="Box" left="15315" top="14505" width="3075" height="270">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|change your transition times dynamically|">
    </PIN>
@@ -589,9 +589,9 @@
    </PIN>
    </NODE>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="134">
-   <BOUNDS type="Node" left="16200" top="7155" width="100" height="100">
+   <BOUNDS type="Node" left="16290" top="9345" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="16200" top="7155" width="480" height="480">
+   <BOUNDS type="Box" left="16290" top="9345" width="480" height="480">
    </BOUNDS>
    <PIN pinname="Value Type" slicecount="1" values="Boolean">
    </PIN>
@@ -641,7 +641,7 @@
    <LINK srcnodeid="25" srcpinname="Out" dstnodeid="123" dstpinname="Y Input Value">
    </LINK>
    <NODE systemname="Logging (AutomataUI Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="Logging (AutomataUI Animation)" componentmode="Hidden" id="78">
-   <BOUNDS type="Node" left="14880" top="14160" width="2610" height="270">
+   <BOUNDS type="Node" left="14970" top="16350" width="2610" height="270">
    </BOUNDS>
    <PIN pinname="AutomataUI" visible="1" slicecount="1" values="||">
    </PIN>
@@ -657,9 +657,9 @@
    <LINK srcnodeid="86" srcpinname="Output String" dstnodeid="78" dstpinname="Message">
    </LINK>
    <NODE systemname="SetTransitionTime (AutomataUI Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="SetTransitionTime (AutomataUI Animation)" componentmode="Hidden" id="97">
-   <BOUNDS type="Node" left="15165" top="12000" width="2160" height="270">
+   <BOUNDS type="Node" left="15255" top="14190" width="2160" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="15165" top="12000" width="3000" height="3000">
+   <BOUNDS type="Box" left="15255" top="14190" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="AutomataUI" visible="1" slicecount="1" values="||">
    </PIN>
@@ -673,17 +673,17 @@
    <LINK srcnodeid="94" srcpinname="Output Enum" dstnodeid="97" dstpinname="Transition">
    </LINK>
    <LINK srcnodeid="93" srcpinname="Y Output Value" dstnodeid="97" dstpinname="Time" linkstyle="VHV">
-   <LINKPOINT x="15465" y="11888">
+   <LINKPOINT x="15555" y="14078">
    </LINKPOINT>
-   <LINKPOINT x="15870" y="11888">
+   <LINKPOINT x="15960" y="14078">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="92" srcpinname="Y Output Value" dstnodeid="97" dstpinname="Set">
    </LINK>
    <NODE systemname="TriggerTransition (AutomataUI Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="TriggerTransition (AutomataUI Animation)" componentmode="Hidden" id="99">
-   <BOUNDS type="Node" left="15225" top="7785" width="2040" height="270">
+   <BOUNDS type="Node" left="15315" top="9975" width="2040" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="15225" top="7785" width="3000" height="3000">
+   <BOUNDS type="Box" left="15315" top="9975" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="AutomataUI" visible="1" slicecount="1" values="||">
    </PIN>
@@ -697,9 +697,9 @@
    <LINK srcnodeid="134" srcpinname="Y Output Value" dstnodeid="99" dstpinname="Trigger">
    </LINK>
    <NODE systemname="ResetToState (AutomataUI Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="ResetToState (AutomataUI Animation)" componentmode="Hidden" id="105">
-   <BOUNDS type="Node" left="15270" top="9480" width="2205" height="270">
+   <BOUNDS type="Node" left="15360" top="11670" width="2205" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="15270" top="9480" width="3000" height="3000">
+   <BOUNDS type="Box" left="15360" top="11670" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="AutomataUI" visible="1" slicecount="1" values="||">
    </PIN>
@@ -715,13 +715,13 @@
    <NODE systemname="AutomataUI (Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="AutomataUI (Animation)" componentmode="InAWindow" id="124">
    <BOUNDS type="Node" left="7316" top="2188" width="6670" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="1215" top="-165" width="8025" height="6075">
+   <BOUNDS type="Window" left="19005" top="2340" width="15615" height="12810">
    </BOUNDS>
-   <PIN pinname="StateXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfState xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;40&lt;/X&gt;&cr;&lf;        &lt;Y&gt;59&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;40&lt;/X&gt;&cr;&lf;      &lt;Y&gt;59&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;233&lt;/X&gt;&cr;&lf;        &lt;Y&gt;62&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;233&lt;/X&gt;&cr;&lf;      &lt;Y&gt;62&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;425&lt;/X&gt;&cr;&lf;        &lt;Y&gt;146&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;425&lt;/X&gt;&cr;&lf;      &lt;Y&gt;146&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;212&lt;/X&gt;&cr;&lf;        &lt;Y&gt;252&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;212&lt;/X&gt;&cr;&lf;      &lt;Y&gt;252&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;&lt;/ArrayOfState&gt;|">
+   <PIN pinname="StateXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfState xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;85&lt;/X&gt;&cr;&lf;        &lt;Y&gt;416&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;85&lt;/X&gt;&cr;&lf;      &lt;Y&gt;416&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;455&lt;/X&gt;&cr;&lf;        &lt;Y&gt;240&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;455&lt;/X&gt;&cr;&lf;      &lt;Y&gt;240&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;692&lt;/X&gt;&cr;&lf;        &lt;Y&gt;334&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;692&lt;/X&gt;&cr;&lf;      &lt;Y&gt;334&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;479&lt;/X&gt;&cr;&lf;        &lt;Y&gt;507&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;479&lt;/X&gt;&cr;&lf;      &lt;Y&gt;507&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;&lt;/ArrayOfState&gt;|">
    </PIN>
    <PIN pinname="SpreadCount" slicecount="1" visible="1" values="5">
    </PIN>
-   <PIN pinname="TransitionXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfTransition xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;go&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;69&lt;/X&gt;&cr;&lf;          &lt;Y&gt;317&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;69&lt;/X&gt;&cr;&lf;        &lt;Y&gt;317&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;245&lt;/X&gt;&cr;&lf;          &lt;Y&gt;122&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;245&lt;/X&gt;&cr;&lf;        &lt;Y&gt;122&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;200&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;170&lt;/X&gt;&cr;&lf;        &lt;Y&gt;247&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;44&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;170&lt;/X&gt;&cr;&lf;      &lt;Y&gt;247&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;44&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;open&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;245&lt;/X&gt;&cr;&lf;          &lt;Y&gt;122&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;245&lt;/X&gt;&cr;&lf;        &lt;Y&gt;122&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;499&lt;/X&gt;&cr;&lf;          &lt;Y&gt;262&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;499&lt;/X&gt;&cr;&lf;        &lt;Y&gt;262&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;100&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;382&lt;/X&gt;&cr;&lf;        &lt;Y&gt;220&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;50&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;382&lt;/X&gt;&cr;&lf;      &lt;Y&gt;220&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;50&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;do&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;499&lt;/X&gt;&cr;&lf;          &lt;Y&gt;262&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;499&lt;/X&gt;&cr;&lf;        &lt;Y&gt;262&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;391&lt;/X&gt;&cr;&lf;          &lt;Y&gt;391&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;391&lt;/X&gt;&cr;&lf;        &lt;Y&gt;391&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;31&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;461&lt;/X&gt;&cr;&lf;        &lt;Y&gt;355&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;38&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;461&lt;/X&gt;&cr;&lf;      &lt;Y&gt;355&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;38&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;return&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;391&lt;/X&gt;&cr;&lf;          &lt;Y&gt;391&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;391&lt;/X&gt;&cr;&lf;        &lt;Y&gt;391&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;245&lt;/X&gt;&cr;&lf;          &lt;Y&gt;122&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;245&lt;/X&gt;&cr;&lf;        &lt;Y&gt;122&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;44&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;326&lt;/X&gt;&cr;&lf;        &lt;Y&gt;285&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;54&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;326&lt;/X&gt;&cr;&lf;      &lt;Y&gt;285&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;54&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;&lt;/ArrayOfTransition&gt;|">
+   <PIN pinname="TransitionXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfTransition xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;go&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;85&lt;/X&gt;&cr;&lf;          &lt;Y&gt;416&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;85&lt;/X&gt;&cr;&lf;        &lt;Y&gt;416&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;385&lt;/X&gt;&cr;&lf;          &lt;Y&gt;302&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;385&lt;/X&gt;&cr;&lf;        &lt;Y&gt;302&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;100&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;248&lt;/X&gt;&cr;&lf;        &lt;Y&gt;387&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;44&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;248&lt;/X&gt;&cr;&lf;      &lt;Y&gt;387&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;44&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;open&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;385&lt;/X&gt;&cr;&lf;          &lt;Y&gt;302&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;385&lt;/X&gt;&cr;&lf;        &lt;Y&gt;302&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;831&lt;/X&gt;&cr;&lf;          &lt;Y&gt;107&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;831&lt;/X&gt;&cr;&lf;        &lt;Y&gt;107&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;100&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;615&lt;/X&gt;&cr;&lf;        &lt;Y&gt;233&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;56&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;615&lt;/X&gt;&cr;&lf;      &lt;Y&gt;233&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;56&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;do&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;831&lt;/X&gt;&cr;&lf;          &lt;Y&gt;107&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;831&lt;/X&gt;&cr;&lf;        &lt;Y&gt;107&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;555&lt;/X&gt;&cr;&lf;          &lt;Y&gt;501&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;555&lt;/X&gt;&cr;&lf;        &lt;Y&gt;501&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;31&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;709&lt;/X&gt;&cr;&lf;        &lt;Y&gt;332&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;38&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;709&lt;/X&gt;&cr;&lf;      &lt;Y&gt;332&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;38&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;return&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;555&lt;/X&gt;&cr;&lf;          &lt;Y&gt;501&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;555&lt;/X&gt;&cr;&lf;        &lt;Y&gt;501&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;385&lt;/X&gt;&cr;&lf;          &lt;Y&gt;302&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;385&lt;/X&gt;&cr;&lf;        &lt;Y&gt;302&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;44&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;478&lt;/X&gt;&cr;&lf;        &lt;Y&gt;429&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;54&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;478&lt;/X&gt;&cr;&lf;      &lt;Y&gt;429&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;54&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;&lt;/ArrayOfTransition&gt;|">
    </PIN>
    <PIN pinname="TransitionNames" slicecount="4" values="go,open,do,return">
    </PIN>
@@ -733,7 +733,11 @@
    </PIN>
    <PIN pinname="return" visible="1">
    </PIN>
-   <PIN pinname="Show Slice" slicecount="1" values="0">
+   <PIN pinname="Show Slice" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="RegionXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfAutomataRegion xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;AutomataRegion&gt;&cr;&lf;    &lt;Name&gt;Game&lt;/Name&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;290&lt;/X&gt;&cr;&lf;        &lt;Y&gt;152&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;387&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;511&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;290&lt;/X&gt;&cr;&lf;      &lt;Y&gt;152&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;387&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;511&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;    &lt;SizeHandle&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;667&lt;/X&gt;&cr;&lf;        &lt;Y&gt;653&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;10&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;10&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;667&lt;/X&gt;&cr;&lf;      &lt;Y&gt;653&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;10&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;10&lt;/Height&gt;&cr;&lf;    &lt;/SizeHandle&gt;&cr;&lf;  &lt;/AutomataRegion&gt;&cr;&lf;&lt;/ArrayOfAutomataRegion&gt;|">
+   </PIN>
+   <PIN pinname="AutomataUI" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="124" srcpinname="Output" dstnodeid="33" dstpinname="Input String">
@@ -764,18 +768,18 @@
    </LINK>
    <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="25" dstpinname="AutomataUI" hiddenwhenlocked="1">
    </LINK>
-   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="78" dstpinname="AutomataUI" hiddenwhenlocked="1">
+   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="78" dstpinname="AutomataUI" hiddenwhenlocked="1" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="97" dstpinname="AutomataUI" hiddenwhenlocked="1">
+   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="97" dstpinname="AutomataUI" hiddenwhenlocked="1" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="99" dstpinname="AutomataUI" hiddenwhenlocked="1">
+   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="99" dstpinname="AutomataUI" hiddenwhenlocked="1" linkstyle="PolyLine">
    </LINK>
-   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="105" dstpinname="AutomataUI" hiddenwhenlocked="1">
+   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="105" dstpinname="AutomataUI" hiddenwhenlocked="1" linkstyle="PolyLine">
    </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="135">
-   <BOUNDS type="Box" left="17415" top="8925" width="1590" height="270">
+   <BOUNDS type="Box" left="17505" top="11115" width="1590" height="270">
    </BOUNDS>
-   <BOUNDS type="Node" left="17415" top="8925" width="0" height="0">
+   <BOUNDS type="Node" left="17505" top="11115" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="Init">
    </PIN>
@@ -820,4 +824,92 @@
    <PIN pinname="Size" slicecount="1" values="29">
    </PIN>
    </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="140">
+   <BOUNDS type="Box" left="15405" top="7920" width="795" height="705">
+   </BOUNDS>
+   <BOUNDS type="Node" left="15405" top="7920" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="RegionActive">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="141">
+   <BOUNDS type="Node" left="15570" top="7290" width="2490" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="15570" top="7290" width="2775" height="630">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|test if a state or transition within the region is active or not&cr;&lf;|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <PACK Name="dx11" Version="1.3.1.1">
+   </PACK>
+   <NODE systemname="GetRegion (AutomataUI Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="GetRegion (AutomataUI Animation)" componentmode="Hidden" id="143">
+   <BOUNDS type="Node" left="15405" top="6930" width="3180" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="15405" top="6930" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Region" visible="1">
+   </PIN>
+   <PIN pinname="Ignore Transitions" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Elapsed Region Time" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="143" srcpinname="RegionActive" dstnodeid="140" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="143" dstpinname="AutomataUI" hiddenwhenlocked="1">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="144">
+   <BOUNDS type="Box" left="18540" top="6270" width="1620" height="495">
+   </BOUNDS>
+   <BOUNDS type="Node" left="18540" top="6270" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Game">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="Region">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="144" srcpinname="Output Enum" dstnodeid="143" dstpinname="Region">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="145">
+   <BOUNDS type="Box" left="18540" top="7350" width="795" height="300">
+   </BOUNDS>
+   <BOUNDS type="Node" left="18540" top="7350" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Elapsed Region Time|">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="143" srcpinname="Elapsed Region Time" dstnodeid="145" dstpinname="Y Input Value">
+   </LINK>
    </PATCH>
