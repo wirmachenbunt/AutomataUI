@@ -649,9 +649,18 @@ namespace VVVV.Nodes
                 TransitionNames.Add(transition.Name);
                 TransitionTimeSettingOut.Add(transition.Frames);
             }
-            //new enum technique
-            EnumManager.UpdateEnum(myGUID + "_Transitions", transitionList[0].Name, transitionList.Select(x => x.Name).Distinct().ToArray());
-            EnumManager.UpdateEnum(myGUID + "_AllTransitions", transitionList[0].Name, transitionList.Select(x => x.Name).ToArray());
+
+            if(transitionList.Count > 0)
+            {
+                //new enum technique
+                EnumManager.UpdateEnum(myGUID + "_Transitions", transitionList[0].Name, transitionList.Select(x => x.Name).Distinct().ToArray());
+                EnumManager.UpdateEnum(myGUID + "_AllTransitions", transitionList[0].Name, transitionList.Select(x => x.Name).ToArray());
+            } else
+            {
+                //EnumManager.UpdateEnum(myGUID + "_Transitions", "", transitionList.Select(x => x.Name).Distinct().ToArray());
+                //EnumManager.UpdateEnum(myGUID + "_AllTransitions", "", transitionList.Select(x => x.Name).ToArray());
+            }
+            
         }
 
         private void UpdateStateConfigs()
@@ -724,10 +733,20 @@ namespace VVVV.Nodes
         private void UpdateRegionsConfigs()
         {
             // Update Config Pin if there is a change
-            RegionXML[0] = AutomataRegion.DataSerializeRegion(regionList);
 
-            //new enum technique
-            EnumManager.UpdateEnum(myGUID + "_Regions", regionList[0].Name, regionList.Select(x => x.Name).ToArray());
+            if (regionList.Count > 0)
+            {
+                RegionXML[0] = AutomataRegion.DataSerializeRegion(regionList);
+                EnumManager.UpdateEnum(myGUID + "_Regions", regionList[0].Name, regionList.Select(x => x.Name).ToArray());
+            }
+                           
+            else
+            {
+                RegionXML[0] = "";
+                //EnumManager.UpdateEnum(myGUID + "_Regions", "", regionList.Select(x => x.Name).ToArray());
+                
+            }
+
         }
 
         private void EditRegion(AutomataRegion region)

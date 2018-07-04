@@ -8,6 +8,7 @@ using VVVV.Utils.VColor;
 using VVVV.Utils.VMath;
 using System.Linq;
 using VVVV.Nodes;
+using System.Drawing;
 
 using VVVV.Core.Logging;
 #endregion usings
@@ -83,16 +84,48 @@ namespace VVVV.Nodes
             {
                 Initialize();
 
-                RegionActive.SliceCount = RegionEnum.IOObject.SliceCount * AutomataUI[0].ActiveStateIndex.SliceCount; //set Slicecount to amount of incoming Automatas
-
-                for (int j = 0; j < RegionEnum.IOObject.SliceCount; j++)
+                if (AutomataUI[0].regionList.Count > 0)
                 {
-                    for (int i = 0; i < AutomataUI[0].ActiveStateIndex.SliceCount; i++) // spreaded
+                    RegionActive.SliceCount = RegionEnum.IOObject.SliceCount * AutomataUI[0].ActiveStateIndex.SliceCount; //set Slicecount to amount of incoming Automatas
+
+                    for (int j = 0; j < RegionEnum.IOObject.SliceCount; j++)
                     {
-                       
+
+
+                        int index = RegionEnum.IOObject[j].Index;
+
+
+                        Rectangle thisRegion = AutomataUI[0].regionList[index].Bounds;
+
+
+                        for (int i = 0; i < AutomataUI[0].ActiveStateIndex.SliceCount; i++) // spreaded
+                        {
+
+                            int offset = i + (j * AutomataUI[0].ActiveStateIndex.SliceCount);
+
+                            int stateIndex = AutomataUI[0].ActiveStateIndex[i];
+                            Rectangle state = AutomataUI[0].stateList[stateIndex].Bounds;
+
+
+                            Rectangle transition;
+
+                            int transitionIndex = AutomataUI[0].TransitionIndex[i];
+                            if (transitionIndex == AutomataUI[0].transitionList.Count) // index ist "fake" nil transiton, dann ist keine transition aktiv
+                            {
+                                transitionIndex = 0;
+                                transition = new Rectangle(10000000, 10000000, 0, 0);
+                            }
+                            else //wenn transition aktiv ist, kann kein state aktiv sein
+                            {
+                                transition = AutomataUI[0].transitionList[transitionIndex].Bounds;
+                                state = new Rectangle(10000000, 10000000, 0, 0); ;
+                            }
+
+                            if (thisRegion.IntersectsWith(state) || thisRegion.IntersectsWith(transition)) RegionActive[offset] = true;
+                            else RegionActive[offset] = false;
+                        }
                     }
                 }
-
             }
         }
     }
