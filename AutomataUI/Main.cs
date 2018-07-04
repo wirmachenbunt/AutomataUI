@@ -522,7 +522,7 @@ namespace VVVV.Nodes
             // transition does not exist ? ok, create it
             if (exists == false || FAllowMultiple[0])
             {
-                string input = "My Transition"; //dialog text
+                string input = "to" + endState.Name; //dialog text
                 int frames = 1;
                 bool pingpong = false;
                 {

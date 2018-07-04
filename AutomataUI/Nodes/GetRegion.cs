@@ -30,8 +30,14 @@ namespace VVVV.Nodes
         [Input("AutomataUI")]
         public Pin<AutomataUI> AutomataUI;
 
+        [Input("Ignore Transitions")]
+        public ISpread<bool> IgnoreTransitions;
+
         [Output("RegionActive")]
         public ISpread<bool> RegionActive;
+
+        [Output("Elapsed Region Time")]
+        public ISpread<int> ElapsedRegionTime;
 
         [Import()]
         public ILogger FLogger;
@@ -87,16 +93,14 @@ namespace VVVV.Nodes
                 if (AutomataUI[0].regionList.Count > 0)
                 {
                     RegionActive.SliceCount = RegionEnum.IOObject.SliceCount * AutomataUI[0].ActiveStateIndex.SliceCount; //set Slicecount to amount of incoming Automatas
+                    ElapsedRegionTime.SliceCount = RegionActive.SliceCount;
+
 
                     for (int j = 0; j < RegionEnum.IOObject.SliceCount; j++)
                     {
-
-
                         int index = RegionEnum.IOObject[j].Index;
 
-
                         Rectangle thisRegion = AutomataUI[0].regionList[index].Bounds;
-
 
                         for (int i = 0; i < AutomataUI[0].ActiveStateIndex.SliceCount; i++) // spreaded
                         {
@@ -121,8 +125,24 @@ namespace VVVV.Nodes
                                 state = new Rectangle(10000000, 10000000, 0, 0); ;
                             }
 
-                            if (thisRegion.IntersectsWith(state) || thisRegion.IntersectsWith(transition)) RegionActive[offset] = true;
-                            else RegionActive[offset] = false;
+
+                            //set output active or not, with or without looking at transitions too
+                            if(IgnoreTransitions[j])
+                            {
+                                if (thisRegion.IntersectsWith(state)) RegionActive[offset] = true;
+                                else RegionActive[offset] = false;
+                            } else
+
+                            {
+                                if (thisRegion.IntersectsWith(state) || thisRegion.IntersectsWith(transition)) RegionActive[offset] = true;
+                                else RegionActive[offset] = false;
+                            }
+
+                            //region timing
+                            if (RegionActive[offset]) ElapsedRegionTime[offset] += 1;
+                            else ElapsedRegionTime[offset] = 0; 
+                            
+                                   
                         }
                     }
                 }
