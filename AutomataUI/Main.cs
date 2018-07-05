@@ -587,7 +587,7 @@ namespace VVVV.Nodes
                 stateList.Add(new State()
                 {
                     ID = Automata.Data.State.RNGCharacterMask(),
-                    Name = input,
+                    Name = UppercaseFirst(input),
                     Frames = frames,
                     Bounds = new Rectangle(new Point(x - (p.StateSize / 2), y - (p.StateSize / 2)), new Size(p.StateSize, p.StateSize))
                 });
@@ -606,7 +606,7 @@ namespace VVVV.Nodes
             {
                 if (PaintAutomataClass.Dialogs.ShowInputDialog(ref input, ref frames, "Edit State", p.dpi) == DialogResult.OK)
                 {
-                    state.Name = input;
+                    state.Name = UppercaseFirst(input);
                     state.Frames = frames;
                     UpdateStateConfigs(); // update JSON,Enums and Redraw
                     UpdateOutputs();
@@ -829,6 +829,17 @@ namespace VVVV.Nodes
                     i++;
                 }
             }
+        }
+
+        static string UppercaseFirst(string s)
+        {
+            // Check for empty string.
+            if (string.IsNullOrEmpty(s))
+            {
+                return string.Empty;
+            }
+            // Return char and concat substring.
+            return char.ToUpper(s[0]) + s.Substring(1);
         }
 
         public void Evaluate(int SpreadMax)
