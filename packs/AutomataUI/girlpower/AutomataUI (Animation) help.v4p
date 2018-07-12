@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta36.dtd" >
-   <PATCH nodename="C:\AutomataUI\packs\AutomataUI\girlpower\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1395" top="10050" width="15615" height="8715">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
+   <PATCH nodename="C:\AutomataUI\packs\AutomataUI\girlpower\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="0" locked="0">
+   <BOUNDS type="Window" left="1395" top="10050" width="15735" height="10530">
    </BOUNDS>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="35.0.0">
    </PACK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="34" systemname="IOBox (String)">
    <BOUNDS type="Node" left="576" top="4758" width="2355" height="270">
@@ -639,15 +639,15 @@
    <NODE systemname="AutomataUI (Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="AutomataUI (Animation)" componentmode="InAWindow" id="124">
    <BOUNDS type="Node" left="7661" top="2863" width="6670" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="1635" top="150" width="14475" height="9915">
+   <BOUNDS type="Window" left="1860" top="225" width="14475" height="9915">
    </BOUNDS>
-   <PIN pinname="StateXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfState xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;123&lt;/X&gt;&cr;&lf;        &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;123&lt;/X&gt;&cr;&lf;      &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;60&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;481&lt;/X&gt;&cr;&lf;        &lt;Y&gt;137&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;481&lt;/X&gt;&cr;&lf;      &lt;Y&gt;137&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;679&lt;/X&gt;&cr;&lf;        &lt;Y&gt;265&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;679&lt;/X&gt;&cr;&lf;      &lt;Y&gt;265&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;487&lt;/X&gt;&cr;&lf;        &lt;Y&gt;425&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;487&lt;/X&gt;&cr;&lf;      &lt;Y&gt;425&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;&lt;/ArrayOfState&gt;|">
+   <PIN pinname="StateXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfState xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;146&lt;/X&gt;&cr;&lf;        &lt;Y&gt;156&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;146&lt;/X&gt;&cr;&lf;      &lt;Y&gt;156&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;441&lt;/X&gt;&cr;&lf;        &lt;Y&gt;114&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;441&lt;/X&gt;&cr;&lf;      &lt;Y&gt;114&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;686&lt;/X&gt;&cr;&lf;        &lt;Y&gt;317&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;686&lt;/X&gt;&cr;&lf;      &lt;Y&gt;317&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;  &lt;State&gt;&cr;&lf;    &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;    &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;    &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;    &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;440&lt;/X&gt;&cr;&lf;        &lt;Y&gt;446&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;440&lt;/X&gt;&cr;&lf;      &lt;Y&gt;446&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/State&gt;&cr;&lf;&lt;/ArrayOfState&gt;|">
    </PIN>
    <PIN pinname="SpreadCount" slicecount="1" visible="1" values="5">
    </PIN>
-   <PIN pinname="TransitionXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfTransition xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;toMenu&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;123&lt;/X&gt;&cr;&lf;          &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;123&lt;/X&gt;&cr;&lf;        &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;60&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;481&lt;/X&gt;&cr;&lf;          &lt;Y&gt;137&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;481&lt;/X&gt;&cr;&lf;        &lt;Y&gt;137&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;100&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;303&lt;/X&gt;&cr;&lf;        &lt;Y&gt;165&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;69&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;303&lt;/X&gt;&cr;&lf;      &lt;Y&gt;165&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;69&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;toSubmenu&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;60&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;481&lt;/X&gt;&cr;&lf;          &lt;Y&gt;137&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;481&lt;/X&gt;&cr;&lf;        &lt;Y&gt;137&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;682&lt;/X&gt;&cr;&lf;          &lt;Y&gt;268&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;682&lt;/X&gt;&cr;&lf;        &lt;Y&gt;268&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;578&lt;/X&gt;&cr;&lf;        &lt;Y&gt;231&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;76&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;578&lt;/X&gt;&cr;&lf;      &lt;Y&gt;231&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;76&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;toGallery&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;682&lt;/X&gt;&cr;&lf;          &lt;Y&gt;268&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;682&lt;/X&gt;&cr;&lf;        &lt;Y&gt;268&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;487&lt;/X&gt;&cr;&lf;          &lt;Y&gt;425&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;487&lt;/X&gt;&cr;&lf;        &lt;Y&gt;425&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;588&lt;/X&gt;&cr;&lf;        &lt;Y&gt;375&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;64&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;588&lt;/X&gt;&cr;&lf;      &lt;Y&gt;375&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;64&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;toMenu&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;487&lt;/X&gt;&cr;&lf;          &lt;Y&gt;425&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;487&lt;/X&gt;&cr;&lf;        &lt;Y&gt;425&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;60&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;481&lt;/X&gt;&cr;&lf;          &lt;Y&gt;137&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;481&lt;/X&gt;&cr;&lf;        &lt;Y&gt;137&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;491&lt;/X&gt;&cr;&lf;        &lt;Y&gt;309&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;56&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;491&lt;/X&gt;&cr;&lf;      &lt;Y&gt;309&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;56&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;&lt;/ArrayOfTransition&gt;|">
+   <PIN pinname="TransitionXML" slicecount="1" values="|&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&cr;&lf;&lt;ArrayOfTransition xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;toMenu&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;Init&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Init&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;146&lt;/X&gt;&cr;&lf;          &lt;Y&gt;156&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;146&lt;/X&gt;&cr;&lf;        &lt;Y&gt;156&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;438&lt;/X&gt;&cr;&lf;          &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;438&lt;/X&gt;&cr;&lf;        &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;100&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;293&lt;/X&gt;&cr;&lf;        &lt;Y&gt;175&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;69&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;293&lt;/X&gt;&cr;&lf;      &lt;Y&gt;175&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;69&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;toSubmenu&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;438&lt;/X&gt;&cr;&lf;          &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;438&lt;/X&gt;&cr;&lf;        &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;699&lt;/X&gt;&cr;&lf;          &lt;Y&gt;327&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;699&lt;/X&gt;&cr;&lf;        &lt;Y&gt;327&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;574&lt;/X&gt;&cr;&lf;        &lt;Y&gt;248&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;76&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;574&lt;/X&gt;&cr;&lf;      &lt;Y&gt;248&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;76&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;toGallery&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;699&lt;/X&gt;&cr;&lf;          &lt;Y&gt;327&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;699&lt;/X&gt;&cr;&lf;        &lt;Y&gt;327&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;440&lt;/X&gt;&cr;&lf;          &lt;Y&gt;446&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;440&lt;/X&gt;&cr;&lf;        &lt;Y&gt;446&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;572&lt;/X&gt;&cr;&lf;        &lt;Y&gt;415&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;64&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;572&lt;/X&gt;&cr;&lf;      &lt;Y&gt;415&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;64&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;toMenu&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;HPRQo4oi&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Gallery&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;440&lt;/X&gt;&cr;&lf;          &lt;Y&gt;446&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;440&lt;/X&gt;&cr;&lf;        &lt;Y&gt;446&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;438&lt;/X&gt;&cr;&lf;          &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;438&lt;/X&gt;&cr;&lf;        &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;446&lt;/X&gt;&cr;&lf;        &lt;Y&gt;320&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;56&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;446&lt;/X&gt;&cr;&lf;      &lt;Y&gt;320&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;56&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;  &lt;Transition&gt;&cr;&lf;    &lt;Name&gt;toMenu&lt;/Name&gt;&cr;&lf;    &lt;startState&gt;&cr;&lf;      &lt;ID&gt;VZEPwLcS&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Submenu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;0&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;699&lt;/X&gt;&cr;&lf;          &lt;Y&gt;327&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;699&lt;/X&gt;&cr;&lf;        &lt;Y&gt;327&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/startState&gt;&cr;&lf;    &lt;endState&gt;&cr;&lf;      &lt;ID&gt;3ljphdUh&lt;/ID&gt;&cr;&lf;      &lt;Name&gt;Menu&lt;/Name&gt;&cr;&lf;      &lt;Active&gt;false&lt;/Active&gt;&cr;&lf;      &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;      &lt;Bounds&gt;&cr;&lf;        &lt;Location&gt;&cr;&lf;          &lt;X&gt;438&lt;/X&gt;&cr;&lf;          &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;        &lt;/Location&gt;&cr;&lf;        &lt;Size&gt;&cr;&lf;          &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;          &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;        &lt;/Size&gt;&cr;&lf;        &lt;X&gt;438&lt;/X&gt;&cr;&lf;        &lt;Y&gt;138&lt;/Y&gt;&cr;&lf;        &lt;Width&gt;70&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;70&lt;/Height&gt;&cr;&lf;      &lt;/Bounds&gt;&cr;&lf;    &lt;/endState&gt;&cr;&lf;    &lt;startBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/startBezierPoint&gt;&cr;&lf;    &lt;endBezierPoint&gt;&cr;&lf;      &lt;X&gt;0&lt;/X&gt;&cr;&lf;      &lt;Y&gt;0&lt;/Y&gt;&cr;&lf;    &lt;/endBezierPoint&gt;&cr;&lf;    &lt;Frames&gt;1&lt;/Frames&gt;&cr;&lf;    &lt;IsPingPong&gt;false&lt;/IsPingPong&gt;&cr;&lf;    &lt;Bounds&gt;&cr;&lf;      &lt;Location&gt;&cr;&lf;        &lt;X&gt;566&lt;/X&gt;&cr;&lf;        &lt;Y&gt;273&lt;/Y&gt;&cr;&lf;      &lt;/Location&gt;&cr;&lf;      &lt;Size&gt;&cr;&lf;        &lt;Width&gt;56&lt;/Width&gt;&cr;&lf;        &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;      &lt;/Size&gt;&cr;&lf;      &lt;X&gt;566&lt;/X&gt;&cr;&lf;      &lt;Y&gt;273&lt;/Y&gt;&cr;&lf;      &lt;Width&gt;56&lt;/Width&gt;&cr;&lf;      &lt;Height&gt;14&lt;/Height&gt;&cr;&lf;    &lt;/Bounds&gt;&cr;&lf;  &lt;/Transition&gt;&cr;&lf;&lt;/ArrayOfTransition&gt;|">
    </PIN>
-   <PIN pinname="TransitionNames" slicecount="4" values="toMenu,toSubmenu,toGallery,toMenu">
+   <PIN pinname="TransitionNames" slicecount="5" values="toMenu,toSubmenu,toGallery,toMenu,toMenu">
    </PIN>
    <PIN pinname="go" visible="1" slicecount="1" values="0">
    </PIN>
@@ -667,9 +667,9 @@
    </PIN>
    <PIN pinname="toMenu" visible="1">
    </PIN>
-   <PIN pinname="toSubmenu" visible="1">
+   <PIN pinname="toSubmenu" visible="1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="toGallery" visible="1">
+   <PIN pinname="toGallery" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="124" srcpinname="Output" dstnodeid="33" dstpinname="Input String">
@@ -858,46 +858,6 @@
    </NODE>
    <LINK srcnodeid="146" srcpinname="Y Output Value" dstnodeid="124" dstpinname="toMenu">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="147">
-   <BOUNDS type="Box" left="12060" top="2505" width="285" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="12060" top="2505" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Bang">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="toSubmenu">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="147" srcpinname="Y Output Value" dstnodeid="124" dstpinname="toSubmenu">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="148">
-   <BOUNDS type="Box" left="14265" top="2490" width="285" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="14265" top="2490" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Bang">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="toGallery">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="148" srcpinname="Y Output Value" dstnodeid="124" dstpinname="toGallery">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="150">
    <BOUNDS type="Box" left="17325" top="6915" width="480" height="480">
    </BOUNDS>
@@ -917,5 +877,111 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="150" srcpinname="Y Output Value" dstnodeid="143" dstpinname="Ignore Transitions">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="157">
+   <BOUNDS type="Box" left="16290" top="18300" width="945" height="840">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16290" top="18300" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Undo">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="163">
+   <BOUNDS type="Box" left="17280" top="18990" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="17280" top="18990" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Reset History|">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="Undo (AutomataUI Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="Undo (AutomataUI Animation)" componentmode="Hidden" id="164">
+   <BOUNDS type="Node" left="15285" top="19635" width="2040" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="15285" top="19635" width="3000" height="3000">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="164" dstpinname="AutomataUI" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="157" srcpinname="Y Output Value" dstnodeid="164" dstpinname="Undo">
+   </LINK>
+   <LINK srcnodeid="163" srcpinname="Y Output Value" dstnodeid="164" dstpinname="Reset History">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="165">
+   <BOUNDS type="Node" left="15285" top="20010" width="2655" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="15285" top="20010" width="2655" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|return to previous state|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="166">
+   <BOUNDS type="Box" left="12075" top="2085" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12075" top="2085" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="toSubmenu">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="166" srcpinname="Y Output Value" dstnodeid="124" dstpinname="toSubmenu">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="167">
+   <BOUNDS type="Box" left="14280" top="2175" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14280" top="2175" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="toGallery">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="167" srcpinname="Y Output Value" dstnodeid="124" dstpinname="toGallery">
    </LINK>
    </PATCH>

@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Library\Automata.Data.cs" />
     <Compile Include="Library\Automata.Drawing.cs" />
+    <Compile Include="Nodes\Undo.cs" />
     <Compile Include="Nodes\GetRegion.cs" />
     <Compile Include="Nodes\GetState.cs" />
     <Compile Include="Nodes\Logging.cs" />
