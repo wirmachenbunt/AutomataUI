@@ -2,12 +2,12 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>C:\vvvv\vvvv_50beta35.8_x64\vvvv.exe</StartProgram>
+    <StartProgram>C:\vvvv\vvvv_50beta36_x64\vvvv.exe</StartProgram>
     <StartArguments>"C:\AutomataUI\packs\AutomataUI\girlpower\AutomataUI %28Animation%29 help.v4p"</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>C:\vvvv\vvvv_50beta35.8_x64\vvvv.exe</StartProgram>
-    <StartArguments>"C:\AutomataUI\AutomataUI %28Animation%29 help.v4p"</StartArguments>
+    <StartProgram>C:\vvvv\vvvv_50beta36_x64\vvvv.exe</StartProgram>
+    <StartArguments>"C:\AutomataUI\packs\AutomataUI\girlpower\AutomataUI %28Animation%29 help.v4p"</StartArguments>
   </PropertyGroup>
 </Project>

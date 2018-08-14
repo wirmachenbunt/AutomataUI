@@ -13,10 +13,10 @@ C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Debug\AutomataUI.dll
 C:\Users\Chris\Desktop\AutomataUI\AutomataUI\obj\Debug\AutomataUI.pdb
 C:\AutomataUI\AutomataUI\bin\Debug\AutomataUI.dll
 C:\AutomataUI\AutomataUI\bin\Debug\AutomataUI.pdb
-C:\AutomataUI\AutomataUI\obj\Debug\AutomataUI.csprojResolveAssemblyReference.cache
 C:\AutomataUI\AutomataUI\obj\Debug\AutomataUI.dll
 C:\AutomataUI\AutomataUI\obj\Debug\AutomataUI.pdb
 C:\AutomataUI\packs\nodes\plugins\AutomataUI.dll
 C:\AutomataUI\packs\nodes\plugins\AutomataUI.pdb
 C:\AutomataUI\packs\AutomataUI\nodes\plugins\AutomataUI.dll
 C:\AutomataUI\packs\AutomataUI\nodes\plugins\AutomataUI.pdb
+C:\AutomataUI\AutomataUI\obj\Debug\AutomataUI.csproj.CoreCompileInputs.cache

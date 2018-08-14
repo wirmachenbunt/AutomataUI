@@ -2,3 +2,5 @@
 12-07-2018 17:21:32.605 ;Menu;custom message
 12-07-2018 17:21:33.853 ;Init;custom message
 12-07-2018 17:21:34.683 ;Menu;custom message
+14-08-2018 16:42:04.633 ;Menu;custom message
+14-08-2018 16:42:53.762 ;Menu;custom message

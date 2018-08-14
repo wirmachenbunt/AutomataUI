@@ -93,7 +93,7 @@ namespace VVVV.Nodes
             {
                 Initialize();
 
-                for (int i = 0; i < SetTime.SliceCount; i++)
+                for (int i = 0; i < SpreadMax; i++)
                 {
                     if (SetTime.IsChanged && SetTime[i])
                     {
