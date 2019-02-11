@@ -129,13 +129,29 @@ namespace VVVV.Nodes
                             //set output active or not, with or without looking at transitions too
                             if(IgnoreTransitions[j])
                             {
-                                if (thisRegion.IntersectsWith(state)) RegionActive[offset] = true;
-                                else RegionActive[offset] = false;
+                                if (thisRegion.IntersectsWith(state))
+                                {
+                                    RegionActive[offset] = true;
+                                    AutomataUI[0].regionList[offset].IsHit = true;
+                                }
+                                else
+                                {
+                                    RegionActive[offset] = false;
+                                    AutomataUI[0].regionList[offset].IsHit = false;
+                                }
                             } else
 
                             {
-                                if (thisRegion.IntersectsWith(state) || thisRegion.IntersectsWith(transition)) RegionActive[offset] = true;
-                                else RegionActive[offset] = false;
+                                if (thisRegion.IntersectsWith(state) || thisRegion.IntersectsWith(transition))
+                                {
+                                    RegionActive[offset] = true;
+                                    AutomataUI[0].regionList[offset].IsHit = true;
+                                }
+                                else
+                                {
+                                    RegionActive[offset] = false;
+                                    AutomataUI[0].regionList[offset].IsHit = false;
+                                }
                             }
 
                             //region timing

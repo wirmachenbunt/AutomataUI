@@ -42,6 +42,9 @@ namespace VVVV.Nodes
         [Output("Out")]
         public ISpread<bool> FOut;
 
+        [Output("Lock Time")]
+        public ISpread<int> FLockTime;
+
         [Output("StateActive")]
         public ISpread<bool> StateActive;
 
@@ -97,7 +100,7 @@ namespace VVVV.Nodes
                 Initialize();
 
                 StateActive.SliceCount = StatesEnum.IOObject.SliceCount * AutomataUI[0].ActiveStateIndex.SliceCount; //set Slicecount to amount of incoming Automatas
-                FadeInOut.SliceCount = ElapsedStateTime.SliceCount = FIn.SliceCount = FOut.SliceCount = StateActive.SliceCount;
+                FadeInOut.SliceCount = ElapsedStateTime.SliceCount = FIn.SliceCount = FOut.SliceCount = FLockTime.SliceCount = StateActive.SliceCount;
 
                 for (int j = 0; j < StatesEnum.IOObject.SliceCount; j++)
                 {
@@ -121,6 +124,8 @@ namespace VVVV.Nodes
                             FIn[offset] = false;
                             FOut[offset] = false;
                         }
+
+                        FLockTime[offset] = AutomataUI[0].stateList.ElementAt(StatesEnum.IOObject[j].Index).Frames;
 
                         //output in timing
                         if (AutomataUI[0].TransitionFramesOut[i] > 0 &&

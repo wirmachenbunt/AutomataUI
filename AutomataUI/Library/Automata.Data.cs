@@ -186,6 +186,12 @@ namespace Automata.Data
             set;
         }
 
+        public bool IsHit
+        {
+            get;
+            set;
+        }
+
         //serialize deserialize
         public static string DataSerializeRegion(List<AutomataRegion> myList)
         {

@@ -284,6 +284,8 @@ namespace Automata.Drawing
                     string regionName = region.Name;
                     e.Graphics.FillRectangle(selectbrush, region.Bounds);
 
+                    if (region.IsHit) e.Graphics.DrawRectangle(OrangePen, region.Bounds);
+
                     Point[] points = {
                         new Point(region.SizeHandle.X, region.SizeHandle.Y + region.SizeHandle.Height),
                         new Point(region.SizeHandle.X + region.SizeHandle.Width, region.SizeHandle.Y),
