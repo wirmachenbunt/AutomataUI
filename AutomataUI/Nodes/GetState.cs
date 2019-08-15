@@ -125,7 +125,19 @@ namespace VVVV.Nodes
                             FOut[offset] = false;
                         }
 
-                        FLockTime[offset] = AutomataUI[0].stateList.ElementAt(StatesEnum.IOObject[j].Index).Frames;
+                        try
+                        {
+                            FLockTime[offset] = AutomataUI[0].stateList.ElementAt(StatesEnum.IOObject[j].Index).Frames;
+                        }
+                        catch (Exception)
+                        {
+
+                           //do nothjing
+                        }
+
+                           
+                        
+                        
 
                         //output in timing
                         if (AutomataUI[0].TransitionFramesOut[i] > 0 &&
