@@ -338,7 +338,7 @@ namespace VVVV.Nodes
 
             else
             {
-                selectedState = hitState; //on click set selected state for dragging
+                if(Form.ModifierKeys != Keys.Control) selectedState = hitState; //on click set selected state for dragging in case no forcing state happens
 
                 if (startConnectionState != null && targetConnectionState != null && e.Button == MouseButtons.Left)
                 {
@@ -415,6 +415,8 @@ namespace VVVV.Nodes
 
         private void Form1_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
         {
+
+            bool redraw = false;
             x = Convert.ToInt32((e.X - p.StagePos.X) / p.dpi);
             y = Convert.ToInt32((e.Y - p.StagePos.Y) / p.dpi);
 
@@ -428,6 +430,7 @@ namespace VVVV.Nodes
                 Lines.EdgePoints myEdgePoints = Lines.GetEdgePoints(State.Center(p.bezierEdit.highlightTransition.startState.Bounds), State.Center(p.bezierEdit.highlightTransition.endState.Bounds), 40, 40, 0.0);
                 if (dragState == "bezierStart") p.bezierEdit.highlightTransition.startBezierPoint = new Point(this.x - myEdgePoints.A.X, this.y - myEdgePoints.A.Y);
                 if (dragState == "bezierEnd") p.bezierEdit.highlightTransition.endBezierPoint = new Point(this.x - myEdgePoints.B.X, this.y - myEdgePoints.B.Y);
+                redraw = true;
             }
             #endregion
 
@@ -442,16 +445,18 @@ namespace VVVV.Nodes
                 previousPosition = MousePosition;
                 p.StagePos.X += deltaX;
                 p.StagePos.Y += deltaY;
+                redraw = true;
             }
 
             //drag state
-            if (selectedState != null && e.Button == MouseButtons.Left && dragState == null)
+            if (selectedState != null && Form.ModifierKeys != Keys.Control && e.Button == MouseButtons.Left && dragState == null)
             {
                 selectedState.Move(new Point(Convert.ToInt32(e.X / p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.X / p.dpi), Convert.ToInt32(e.Y / p.dpi) - (p.StateSize / 2) - Convert.ToInt32(p.StagePos.Y / p.dpi)));
+                redraw = true;
             }
 
             //drag region
-            if (selectedState == null && hitRegion != null && e.Button == MouseButtons.Left && hitsizeHandle == null && dragState == null)
+            if (selectedState == null && Form.ModifierKeys != Keys.Control && hitRegion != null && e.Button == MouseButtons.Left && hitsizeHandle == null && dragState == null)
             {
                 Point mousePos = MousePosition;
                 int deltaX = (mousePos.X - previousPosition.X);
@@ -459,6 +464,7 @@ namespace VVVV.Nodes
                 previousPosition = MousePosition;
                 hitRegion.Bounds = new Rectangle(hitRegion.Bounds.X + deltaX, hitRegion.Bounds.Y + deltaY, hitRegion.Bounds.Width, hitRegion.Bounds.Height);
                 hitRegion.SizeHandle = new Rectangle(hitRegion.SizeHandle.X + deltaX, hitRegion.SizeHandle.Y + deltaY, 10, 10);
+                redraw = true;
             }
 
             //drag size
@@ -479,7 +485,7 @@ namespace VVVV.Nodes
 
                 hitsizeHandle.SizeHandle = new Rectangle(sizeX, sizeY, 10,10);
                 hitsizeHandle.Bounds = new Rectangle(hitsizeHandle.Bounds.X, hitsizeHandle.Bounds.Y, sizeX - hitsizeHandle.Bounds.X +10, sizeY - hitsizeHandle.Bounds.Y+10);
-
+                redraw = true;
             }
 
 
@@ -487,16 +493,20 @@ namespace VVVV.Nodes
 
             #region startConnection
 
+            if(startConnectionState != null) redraw = true;
+
             if (startConnectionState != null && hitState != null)
             {
-                targetConnectionState = hitState;
+                targetConnectionState = hitState;           
             }
             else targetConnectionState = null;
             #endregion
 
             SetSelectionRectangle(e);
 
-            this.Invalidate(); //redraw
+            //redraw
+            if (redraw) this.Invalidate();
+            
         }
 
         #endregion mouse

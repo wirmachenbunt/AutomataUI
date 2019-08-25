@@ -369,7 +369,7 @@ namespace Automata.Drawing
                     e.Graphics.ScaleTransform(dpi, dpi); //dpi scaling 
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias; // shapeman
                     e.Graphics.Clear(MyBackgroundColor);
-                    e.Graphics.FillEllipse(StateBrush, fw.x - 10, fw.y - 10, 20, 20); // draw mouse                   
+                    //e.Graphics.FillEllipse(StateBrush, fw.x - 10, fw.y - 10, 20, 20); // draw mouse                   
 
                     PaintRegions(sender, e);
 
