@@ -280,6 +280,7 @@ namespace VVVV.Nodes
             {
                 DeleteTransition(e);
                 DeleteRegion(e);
+                this.Invalidate(); //redraw
             }
 
             //hit detection bezier transition
@@ -532,6 +533,7 @@ namespace VVVV.Nodes
             // transition does not exist ? ok, create it
             if (exists == false || FAllowMultiple[0])
             {
+                
                 string input = "to" + endState.Name; //dialog text
                 int frames = 1;
                 bool pingpong = false;
@@ -552,6 +554,7 @@ namespace VVVV.Nodes
                         //update config
                         UpdateTransitionConfigs();
                         UpdateOutputs();
+                        this.Invalidate();
                     }
                 }
             }
@@ -716,6 +719,7 @@ namespace VVVV.Nodes
                                         Math.Abs(x - holdMousePos.X),
                                         Math.Abs(y - holdMousePos.Y));
                 p.selectionRectangle = rc;
+                this.Invalidate();
             }
         }
 
