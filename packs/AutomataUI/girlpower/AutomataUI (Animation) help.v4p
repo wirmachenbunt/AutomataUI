@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
    <PATCH nodename="C:\AutomataUI\packs\AutomataUI\girlpower\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="-360" locked="0">
    <BOUNDS type="Window" left="12030" top="0" width="15555" height="9270">
    </BOUNDS>
-   <PACK Name="addonpack" Version="38.1.0">
+   <PACK Name="addonpack" Version="40.0.0">
    </PACK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="34" systemname="IOBox (String)">
    <BOUNDS type="Node" left="576" top="4758" width="2355" height="270">
@@ -41,7 +41,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="561" top="828" width="4815" height="585">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|Automata UI 1.9|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Automata UI 1.9.77|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -59,7 +59,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="546" top="1458" width="6135" height="615">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|wirmachenbunt // Christian Engler //  2019&cr;&lf;Open Source Version|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|wirmachenbunt // Christian Engler //  2021&cr;&lf;Open Source Version|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -1020,4 +1020,10 @@
    </LINK>
    <LINK srcnodeid="170" srcpinname="Change" dstnodeid="171" dstpinname="Y Input Value">
    </LINK>
+   <PACK Name="dx11.particles" Version="1.0.6">
+   </PACK>
+   <PACK Name="mp.dx" Version="3.1.17.0">
+   </PACK>
+   <PACK Name="mp.essentials" Version="3.1.31.0">
+   </PACK>
    </PATCH>

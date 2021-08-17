@@ -369,7 +369,7 @@ namespace VVVV.Nodes
                     break;
                 }
             }
-
+            this.Invalidate();
         }
 
         private void Form1_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
