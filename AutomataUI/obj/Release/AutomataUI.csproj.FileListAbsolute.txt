@@ -19,3 +19,4 @@ C:\AutomataUI\packs\AutomataUI\nodes\plugins\AutomataUI.dll
 C:\AutomataUI\packs\AutomataUI\nodes\plugins\AutomataUI.pdb
 C:\AutomataUI\AutomataUI\obj\Release\AutomataUI.csprojAssemblyReference.cache
 C:\AutomataUI\AutomataUI\obj\Release\AutomataUI.csproj.CoreCompileInputs.cache
+C:\AutomataUI\AutomataUI\obj\Release\AutomataUI.csproj.CopyComplete

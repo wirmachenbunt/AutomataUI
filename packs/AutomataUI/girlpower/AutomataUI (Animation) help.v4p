@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
-   <PATCH nodename="C:\AutomataUI\packs\AutomataUI\girlpower\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="-360" locked="0">
-   <BOUNDS type="Window" left="12030" top="0" width="15555" height="9270">
+   <PATCH nodename="C:\AutomataUI\packs\AutomataUI\girlpower\AutomataUI (Animation) help.v4p" systemname="AutomataUI (Animation) help2" filename="C:\AutomataUI\AutomataUI\AutomataUI (Animation) help2.v4p" scrollx="0" scrolly="0" locked="0">
+   <BOUNDS type="Window" left="12030" top="0" width="15555" height="17550">
    </BOUNDS>
    <PACK Name="addonpack" Version="40.0.0">
    </PACK>
@@ -1026,4 +1026,48 @@
    </PACK>
    <PACK Name="mp.essentials" Version="3.1.31.0">
    </PACK>
+   <NODE systemname="ToJSON (AutomataUI Animation)" filename="..\nodes\plugins\AutomataUI.dll" nodename="ToJSON (AutomataUI Animation)" componentmode="Hidden" id="172">
+   <BOUNDS type="Node" left="11535" top="7725" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11535" top="7725" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="AutomataUI" visible="1">
+   </PIN>
+   <PIN pinname="StateActive" visible="1">
+   </PIN>
+   <PIN pinname="JSON" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="124" srcpinname="AutomataUI" dstnodeid="172" dstpinname="AutomataUI">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="173">
+   <BOUNDS type="Box" left="13290" top="7950" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13290" top="7950" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="StateActive">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="172" srcpinname="StateActive" dstnodeid="173" dstpinname="Input String">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="174">
+   <BOUNDS type="Box" left="6285" top="9765" width="4065" height="6030">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6285" top="9765" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="172" srcpinname="JSON" dstnodeid="174" dstpinname="Input String">
+   </LINK>
    </PATCH>
